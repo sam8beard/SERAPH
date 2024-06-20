@@ -8,8 +8,8 @@
 
 .sign-in .overlap-group-wrapper {
     background-color: #20375d;
-    height: 1080px;
-    width: 1920px;
+    height: 100vh; /* Adjust height as needed */
+    width: 100vw; /* Adjust width as needed */
 }
 
 .sign-in .image {
@@ -22,6 +22,7 @@
 }
 
 .sign-in .rectangle {
+    background-color: D9D9D9;
     height: 898px;
     left: 1020px;
     position: absolute;
