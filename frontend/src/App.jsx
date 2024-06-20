@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css'; // Assuming App.css contains necessary styles
+import './signinstyle.css'; // Assuming App.css contains necessary styles
 
 // Import images (adjust paths based on your actual directory structure)
 import image1 from './assets/image 1.png';

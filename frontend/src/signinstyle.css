@@ -1,0 +1,164 @@
+.sign-in {
+    background-color: #20375d;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh; /* Set height to full viewport height */
+    width: 100vw; /* Set width to full viewport width */
+}
+
+.sign-in .overlap-group-wrapper {
+    background-color: #20375d;
+    height: 100%; /* Adjust as needed */
+    width: 100%; /* Adjust as needed */
+    max-height: 1080px; /* Set a maximum height for large screens */
+    max-width: 1920px; /* Set a maximum width for large screens */
+    margin: auto; /* Center the wrapper horizontally and vertically */
+}
+
+.sign-in .image {
+    height: 1080px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 1219px;
+}
+
+.sign-in .rectangle {
+    background-color: D9D9D9;
+    height: 898px;
+    left: 1020px;
+    position: absolute;
+    top: 107px;
+    width: 799px;
+}
+
+.sign-in .text-wrapper {
+    color: #ffffff;
+    font-family: "Lexend-Regular", Helvetica;
+    font-size: 150px;
+    font-weight: 400;
+    left: 100px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;  
+    text-shadow: 15px 15px 10px #00000040;
+    top:388px;
+    white-space:nowrap;
+    width:840px;
+}
+
+.sign-in .div {
+  background-color: #d9d9d9;
+  border-radius: 30px;
+  height: 76px;
+  left: 1090px;
+  position: absolute;
+  top: 463px;
+  width: 658px;
+}
+
+.sign-in .rectangle-2 {
+  background-color: #d9d9d9;
+  border-radius: 30px;
+  height: 76px;
+  left: 1090px;
+  position: absolute;
+  top: 608px;
+  width: 658px;
+}
+
+.sign-in .text-wrapper-2 {
+  color: #000000;
+  font-family: "Lexend-Light", Helvetica;
+  font-size: 48px;
+  font-weight: 300;
+  height: 60px;
+  left: 1132px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 470px;
+}
+
+.sign-in .text-wrapper-3 {
+  color: #000000;
+  font-family: "Lexend-Light", Helvetica;
+  font-size: 48px;
+  font-weight: 300;
+  height: 60px;
+  left: 1132px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 615px;
+}
+
+.sign-in .rectangle-3 {
+  background-color: #d9d9d9;
+  border-radius: 30px;
+  height: 73px;
+  left: 1284px;
+  position: absolute;
+  top: 868px;
+  width: 270px;
+}
+
+.sign-in .rectangle-4 {
+  background-color: #d9d9d9;
+  border-radius: 30px;
+  height: 73px;
+  left: 1284px;
+  position: absolute;
+  top: 769px;
+  width: 270px;
+}
+
+.sign-in .text-wrapper-4 {
+  color: #000000;
+  font-family: "Lexend-Light", Helvetica;
+  font-size: 48px;
+  font-weight: 300;
+  height: 60px;
+  left: 1356px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 874px;
+}
+
+.sign-in .text-wrapper-5 {
+  color: #000000;
+  font-family: "Lexend-Light", Helvetica;
+  font-size: 48px;
+  font-weight: 300;
+  height: 60px;
+  left: 1316px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 775px;
+}
+
+.sign-in .img {
+  height: 254px;
+  left: 1233px;
+  object-fit: cover;
+  position: absolute;
+  top: 158px;
+  width: 373px;
+}
+
+.overlap-group {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #20375d; /* Optional fallback background color */
+  height: 100%; /* Fill the entire overlap-group-wrapper */
+  width: 100%; /* Fill the entire overlap-group-wrapper */
+  position: relative; /* Ensure it's positioned relative for absolute child elements */
+}
