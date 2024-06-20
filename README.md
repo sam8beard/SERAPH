@@ -1,8 +1,5 @@
 # SERAPH
 
-## In root directory 
-``` npm create vite@latest frontend -- --template react ```
-
 ## From inside frontend 
 ``` npm install ``` 
 
@@ -14,3 +11,25 @@
 ``` pip install flask-cors ```
 
 ``` python -m pip install ``` 
+
+
+
+
+
+
+For lauren and whoever 
+
+create directory for projects 
+
+go to github
+
+find url 
+
+in project directory 
+
+    run: git clone "insert url here" 
+
+
+
+
+
