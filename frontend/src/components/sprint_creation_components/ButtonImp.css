@@ -1,0 +1,8 @@
+
+.submitBtn:hover {
+    background-color: azure;
+}
+.submitBtn{
+    border: 2px solid black;
+    border-radius: 10px;
+}

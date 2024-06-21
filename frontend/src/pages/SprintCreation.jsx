@@ -1,4 +1,14 @@
 import './SprintCreation.css'
+import StartDate from '../components/sprint_creation_components/StartDate.jsx';
+import EndDate from '../components/sprint_creation_components/EndDate.jsx';
+import SprintInput from '../components/sprint_creation_components/SprintInput.jsx';
+import 'bootstrap/dist/css/bootstrap.css';
+import CommittedInput from '../components/sprint_creation_components/CommittedInput';
+import Uncommitted from '../components/sprint_creation_components/Uncommitted';
+import Completed from '../components/sprint_creation_components/Completed';
+import Notes from '../components/sprint_creation_components/Notes';
+import ButtonImp from '../components/sprint_creation_components/ButtonImp';
+
 function SprintCreation() { 
     return (
         <div className="parent">
@@ -10,84 +20,27 @@ function SprintCreation() {
 
             <div className="input">
                 <div className="date">
-                <div className='title'>
-                    <div className="startTitle">
-                        <p>Start Date</p>
-                    </div>
-                    <div className="startDateInput">
-                        <input type="text" className="startDate" placeholder='input start date'></input>
-                        
-                    </div>
+                    <StartDate/> 
+                    <EndDate/>
                 </div>
-                    <div className='title'>
-                        <div className="endTitle">
-                            <p>End Date</p>
-                        </div>
-                        <div className="endDateInput">
-                        <input type="text" className="endDate" placeholder='input end date'></input>
-                        </div>
-                    </div>
-                   
-                    
-                </div>
-                <div className="title">
-                    <div className="sprintTitle">
-                        <p>Number of Sprints</p>
-                    </div>
 
-                    <div className="sprints">
-                    <div className="sprintInput">
-                        <input className="sprint" placeholder='Input number of sprints'></input>
-                    </div>
-
-                    </div>
-
-                </div>
+                <SprintInput/>
                 
-                <div className='title'>
-                    <div className="commitTitle">
-                        <p>Committed Load</p>
-                    </div>
-
-                    <div className="committed">
-                    <input className="committedInput" placeholder='Input committed load'></input>
-                    </div>
-                </div>
-               
-                <div className="title">
-                    <div className="uncommitTitle">
-                        <p>Uncommitted Load</p>
-                    </div>
-                    <div className="uncommitted">
-                    <input className="uncommittedInput" placeholder='Input uncommitted load'></input>
-                    </div>
-                </div>
+                <CommittedInput/>
                 
-                <div className="title">
-                    <div className="compTitle">
-                        <p>Completed Tasks</p>
-                    </div>
-                    <div className="completed">
-                    <input className="completedInput" placeholder='Input completed tasks'></input>
-                    </div>
-                </div>
+               <Uncommitted/>
+                
+                <Completed/>
                
-                <div className='title'>
-                    <div className="notesTitle">
-                        <p>Notes</p>
-                    </div>
-                    <div className="notes">
-                    <input className="notesInput" placeholder='Input notes'></input>
-                    </div>
-                </div>
+               <Notes/>
+                
                
             </div>
 
             <div className="bottom">
-                <div className="buttons">
-                    <button type="submit" className="submitBtn">Submit</button>
-                </div>
 
+                <ButtonImp/>
+                
             </div>
 
         </div>
