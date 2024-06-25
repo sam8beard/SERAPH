@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.css";
-import './SprintOverview.css'
+import './SprintOverview.css';
+import graph from "../assets/SampleGraph.png";
 import {
     Outlet,
     NavLink,
@@ -17,23 +18,13 @@ function Root() {
 
     return (
         <>
-            <div>
-                <div className="flex-container-navbar text-style-navbar">
-                    <img src="../../images/SERAPH.png" className="logo" />
-                    <div>S E R A P H</div>
-                    <div>Home</div>
-                    <div>Archived</div>
-                    <div>Welcome User</div>
-                </div>
-            </div>
-
-            <h1 className="text-style-header">
+            <h1 className="header-1 text-style-header">
                 Enterprise Collection Planner (ECP) 6/3/2024 - 6/7/2024
             </h1>
 
             <div className="progress-bar-container">
                 <div className="progress-bar-text">{now}%</div>
-                <ProgressBar striped variant="info" className="progress-bar" now={now} />
+                <ProgressBar striped variant="info" className="progress-bar-SO" now={now} />
             </div>
 
             <div className="flex-container-parent">
@@ -58,7 +49,7 @@ function Root() {
                 </div>
 
                 <div className="flex-container-child-right">
-                    <img src="../images/SampleGraph.png"></img>
+                    <img src={graph} />
                 </div>
             </div>
             

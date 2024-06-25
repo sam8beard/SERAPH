@@ -57,7 +57,7 @@ body {
   margin: 10px 0;
 }
 
-.progress-bar {
+.progress-bar-PV {
   width: 100%;
   background-color: #ccc;
   border-radius: 5px;
@@ -65,7 +65,7 @@ body {
   margin-top: 120px;
 }
 
-.progress {
+.progress-PV {
   width: 50%;
   height: 10px;
   background-color: #00bfff;
