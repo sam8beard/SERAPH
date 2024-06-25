@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Project Creation Div*/
+ .project-creation{
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.div {
+  background-color: #ffffff;
+  height: 1080px;
+  width: 1920px;
+  overflow: hidden;
+}
+
+/* Div for Nav Bar*/
+.div-2 {
+  background-color: #20375d;
+  height: 128px;
+  left: 0;
+  right: 0;
+  position: absolute;
+  top: 0;
+  width: 1924px;
+}
+
+/* SERAPH */
+ .p {
+  color: #d9d9d9;
+  font-family:Lexend-Regular,Helvetica;
+  font-size:48px;
+  font-weight:400;
+  height:60px;
+  left:143px;
+  letter-spacing:0;
+  line-height:normal;
+  position:absolute;
+  top:34px;
+  width:264px;
+}
+
+/* SERAPH Logo */
+ .image {
+  height: 87px;
+  left: 33px;
+  object-fit: cover;
+  position: absolute;
+  top: 18px;
+  width: 86px;
+}
+
+/* Welcome User */
+.text-wrapper-1 {
+  color: #fffdfd;
+  font-family:Lexend-Regular, Helvetica;
+  font-size:20px;
+  font-weight:400;
+  left:1684px;
+  letter-spacing:0;
+  line-height:normal;
+  position:absolute;
+  text-align:center;
+  top:51px;
+  width:202px;
+}
+
+/* Project Creation */
+.text-wrapper-2 {
+  color: #fffdfd;
+  font-family:Lexend-Regular,Helvetica;
+  font-size:48px;
+  font-weight:400;
+  left:772px;
+  letter-spacing:0;
+  line-height:normal;
+  position:absolute;
+  top:32px;
+  width:376px;
+}
+
+.div-3 {
+  height: 952px;
+  top: 128px;
+  position: absolute;
+  width: 1920px;
+}
+
+.text-wrapper-3, .text-wrapper-4, .text-wrapper-5, .text-wrapper-6, .text-wrapper-7, .text-wrapper-8, .text-wrapper-9 {
+  color: #000000;
+  font-family: "Lexend-Regular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 33px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  z-index: 2;
+}
+
+/* base rectangle */
+.rectangle-1, .rectangle-2, .rectangle-3, .rectangle-4, .rectangle-5, .rectangle-6, .rectangle-7 {
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  height: 48px;
+  left: 33px;
+  position: absolute;
+  z-index: 1;
+  box-shadow: none;
+}
+
+/* Title */
+.text-wrapper-3 {
+  top: 46px;
+}
+
+.rectangle-1 {
+  top: 84px;
+  width: 443px;
+}
+
+/* Team Members */
+.text-wrapper-4 {
+  top: 178px;
+}
+
+.rectangle-2 {
+  top: 216px;
+  width: 237px;
+}
+
+/* Customer */
+.text-wrapper-5 {
+  top: 310px;
+}
+
+.rectangle-3 {
+  top:348px;
+  width:443px;
+ }
+
+/* Technology Used */
+.text-wrapper-6 {
+  top: 442px;
+}
+
+.rectangle-4 {
+  top: 480px;
+  width: 237px;
+}
+
+/* Training Requests  */
+.text-wrapper-7 {
+  top: 574px;
+}
+
+.rectangle-5 {
+  top: 612px;
+  width: 237px;
+}
+
+/* Element Chief */
+.text-wrapper-8 {
+  top: 706px;
+}
+
+.rectangle-6 {
+  top: 744px;
+  width: 443px;
+}
+
+/* Create Button */
+.text-wrapper-9 {
+  left: 1215px;
+  top: 838px;
+}
+
+.rectangle-7 {
+  top: 825px;
+  width: 186px;
+  left: 1156px;
+}
+
+.plus-sign-1 {
+  left: 1095px;
+  top: 221px;
+  position: absolute;
+}
+
+.plus-sign-2 {
+  left: 1095px;
+  top: 480px;
+  position: absolute;
+}
+ 
