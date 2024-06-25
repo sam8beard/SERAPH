@@ -15,8 +15,10 @@ function NavigationBar() {
               <Nav className="me-auto">
                 <Nav.Link href="/sprintoverview">Sprint Overview</Nav.Link>
                 <Nav.Link href="/sprintcreation">Sprint Creation</Nav.Link>
-                <Nav.Link href="/sprintupdate">Sprint Update</Nav.Link>
-                <Nav.Link href="#link">Link</Nav.Link>
+                <Nav.Link href="/pdfoverview">PDF Overview</Nav.Link>
+                <Nav.Link href="/projectarchive">Project Archive</Nav.Link>
+                <Nav.Link href="/signin">Sign In</Nav.Link>
+                <Nav.Link href="/projectview">Project View</Nav.Link>
                 <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                   <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">

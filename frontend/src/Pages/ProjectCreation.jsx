@@ -1,10 +1,10 @@
 import React from "react";
-import './projectcreationstyle.css'; 
+import './ProjectCreation.css'; 
 
-import plussign from './assets/Plus_Sign.png';
-import seraph_logo from './assets/seraph_logo.png';
+import plussign from '../assets/Plus_Sign.png';
+import seraph_logo from '../assets/seraph_logo.png';
 
-function ProjectCreationPage() {
+function ProjectCreation() {
     return (
             <div className="project-creation">
                 <div className="div">
@@ -55,4 +55,4 @@ function ProjectCreationPage() {
     ); 
 }
 
-export default ProjectCreationPage;
+export default ProjectCreation;

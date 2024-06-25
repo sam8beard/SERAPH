@@ -1,10 +1,10 @@
 import React from 'react';
-import './signinstyle.css'; 
+import './SignIn.css'; 
 
-import seraph_logo from './assets/seraph_logo.png';
-import dod_logo from './assets/DOD_Logo.png';
+import seraph_logo from '../assets/seraph_logo.png';
+import dod_logo from '../assets/DOD_Logo.png';
 
-function SignInPage() {
+function SignIn() {
 
   return (
     <div className="sign-in">
@@ -33,4 +33,4 @@ function SignInPage() {
   );
 }
 
-export default SignInPage;
+export default SignIn;

@@ -1,12 +1,12 @@
 import React from "react";
-import './style.css'; 
+import './ProjectArchive.css'; 
 
-import seraph_logo from './assets/seraph_logo-1.png';
-import filter_icon from './assets/filter_icon.png';
-import search_icon from './assets/search_icon.png';
+import seraph_logo from '../assets/seraph_logo-1.png';
+import filter_icon from '../assets/filter_icon.png';
+import search_icon from '../assets/search_icon.png';
 
 
-function ProjectArchivedPage() {
+function ProjectArchive() {
     return (
         <div class="projects-archived">
             <div class="overlap-wrapper">
@@ -52,4 +52,4 @@ function ProjectArchivedPage() {
     );
 }
 
-export default ProjectArchivedPage;
+export default ProjectArchive;
