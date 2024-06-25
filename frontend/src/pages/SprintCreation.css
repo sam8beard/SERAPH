@@ -1,0 +1,65 @@
+
+.parent {
+    display: flex;
+    justify-content: flex-start;
+    height: 100vh; 
+    width: 100vw;
+    flex-direction: column;
+
+
+}
+body {
+    background-color: lightgrey;
+}
+
+input {
+    display:flex;
+    justify-content: flex-between;
+    border-radius: 10px;
+    height: 30px;
+    width: 200px;
+}
+
+
+.input { 
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: 80vh;
+    font-size: 2rem;
+    justify-content: space-evenly;
+
+}
+
+.date {
+
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: space-between;
+}
+
+
+.bottom {
+    display: flex;
+
+    width: 100vh;
+    justify-content: flex-end;
+}
+
+.top {
+    display:flex;
+    justify-content: center;
+
+}
+
+
+.title {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    justify-content: flex-end;
+    padding: 20px;
+ 
+
+}

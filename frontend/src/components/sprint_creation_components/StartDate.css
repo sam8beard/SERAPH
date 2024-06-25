@@ -1,0 +1,49 @@
+
+.input { 
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    font-size: 2rem;
+
+    height: 90vh;
+
+    justify-content: space-evenly;
+
+}
+
+.date {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 400px;
+}
+
+
+
+.bottom {
+    display: flex;
+
+    width: 120vh;
+    justify-content: flex-end;
+
+}
+
+.top {
+    display:flex;
+    justify-content: center;
+    width: 120vh;
+}
+
+.submitBtn:hover {
+    background-color: azure;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    justify-content: flex-end;
+
+}
