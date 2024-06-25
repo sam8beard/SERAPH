@@ -3,11 +3,11 @@ import StartDate from '../components/sprint_creation_components/StartDate.jsx';
 import EndDate from '../components/sprint_creation_components/EndDate.jsx';
 import SprintInput from '../components/sprint_creation_components/SprintInput.jsx';
 import 'bootstrap/dist/css/bootstrap.css';
-import CommittedInput from '../components/sprint_creation_components/CommittedInput';
-import Uncommitted from '../components/sprint_creation_components/Uncommitted';
-import Completed from '../components/sprint_creation_components/Completed';
-import Notes from '../components/sprint_creation_components/Notes';
-import ButtonImp from '../components/sprint_creation_components/ButtonImp';
+import CommittedInput from '../components/sprint_creation_components/CommittedInput.jsx';
+import Uncommitted from '../components/sprint_creation_components/Uncommitted.jsx';
+import Completed from '../components/sprint_creation_components/Completed.jsx';
+import Notes from '../components/sprint_creation_components/Notes.jsx';
+import ButtonImp from '../components/sprint_creation_components/ButtonImp.jsx';
 
 function SprintCreation() { 
     return (

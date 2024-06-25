@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dashboard from './pages/Dashboard.jsx'
 import NavigationBar from './components/NavigationBar.jsx'
 import Testing from './pages/Testing.jsx'
-import SprintOverview from './pages/SprintOverview'
+import SprintOverview from './pages/SprintOverview.jsx'
 import SprintCreation from './pages/SprintCreation.jsx'
 import SprintUpdate from './pages/SprintUpdate.jsx'
 
@@ -37,6 +37,14 @@ function App() {
           <Route 
               path='/sprintcreation'
               element={<SprintCreation />}
+          />
+          <Route 
+              path='/pdfoverview'
+              element={<SprintOverview />}
+          />
+          <Route 
+              path='/'
+              element={<SprintOverview />}
           />
           <Route 
               path='/sprintoverview'
