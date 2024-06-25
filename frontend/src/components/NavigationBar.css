@@ -6,7 +6,6 @@
     left: 0 !important; /* Align it to the left */
     width: 100vw !important; /* Full width */
     z-index: 1000; /* Ensure it stays above other content */
-    margin-bottom: 50px !important;
 }
 
 
