@@ -1,0 +1,309 @@
+.projects-archived {
+    background-color: #20375d;
+    height: 1080px; 
+    width: 1920px;  
+    overflow: hidden;
+    position: relative;
+}
+
+.overlap-wrapper {
+    background-color: #ffffff;
+    height: 1080px;
+    width: 1920px;
+    overflow: hidden;
+}
+
+/* Div for Nav Bar*/
+.div-1 {
+    background-color: #20375d;
+    height: 128px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 0;
+    width: 1924px;
+    border-bottom: 3px solid #ffffff; 
+    z-index: 1;
+}
+
+.div-2 {
+    background-color: #20375d;
+    height: 952px;
+    top: 128px;
+    position: relative;
+    width: 1920px;
+  }
+
+/* SERAPH Logo */
+.image {
+    height: 87px;
+    left: 33px;
+    object-fit: cover;
+    position: absolute;
+    top: 18px;
+    width: 86px;
+}
+
+.image2 {
+    width: 972px;
+    height: 986px;
+    right: -249px;
+    overflow: hidden; 
+    position: absolute;
+    opacity: 0.25;
+    z-index: 1;
+}
+  
+  /* Welcome User */
+  .text-wrapper-1 {
+    color: #fffdfd;
+    font-family:Lexend-Regular, Helvetica;
+    font-size:20px;
+    font-weight:400;
+    left:1684px;
+    letter-spacing:0;
+    line-height:normal;
+    position:absolute;
+    text-align:center;
+    top:51px;
+    width:202px;
+  }
+  
+  /* Home */
+  .text-wrapper-2 {
+    color: #fffdfd;
+    font-family:Lexend-Regular,Helvetica;
+    font-size:48px;
+    font-weight:400;
+    left:534px;
+    letter-spacing:0;
+    line-height:normal;
+    position:absolute;
+    top:32px;
+    width:376px;
+  }
+
+  /* Archived */
+  .text-wrapper-3 {
+    color: #fffdfd;
+    font-family:Lexend-Regular,Helvetica;
+    font-size:48px;
+    font-weight:400;
+    left:1093px;
+    letter-spacing:0;
+    line-height:normal;
+    position:absolute;
+    top:32px;
+    width:376px;
+    text-decoration: underline;
+  }
+
+  .text-wrapper-4 {
+    color: #ffffff;
+    font-family:Lexend-Light,Helvetica;
+    font-size:30px;
+    font-weight:300;
+    left: 872px;
+    letter-spacing:0;
+    line-height:normal;
+    position:absolute;
+    text-align:center;
+    top: 43px;
+    width:265px;
+  }
+
+  /* SERAPH */
+.p {
+    color: #d9d9d9;
+    font-family:Lexend-Regular,Helvetica;
+    font-size:48px;
+    font-weight:400;
+    height:60px;
+    left:143px;
+    letter-spacing:0;
+    line-height:normal;
+    position:absolute;
+    top:34px;
+    width:264px;
+  }
+
+.export-pdf {
+    color: #000000;
+    font-family:"Lexend-Regular",Helvetica;
+    font-size:20px;
+    font-weight:300;
+    letter-spacing:0;
+    line-height:normal;
+    position:absolute;
+    text-align:center;
+    width: 185px;
+    height: 34px;
+    top: 482px;
+    right: 180px;
+    z-index: 3;
+}
+
+.rectangle-1 {
+    background-color: #d9d9d9;  
+    position: absolute;  
+    top: 459px;  
+    width: 259px;
+    height: 69px;
+    right: 141px;
+    z-index: 2;
+    opacity: 1;
+    border-radius: 10px;
+}
+
+.rectangle-2 {
+  background-color: #f8f8f8;
+  width: 1219px;
+  height: 689px;
+  left: 93px;
+  top: 201px;
+  right: 607px;
+  position: absolute; 
+  z-index: 2;
+  border: 2px solid #000;
+}
+
+.div-3 {
+  width: 1219px;
+  height: 689px;
+  left: 93px;
+  top: 201px;
+  right: 607px;
+  position: absolute; 
+}
+
+.text-wrapper-5, .text-wrapper-6, .text-wrapper-7 {
+  color: #000000;
+  font-family:"Lexend-Regular",Helvetica;
+  font-size:20px;
+  font-weight:300;
+  letter-spacing:0;
+  line-height:normal;
+  position:absolute;
+  text-align:center;
+  
+  top: 14px;
+  z-index: 4;
+}
+
+.text-wrapper-5 {
+  left: 13px;
+}
+
+.text-wrapper-6 {
+  left: 173px;
+}
+
+.text-wrapper-7 {
+  right: 57px;
+}
+
+.filter-1 {
+  left: 257px;
+  top: 20px;
+  width: 19.743px;
+  height: 9.636px;
+  z-index: 4;
+  position: absolute;
+}
+
+.filter-2 {
+  right: 30px;
+  top: 20px;
+  width: 19.743px;
+  height: 9.636px;
+  z-index: 4;
+  position: absolute;
+}
+
+.frame {
+  background-color: #5E7190;
+  left: 5px;
+  right: 5px;
+  top: 46px;
+  width: 1211px;
+  height: 59px;
+  z-index: 4;
+  position: absolute;
+}
+
+.text-wrapper-8, .text-wrapper-9, .text-wrapper-10 {
+  color: #ffffff;
+  font-family:"Lexend-Regular",Helvetica;
+  font-size:20px;
+  font-weight:300;
+  letter-spacing:0;
+  line-height:normal;
+  position:absolute;
+  text-align:center;
+  top: 17px;
+}
+
+.text-wrapper-8 {
+  left: 27px;
+}
+
+.text-wrapper-9 {
+  left: 505px;
+}
+
+.text-wrapper-10 {
+  right: 65px;
+}
+
+.line-1 {
+  z-index: 5;
+  position: absolute;
+  background-color: #000000;
+  width: 2px;
+  height: 688px;
+  left: 149px;
+}
+
+.line-2 {
+  z-index: 5;
+  position: absolute;
+  background-color: #000000;
+  width: 2px;
+  left: 5px;
+  right: 5px;
+  width: 1211px;
+  height: 2px;
+  top: 46px;
+}
+
+.search_bar {
+  position: absolute;
+  background-color: #dfdfdf;
+  width: 1196px;
+  height: 45px;
+  border-radius: 10px;
+  left: 105px;
+  top: 141px;
+}
+
+.search_icon {
+  width: 34px;
+  height: 34px;
+  left: 117px;
+  top: 147px;
+  position: absolute;
+}
+
+.search-text {
+  color: #000000;
+  font-family:"Lexend-Regular",Helvetica;
+  font-size:20px;
+  font-weight:300;
+  letter-spacing:0;
+  line-height:normal;
+  position:absolute;
+  text-align:center;
+  opacity: 0.5;
+  top: 152px;
+  left: 185px;
+}
