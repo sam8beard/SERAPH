@@ -4,7 +4,9 @@
   padding: 2rem;
   text-align: center;
 }
-
+.nav-container { 
+  margin-top: 50px !important;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
