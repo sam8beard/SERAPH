@@ -7,6 +7,8 @@ import Dashboard from './pages/Dashboard.jsx'
 import NavigationBar from './components/NavigationBar.jsx'
 import Testing from './pages/Testing.jsx'
 import SprintOverview from './pages/SprintOverview'
+import SprintCreation from './pages/SprintCreation.jsx'
+import SprintUpdate from './pages/SprintUpdate.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,6 +26,18 @@ function App() {
               path='/'
               element={<Dashboard/>}
           /> 
+          <Route 
+              path='/sprintoverview'
+              element={<SprintOverview />}
+          />
+          <Route 
+              path='/sprintupdate'
+              element={<SprintUpdate />}
+          />
+          <Route 
+              path='/sprintcreation'
+              element={<SprintCreation />}
+          />
           <Route 
               path='/sprintoverview'
               element={<SprintOverview />}
