@@ -2,7 +2,7 @@ body {
     display: block;
 }
 
-.header-1 {
+.header-1-SO {
     display: flex;
     margin: auto;
     width: 80%;
@@ -13,7 +13,7 @@ body {
     padding-bottom: 30px;
 }
 
-.progress-bar-container {
+.progress-bar-container-SO {
     display: flex;
     justify-content: center;
     margin-top: 20px;
@@ -21,7 +21,7 @@ body {
     position: relative;
 }
 
-.progress-bar-text {
+.progress-bar-text-SO {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -43,7 +43,7 @@ body {
     height: 50px !important;
 }
 
-.flex-container-parent {
+.flex-container-parent-SO {
     display: flex;
     background-color: #D9D9D9;
     margin: auto;
@@ -52,20 +52,20 @@ body {
     border-radius: 10px;
 }
 
-.flex-container-child-left {
+.flex-container-child-left-SO {
     display: flex;
     flex-direction: column;
     flex: 4;
 }
 
-.flex-container-child-left > div {
+.flex-container-child-left-SO > div {
     background-color: #8E8E8E;
     border-radius: 10px;
     padding: 10px;
     flex: 1;
 }
 
-.flex-container-child-right {
+.flex-container-child-right-SO {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,11 +73,11 @@ body {
     margin-left: 30px;
 }
 
-.flex-container-child-right > img {
+.flex-container-child-right-SO > img {
     height: 100%;
 }
 
-.text-style-normal {
+.text-style-normal-SO {
     color: #000000;
     font-family: Lexend;
     font-size: 24px;
@@ -86,7 +86,7 @@ body {
     line-height: 40px;
 }
 
-.text-style-header {
+.text-style-header-SO {
     color: #000000;
     font-family: Lexend;
     font-optical-sizing: auto;
@@ -94,7 +94,7 @@ body {
     font-style: normal;
 }
 
-.text-style-navbar {
+.text-style-navbar-SO {
     color: #FFFFFF;
     justify-content: space-around;
     font-family: Lexend;
@@ -102,9 +102,4 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-}
-
-.icon {
-    width: 87px;
-    height: 87px;
 }
