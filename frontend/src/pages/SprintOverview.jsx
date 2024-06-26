@@ -1,15 +1,7 @@
 import "bootstrap/dist/css/bootstrap.css";
 import './SprintOverview.css';
-import graph from "../assets/SampleGraph.png";
-import {
-    Outlet,
-    NavLink,
-    useLoaderData,
-    Form,
-    redirect,
-    Link,
-} from "react-router-dom";
 
+import Graph from "../assets/SampleGraph.png";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import React from "react";
 
@@ -49,7 +41,7 @@ function Root() {
                 </div>
 
                 <div className="flex-container-child-right-SO">
-                    <img src={graph} />
+                    <img src={Graph} />
                 </div>
             </div>
             
