@@ -7,13 +7,13 @@ views = Blueprint('views', __name__)
 @views.route('/add_project')
 def add_project():
     new_project = Project(
-        CustomerName="Test Customer",
-        TechUsed="Python, Flask",
-        ProjectID="P001",
-        ProjectName="Test Project",
-        ElementChiefID="E001",
-        FlightDirectorID="F001",
-        Archived=0
+        customername="Test Customer",
+        techused="Python, Flask",
+        projectid="P001",
+        projectname="Test Project",
+        elementchiefid="E001",
+        flightdirectorid="F001",
+        archived=0
     )
     db.session.add(new_project)
     db.session.commit()
