@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from .models import sprint
+from .models import Sprint
 from . import db
 from datetime import datetime
 
@@ -9,14 +9,14 @@ auth = Blueprint('auth', __name__)
 def sprint():
     if request.method == 'POST':
         # Extract form data
-        sprint_id = request.form.get('SprintID')
-        project_id = request.form.get('ProjectID')
-        start_date = request.form.get('StartDate')
-        end_date = request.form.get('EndDate')
-        commited_load = request.form.get('Commitload')
-        uncommited_load = request.form.get('UncommitedLoad')
-        completed = request.form.get('Completed')
-        notes = request.form.get('Notes')
+        sprint_id = request.form.get('sprintid')
+        project_id = request.form.get('projectid')
+        start_date = request.form.get('startdate')
+        end_date = request.form.get('enddate')
+        commited_load = request.form.get('commitedload')
+        uncommited_load = request.form.get('uncommitedload')
+        completed = request.form.get('completed')
+        notes = request.form.get('notes')
 
         # Convert date strings to datetime objects
         start_date = datetime.strptime(start_date, '%Y-%m-%d').date()
