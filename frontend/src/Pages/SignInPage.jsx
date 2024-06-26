@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import seraph_logo_SI from '../assets/seraph_logo.png';
 import dod_logo_SI from '../assets/DOD_Logo.png';
 
@@ -192,6 +193,35 @@ function SignInPage() {
             <div className="text-wrapper-4-SI" style={styles.textWrapper4SI}>CAC SSO</div>
             <div className="text-wrapper-5-SI" style={styles.textWrapper5SI}>Login</div>
             <img className="dod_logo-SI" alt="DOD Logo" src={dod_logo_SI} style={styles.dodLogoSI} />
+=======
+import './signinstyle.css'; 
+
+import seraph_logo from './assets/seraph_logo.png';
+import dod_logo from './assets/DOD_Logo.png';
+
+function SignInPage() {
+
+  return (
+    <div className="sign-in">
+      <div className="overlap-group-wrapper">
+        <div className="overlap-group">
+          <img className="seraph_logo" alt="Seraph Logo" src={seraph_logo} />
+          <p className="text-wrapper">S E R A P H</p>
+          
+          <div className="text-wrapper-2">Username</div>
+          <div className="text-wrapper-3">Password</div>
+
+          <div className="rectangle-1" >
+            <div className="rectangle-2" />
+            <div className="rectangle-3" />
+      
+            <div className="rectangle-4" />
+            <div className="rectangle-5" />
+
+            <div className="text-wrapper-4">CAC SSO</div>
+            <div className="text-wrapper-5">Login</div>
+            <img className="dod_logo" alt="DOD Logo" src={dod_logo}/>
+>>>>>>> af0baebef60f04d699e5a7ad0242d22b8684af12
           </div>
         </div>
       </div>
