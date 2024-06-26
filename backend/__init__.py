@@ -8,8 +8,8 @@ def create_app():
     app = Flask(__name__)
 
     # Use environment variables for secret key and database URI
-    app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'your_default_secret_key')
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgresql://guest:Guest123@172.20.0.118:5433/postgres')
+    app.config['SECRET_KEY'] = 'your_default_secret_key'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://guest:Guest123@172.20.0.118:5433/postgres'
 
     db.init_app(app)
 
@@ -24,18 +24,6 @@ def create_app():
     from .models import Customer, Employee, WAR, Milestone, Sprint, Project
 
     with app.app_context():
-        try:
-            db.create_all()  # Create tables if they don't exist
-            print('Database tables ensured!')
-        except Exception as e:
-            print(f"Error creating database tables: {e}")
+        db.create_all()  # This will create tables if they don't exist
 
     return app
-
-def create_database(app):
-    with app.app_context():
-        try:
-            db.create_all()  # Ensure all tables are created
-            print('Database tables ensured!')
-        except Exception as e:
-            print(f"Error creating database tables: {e}")
