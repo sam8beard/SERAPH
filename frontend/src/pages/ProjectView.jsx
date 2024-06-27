@@ -13,8 +13,8 @@ function ProjectView() {
                         <p>Customer:</p>
                         <p>Technologies Used:</p>
                         <p>Description:</p>
-                        <div className="progress-bar">
-                            <div className="progress"></div>
+                        <div className="progress-bar-PV">
+                            <div className="progress-PV"></div>
                         </div>
                     </div>
                 </div>

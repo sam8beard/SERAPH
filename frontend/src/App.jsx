@@ -3,17 +3,17 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Dashboard from './pages/Dashboard.jsx'
+import Dashboard from './Pages/Dashboard.jsx'
 import NavigationBar from './components/NavigationBar.jsx'
-import Testing from './pages/Testing.jsx'
-import SprintOverview from './pages/SprintOverview.jsx'
-import SprintCreation from './pages/SprintCreation.jsx'
-import SprintUpdate from './pages/SprintUpdate.jsx'
-import PDFOverview from './pages/PDFOverview.jsx'
-import ProjectArchive from './pages/ProjectArchive.jsx';
-import SignIn from './pages/SignIn.jsx'
-import ProjectCreation from './pages/ProjectCreation.jsx'
-import ProjectView from './pages/ProjectView.jsx'
+import Testing from './Pages/Testing.jsx'
+import SprintOverview from './Pages/SprintOverview.jsx'
+import SprintCreation from './Pages/SprintCreation.jsx'
+import SprintUpdate from './Pages/SprintUpdate.jsx'
+import PDFOverview from './Pages/PDFOverview.jsx'
+import ProjectArchive from './Pages/ProjectArchive.jsx';
+import SignIn from './Pages/SignIn.jsx'
+import ProjectCreation from './Pages/ProjectCreation.jsx'
+import ProjectView from './Pages/ProjectView.jsx'
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
 
   return (
     <>
-    <div className="container">
+    <div>
       <Router>
         <div className="nav-container"> 
           <NavigationBar />

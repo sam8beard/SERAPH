@@ -1,15 +1,19 @@
-/* .card-container { 
-    display: flex; 
-    justify-content: space-around;
+.cards-container-PC {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
-.card-container div { 
-    border: solid 5px red;
-} */
 
-.card { 
-    display: flex; 
+.card-PC { 
+    display: flex;
+    flex: 1;
+    box-sizing: border-box;
     border: solid 5px red; 
-    width: 1000px;
+    width: 100%;
     justify-content: space-around;
     line-height: 100px;
+}
+
+.card-info-PC {
+    margin: 0;
 }
