@@ -1,6 +1,6 @@
 from flask import Blueprint
 from . import db
-from .models import Project
+from models import Project, Employees, War, Milestones, Sprint
 
 views = Blueprint('views', __name__)
 
