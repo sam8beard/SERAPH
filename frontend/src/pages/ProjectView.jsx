@@ -5,7 +5,7 @@ function ProjectView() {
     return (
         <>
             <div className="parent">
-                <div className='project-card'>
+                <div className='box1'>
                     <div className="project-info">
                         <img src="medusa.png" alt="Medusa Logo" className="project-logo" />
                         <h1 className="project-title">MEDUSA</h1>
@@ -19,7 +19,7 @@ function ProjectView() {
                     </div>
                 </div>
 
-                <div className='sprint-overview-card'>
+                <div className='box2'>
                     <div className='sprint-overview-title'>
                         <h2>Sprint Overview</h2>
                     </div>
