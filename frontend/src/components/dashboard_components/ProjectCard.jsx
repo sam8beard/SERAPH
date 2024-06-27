@@ -3,17 +3,17 @@ import './ProjectCard.css'
 const ProjectCard = ({projects}) => { 
     return ( 
         <> 
-            {projects.map((project) => (
-                <div className="card">
-                    <div className="card-section"> {project.projectID} </div>
-                    <div className="card-section"> {project.customerName} </div>
-                    <div className="card-section"> {project.techUsed} </div>
-                    <div className="card-section"> {project.flightDirectorID} </div>
-                    <div className="card-section"> {project.archived} </div>
-               
-                </div>    
-
-            ))}
+            <div className="cards-container-PC">
+                {projects.map((project) => (
+                    <div className="card-PC">
+                        <div className="card-info-PC"> {project.projectID} </div>
+                        <div className="card-info-PC"> {project.customerName} </div>
+                        <div className="card-info-PC"> {project.techUsed} </div>
+                        <div className="card-info-PC"> {project.flightDirectorID} </div>
+                        <div className="card-info-PC"> {project.archived} </div>
+                    </div>
+                ))}
+            </div>
         </>
     )
 }
