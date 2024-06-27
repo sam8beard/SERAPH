@@ -1,0 +1,42 @@
+.flex-container-parent-SO {
+    display: flex;
+    background-color: #D9D9D9;
+    margin: auto;
+    padding: 40px;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.flex-container-child-left-SO {
+    display: flex;
+    flex-direction: column;
+    flex: 4;
+}
+
+.flex-container-child-left-SO > div {
+    background-color: #8E8E8E;
+    border-radius: 10px;
+    padding: 10px;
+    flex: 1;
+}
+
+.flex-container-child-right-SO {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin-left: 30px;
+}
+
+.flex-container-child-right-SO > img {
+    height: 100%;
+}
+
+.text-style-normal-SO {
+    color: #000000;
+    font-family: Lexend;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+}
