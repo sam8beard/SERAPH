@@ -33,12 +33,12 @@ class Employees(db.Model):
 
 class War(db.Model):
     projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'), primary_key=True)
-    startdate = db.Column(db.Date)
+    startdate = db.Column(db.Date, primary_key=True)
     enddate = db.Column(db.Date)
 
 class Milestones(db.Model):
     projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'), primary_key=True)
-    date = db.Column(db.Date)
+    date = db.Column(db.Date, primary_key = True)
     description = db.Column(db.String(1000))
     status = db.Column(db.String(1000))
 

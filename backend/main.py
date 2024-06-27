@@ -1,6 +1,6 @@
 from flask import request, jsonify 
 from config_db import db, app
-from models import Project
+from models import Project, Employees, War, Milestones, Sprint
 
 # Project functions
 
@@ -53,29 +53,34 @@ def delete_project(project_id):
 # War functions
 # How does this access other database tables?
 
+#Returns everything from the wars tables
 @app.route("/get_wars", methods=["GET"])
 def get_wars():
-    wars = Project.query.all()
-    json_wars = list(map(lambda x: x.to_json(), wars))
-    return jsonify({"wars": json_wars})
+    if request.method =='GET':
+        returnWars = Project.query.all()
+        json_wars = list(map(lambda x: x.to_json(), returnWars))
+        return jsonify({"returnWars": json_wars})
 
+#To add a specific war to the table
 @app.route("/add_war", methods=["POST"])
-def add_war(): 
-    warID = request.json.get("warID")
-    dateRange = request.json.get("dateRange")
+def add_war():
+    if request.method =='POST':
+        warID = request.json.get("warID")
+        startDate = request.json.get("startDate")
+        endDate = request.json.get("endDate")
 
-    if not warID or not dateRange: 
-        return (
-            jsonify({"message": "You must fill in all fields to create a war"}), 400
-        )
+        if not warID or not startDate or not endDate: 
+            return (
+                jsonify({"message": "You must fill in all fields to create a war"}), 400
+            )
     
-    new_war = Project(warID = warID, dateRange = dateRange)
-    
-    try:
-        db.session.add(new_war)
-        db.session.commit() 
-    except Exception as e: 
-        return jsonify()
+        new_war = Project(warID = warID, startDate = startdate, endDate = enddate)
+        
+        try:
+            db.session.add(new_war)
+            db.session.commit() 
+        except Exception as e: 
+            return jsonify()
 
 @app.route("/get_war/<int:war_id>", methods=["GET"])
 def get_war(war_id):
