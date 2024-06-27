@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from .models import Sprint
+from models import Sprint
 from . import db
 from datetime import datetime
 
@@ -43,3 +43,23 @@ def sprint():
 
     # If GET request or after successful POST (redirected back), render the form
     return render_template('register.html')
+
+@auth.route('/sprints', methods=['GET', 'POST'])
+def archived():
+    if request.method == 'POST':
+        archived = request.form.get('archived')
+
+    #probably need to change since no templating
+    return render_template('archived.html', taken = 1)
+
+#Queries dump
+
+#Returning all the sprints for a specific project 
+#SQL = Select * FROM sprints where projectid = project_id 
+
+#Returning one specific sprint for a specific project
+#SQL = Select * FROM sprints where projectid = project_id AND 
+
+
+#Archive Search
+#SQL = 
