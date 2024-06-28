@@ -105,6 +105,7 @@ function SignIn() {
       opacity: 0.8,
       borderRadius: '30px',
       zIndex: 1,
+      fontSize: '30px',
     },
     rectangle2SI: {
       position: 'absolute',
@@ -116,6 +117,8 @@ function SignIn() {
       right: '66px',
       top: '356px',
       height: '76px',
+      fontSize: '30px',
+      paddingLeft: '20px'
     },
     rectangle3SI: {
       position: 'absolute',
@@ -127,6 +130,7 @@ function SignIn() {
       right: '66px',
       top: '501px',
       height: '76px',
+      paddingLeft: '20px'
     },
     rectangle4SI: {
       position: 'absolute',
@@ -139,6 +143,7 @@ function SignIn() {
       left: '260px',
       right: '261px',
       top: '662px',
+      fontSize: '30px',
     },
     rectangle5SI: {
       position: 'absolute',
@@ -151,6 +156,7 @@ function SignIn() {
       left: '260px',
       right: '261px',
       top: '761px',
+      fontSize: '30px',
     },
     dodLogoSI: {
       height: '254px',
@@ -172,25 +178,32 @@ function SignIn() {
     },
   };
 
+
+
   return (
     <div style={styles.signInSI}>
       <div style={styles.overlapGroupWrapperSI}>
         <div style={styles.overlapGroupSI}>
           <img className="seraph_logo-SI" alt="Seraph Logo" src={seraph_logo_SI} style={styles.seraphLogoSI} />
           <p className="text-wrapper-SI" style={styles.textWrapperSI}>S E R A P H</p>
-          
-          <div className="text-wrapper-2-SI" style={styles.textWrapper2SI}>Username</div>
-          <div className="text-wrapper-3-SI" style={styles.textWrapper3SI}>Password</div>
 
           <div className="rectangle-1-SI" style={styles.rectangle1SI}>
             <div className="rectangle-2-SI" style={styles.rectangle2SI} />
             <div className="rectangle-3-SI" style={styles.rectangle3SI} />
-      
-            <div className="rectangle-4-SI" style={styles.rectangle4SI} />
-            <div className="rectangle-5-SI" style={styles.rectangle5SI} />
+            
+            {/* Username Textbox */}
+            <input type="text" style={styles.rectangle2SI} placeholder="Username " className="input-box"/>
+            
+            {/* Password Textbox */}
+            <input type="password" style={styles.rectangle3SI} placeholder="Password " className="input-box" />
+            
+            {/* CAC SOS Button */}
+            <button className="button-box" style={styles.rectangle4SI} > CAC SSO </button>
+            
+            {/* Login Button */}
+            <button className="button-box" style={styles.rectangle5SI} onClick={() => window.location.href = '/dashboard'}> Login </button>
 
-            <div className="text-wrapper-4-SI" style={styles.textWrapper4SI}>CAC SSO</div>
-            <div className="text-wrapper-5-SI" style={styles.textWrapper5SI}>Login</div>
+          
             <img className="dod_logo-SI" alt="DOD Logo" src={dod_logo_SI} style={styles.dodLogoSI} />
           </div>
         </div>

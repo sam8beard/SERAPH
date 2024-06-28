@@ -80,6 +80,7 @@ function ProjectCreation() {
       top: '128px',
       position: 'absolute',
       width: '1920px',
+      left: '600px',
     },
     textWrapper3PC: {
       color: '#000000',
@@ -174,6 +175,9 @@ function ProjectCreation() {
       zIndex: 1,
       width: '443px',
       top: '84px',
+      display: 'flex',
+      alignItems: 'center',
+      paddingLeft: '10px',
     },
     rectangle2PC: {
       backgroundColor: '#d9d9d9',
@@ -184,6 +188,9 @@ function ProjectCreation() {
       zIndex: 1,
       width: '237px',
       top: '216px',
+      display: 'flex',
+      alignItems: 'center',
+      paddingLeft: '10px',
     },
     rectangle3PC: {
       backgroundColor: '#d9d9d9',
@@ -194,6 +201,9 @@ function ProjectCreation() {
       zIndex: 1,
       width: '443px',
       top: '348px',
+      display: 'flex',
+      alignItems: 'center',
+      paddingLeft: '10px',
     },
     rectangle4PC: {
       backgroundColor: '#d9d9d9',
@@ -204,6 +214,9 @@ function ProjectCreation() {
       zIndex: 1,
       width: '237px',
       top: '480px',
+      display: 'flex',
+      alignItems: 'center',
+      paddingLeft: '10px',
     },
     rectangle5PC: {
       backgroundColor: '#d9d9d9',
@@ -214,6 +227,9 @@ function ProjectCreation() {
       zIndex: 1,
       width: '237px',
       top: '612px',
+      display: 'flex',
+      alignItems: 'center',
+      paddingLeft: '10px',
     },
     rectangle6PC: {
       backgroundColor: '#d9d9d9',
@@ -224,6 +240,9 @@ function ProjectCreation() {
       zIndex: 1,
       width: '443px',
       top: '744px',
+      display: 'flex',
+      alignItems: 'center',
+      paddingLeft: '10px',
     },
     rectangle7PC: {
       backgroundColor: '#d9d9d9',
@@ -234,16 +253,27 @@ function ProjectCreation() {
       zIndex: 1,
       width: '186px',
       top: '825px',
+      display: 'flex',
+      alignItems: 'center',
+      paddingLeft: '10px',
     },
-    plusSign1PC: {
-      left: '1095px',
+    buttonPC: {
+      backgroundColor: '#d9d9d9', // Match the background color of the text boxes
+      borderRadius: '10px', // Match the border radius of the text boxes
+      height: '48px', // Match the height of the text boxes
+      border: 'none', // Remove the border to match the text boxes
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: '20px', // Match the font size of the text boxes
+      fontWeight: 400,
+      fontFamily: 'Lexend-Regular, Helvetica',
+      cursor: 'pointer',
       position: 'absolute',
-      top: '221px',
-    },
-    plusSign2PC: {
-      left: '1095px',
-      position: 'absolute',
-      top: '480px',
+      zIndex: 2,
+      top: '750px', // Adjusted to match textWrapper9PC top position
+      left: '1215px', // Adjusted to match textWrapper9PC left position
+      width: '186px',
     },
   };
 
@@ -252,34 +282,32 @@ function ProjectCreation() {
       <div style={styles.divPC}>
         <div style={styles.div3PC}>
           <div style={styles.textWrapper3PC}>Title</div>
-          <div style={styles.rectangle1PC} />
+          <input type="text" style={styles.rectangle1PC} placeholder=" " />
           <div style={styles.textWrapper4PC}>Team Members</div>
 
-          <div style={{ ...styles.rectangle2PC, left: '33px' }} />
-          <div style={{ ...styles.rectangle2PC, left: '294px' }} />
-          <div style={{ ...styles.rectangle2PC, left: '555px' }} />
-          <div style={{ ...styles.rectangle2PC, left: '816px' }} />
+          <input type="text" style={{ ...styles.rectangle2PC, left: '33px' }} placeholder=" " />
+          <input type="text" style={{ ...styles.rectangle2PC, left: '294px' }} placeholder=" " />
+          <input type="text" style={{ ...styles.rectangle2PC, left: '555px' }} placeholder=" " />
+          <input type="text" style={{ ...styles.rectangle2PC, left: '816px' }} placeholder=" " />
 
           <div style={styles.textWrapper5PC}>Customer</div>
-          <div style={styles.rectangle3PC} />
+          <input type="text" style={styles.rectangle3PC} placeholder=" " />
           <div style={styles.textWrapper6PC}>Technologies Used</div>
 
-          <div style={{ ...styles.rectangle4PC, left: '33px' }} />
-          <div style={{ ...styles.rectangle4PC, left: '294px' }} />
-          <div style={{ ...styles.rectangle4PC, left: '555px' }} />
-          <div style={{ ...styles.rectangle4PC, left: '816px' }} />
+          <input type="text" style={{ ...styles.rectangle4PC, left: '33px' }} placeholder=" " />
+          <input type="text" style={{ ...styles.rectangle4PC, left: '294px' }} placeholder=" " />
+          <input type="text" style={{ ...styles.rectangle4PC, left: '555px' }} placeholder=" " />
+          <input type="text" style={{ ...styles.rectangle4PC, left: '816px' }} placeholder=" " />
 
           <div style={styles.textWrapper7PC}>Training Requests</div>
-          <div style={styles.rectangle5PC} />
+          <input type="text" style={styles.rectangle5PC} placeholder=" " />
           <div style={styles.textWrapper8PC}>Element Chief</div>
-          <div style={styles.rectangle6PC} />
+          <input type="text" style={styles.rectangle6PC} placeholder=" " />
 
-          <div style={styles.textWrapper9PC}>Create</div>
-          <div style={styles.rectangle7PC} />
+          <button style={styles.buttonPC}>Create</button>
 
           {/* Note: plussign and seraph_logo are not used in the component */}
         </div>
-
       </div>
     </div>
   );
