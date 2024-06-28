@@ -9,6 +9,7 @@ class Project(db.Model):
     elementchiefid = db.Column(db.String(100))
     flightdirectorid = db.Column(db.String(100))
     archived = db.Column(db.Integer)
+    projecturl = db.Column(db.String(1000))
 
     # DO THIS FOR EVERY MODEL
     def to_json(self): 
@@ -20,6 +21,7 @@ class Project(db.Model):
             "elementChiefID": self.elementchiefid,
             "flightDirectorID": self.flightdirectorid,
             "archived": self.archived,
+            "projecturl": self.projecturl,
         }
 
 
@@ -68,12 +70,22 @@ class Milestones(db.Model):
         }
 
 class Sprint(db.Model):
-    sprintid = db.Column(db.String(20), primary_key=True)
+<<<<<<< HEAD
+    sprintid = db.Column(db.Integer, primary_key=True)
     projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'))
     startdate = db.Column(db.Date)
     enddate = db.Column(db.Date)
     committedload = db.Column(db.Integer)
     uncommittedload = db.Column(db.Integer)
+=======
+    sprintID = db.Column(db.String(20), primary_key=True)
+    sprintName = db.Column(db.String(20))
+    projectID = db.Column(db.String(100), db.ForeignKey('project.projectID'))
+    startDate = db.Column(db.Date)
+    endDate = db.Column(db.Date)
+    committedLoad = db.Column(db.Integer)
+    uncommittedLoad = db.Column(db.Integer)
+>>>>>>> 4eae3ca1ef4aa37eea089cb84da8b5b14726ea03
     completed = db.Column(db.Integer)
     notes = db.Column(db.Text)
     archived = db.Column(db.Integer)
