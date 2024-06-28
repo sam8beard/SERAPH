@@ -70,7 +70,7 @@ class Milestones(db.Model):
         }
 
 class Sprint(db.Model):
-    sprintid = db.Column(db.String(20), primary_key=True)
+    sprintid = db.Column(db.Integer, primary_key=True)
     sprintname = db.Column(db.String(20))
     projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'))
     startdate = db.Column(db.Date)
