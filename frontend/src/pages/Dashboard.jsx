@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import './Dashboard.css';
+import CardGrid from '../components/dashboard_components/CardGrid' 
 import { useState, useEffect } from 'react'
 import ProjectCard from '../components/dashboard_components/ProjectCard';
 
@@ -25,15 +26,17 @@ function Dashboard() {
             body: JSON.stringify(formData)
         })
     }
+
     return (
         <div className='parent'> 
-            <ProjectCard projects={projects}/> 
+            <CardGrid projects={projects}/> 
 
-            <form> 
+            <form > 
                 <input type="text" placeholder='Project'/>
             </form>
         </div>
-
+        // CREATE FORM COMPONENT AND INSERT HERE
+        // HANDLE ALL OF TE 
         
     )
 }
