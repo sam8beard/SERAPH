@@ -171,10 +171,11 @@ def add_sprint():
     except Exception as e:
         return jsonify()
 
-@app.route("/get_sprint/<int:sprint_id>", methods=["GET"])
+@app.route("/get_sprint/<string:sprint_id>", methods=["GET"])
 def get_sprint(sprint_id):
-    sprint = Sprint.query.get(sprint_id)
-    return jsonify({"sprint": sprint.to_json()})
+    with db.session() as session:
+        sprint = session.get(Sprint, sprint_id)
+        return jsonify({"sprint": sprint.to_json()})
 
 @app.route("/delete_sprint/<int:sprint_id>", methods=["DELETE"])
 def delete_sprint(sprint_id):

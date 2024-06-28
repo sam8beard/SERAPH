@@ -5,23 +5,23 @@ import SprintHeader from "../components/sprint_overview_components/SprintHeader"
 import SprintInfo from "../components/sprint_overview_components/SprintInfo";
 
 function SprintOverview() {
-    const [sprints, setSprints] = useState([])
+    const [sprint, setSprint] = useState([])
 
     useEffect(() => {
-        fetchSprints()
+        fetchSprint()
     }, [])
 
-    const fetchSprints = async() => {
-        const response = await fetch("http://127.0.0.1:5000/get_sprints")
+    const fetchSprint = async() => {
+        const response = await fetch("http://127.0.0.1:5000/get_sprint/S001")
         const data = await response.json()
-        setSprints(data.sprints)
-        console.log(data.sprints)
+        setSprint(data.sprint)
+        console.log(data.sprint)
     }
 
     return (
         <div>
-            <SprintHeader sprints={sprints} />
-            {/* <SprintInfo sprint={sprint} /> */}
+            <SprintHeader sprint={sprint} />
+            <SprintInfo sprint={sprint} />
         </div>
     );
 }

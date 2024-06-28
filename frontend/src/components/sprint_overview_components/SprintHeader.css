@@ -1,5 +1,4 @@
 .header-1-SO {
-    display: flex;
     margin: auto;
     width: 80%;
     justify-content: center;
@@ -7,6 +6,14 @@
     text-align: center;
     padding-top: 30px;
     padding-bottom: 30px;
+    line-height: 80px;
+}
+
+.header-2-SO {
+    margin: auto;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
 }
 
 .progress-bar-container-SO {

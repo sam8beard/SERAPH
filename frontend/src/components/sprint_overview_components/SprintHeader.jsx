@@ -1,15 +1,17 @@
 import React from 'react';
 import './SprintHeader.css';
 
-const SprintHeader = ({sprints}) => {
-    const now = 60;
-
+const SprintHeader = ({sprint}) => {
     return (
         <>
             <h1 className="header-1-SO text-style-header-SO">
-                {sprints.map((sprint) => (
-                    <div>{sprint.startDate} - {sprint.endDate}</div>
-                ))}
+                <div>Project Name Here</div>
+                <div>{sprint.startDate} - {sprint.endDate}</div>
+                <div>
+                    <div>Committed Load: {sprint.commitedLoad}</div>
+                    <div>Uncommitted Load: {sprint.uncommittedLoad}</div>
+                    <div>Total Completed: {sprint.completed}</div>
+                </div>
             </h1>
         </>
     )
