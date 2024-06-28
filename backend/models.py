@@ -9,6 +9,7 @@ class Project(db.Model):
     elementchiefid = db.Column(db.String(100))
     flightdirectorid = db.Column(db.String(100))
     archived = db.Column(db.Integer)
+    projecturl = db.Column(db.String(1000))
 
     # DO THIS FOR EVERY MODEL
     def to_json(self): 
@@ -20,6 +21,7 @@ class Project(db.Model):
             "elementChiefID": self.elementchiefid,
             "flightDirectorID": self.flightdirectorid,
             "archived": self.archived,
+            "projecturl": self.projecturl,
         }
 
 
