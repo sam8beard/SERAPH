@@ -74,7 +74,7 @@ class Sprint(db.Model):
     projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'))
     startdate = db.Column(db.Date)
     enddate = db.Column(db.Date)
-    commitedload = db.Column(db.Integer)
+    committedload = db.Column(db.Integer)
     uncommittedload = db.Column(db.Integer)
     completed = db.Column(db.Integer)
     notes = db.Column(db.Text)
@@ -86,7 +86,7 @@ class Sprint(db.Model):
             "projectID": self.projectid,
             "startDate": self.startdate,
             "endDate": self.enddate,
-            "commitedLoad": self.commitedload,
+            "commitedLoad": self.committedload,
             "uncommittedLoad": self.uncommittedload,
             "completed": self.completed,
             "notes": self.notes,
