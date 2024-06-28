@@ -152,17 +152,17 @@ def add_sprint():
     projectid = request.json.get("projectID")
     startdate = request.json.get("startDate")
     enddate = request.json.get("endDate")
-    commitedload = request.json.get("commitedLoad")
+    committedload = request.json.get("committedLoad")
     uncommitedload = request.json.get("uncommitedLoad")
     completed = request.json.get("completed")
     notes = request.json.get("notes")
     archived = request.json.get("archived")
 
-    if not sprintid or not projectid or not startdate or not enddate or not commitedload or not uncommitedload or not completed or not notes or not archived:
+    if not sprintid or not projectid or not startdate or not enddate or not committedload or not uncommitedload or not completed or not notes or not archived:
         return jsonify({"message": "You must fill in all fields to create a sprint"}), 400
     
     new_sprint = Sprint(sprintid = sprintid, projectid = projectid,
-                        startdate = startdate, enddate = enddate, commitedload = commitedload, uncommitedload = uncommitedload,
+                        startdate = startdate, enddate = enddate, commitedload = committedload, uncommitedload = uncommitedload,
                         completed = completed, notes = notes, archived = archived)
     
     try:
