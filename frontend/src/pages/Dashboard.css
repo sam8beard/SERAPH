@@ -1,5 +1,7 @@
 .parent { 
     color: black !important;
+    display: flex;
+    justify-content: center;
 }
 
 /* h1 { 
