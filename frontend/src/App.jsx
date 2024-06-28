@@ -12,6 +12,7 @@ import ProjectArchive from './pages/ProjectArchive.jsx';
 import SignIn from './pages/SignIn.jsx';
 import ProjectCreation from './pages/ProjectCreation.jsx';
 import ProjectView from './pages/ProjectView.jsx';
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 function App() {

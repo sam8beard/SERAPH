@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import seraph_logo from '../assets/seraph_logo-1.png';
+import 'bootstrap/dist/css/bootstrap.css';
 
 function SprintCreation() {
   const [startDate, setStartDate] = useState(null);
@@ -334,7 +335,7 @@ function SprintCreation() {
       <div style={styles.textWrapper9PC}>Notes </div>
       <input type="text" style={styles.rectangle9PC} placeholder="  " />
 
-      <button style={styles.buttonPC}>Submit</button>
+      <button style={styles.buttonPC} onClick={() => window.location.href = '/dashboard'}>Submit</button>
     </div>
   );
 }

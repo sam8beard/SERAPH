@@ -304,7 +304,7 @@ function ProjectCreation() {
           <div style={styles.textWrapper8PC}>Element Chief</div>
           <input type="text" style={styles.rectangle6PC} placeholder=" " />
 
-          <button style={styles.buttonPC}>Create</button>
+          <button style={styles.buttonPC} onClick={() => window.location.href = '/dashboard'}>Create</button>
 
           {/* Note: plussign and seraph_logo are not used in the component */}
         </div>

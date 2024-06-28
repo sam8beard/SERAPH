@@ -227,7 +227,7 @@ const PDFOverview = () => {
           
           <div style={styles.group}>
             <button style={styles.saveButton}>Save PDF</button>
-            <button style={styles.cancelButton}>Cancel</button>
+            <button style={styles.cancelButton} onClick={() => window.location.href = '/projectarchive'}>Cancel</button>
           </div>
           
           <div style={styles.textWrapper10}>Medusa.pdf</div>

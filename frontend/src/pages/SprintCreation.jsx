@@ -278,7 +278,7 @@ function SprintCreation() {
       <div style={styles.textWrapper7PC}>Sprint Name</div>
       <input type="text" style={styles.rectangle7PC} placeholder="  " />
 
-      <button style={styles.buttonPC}>Submit</button>
+      <button style={styles.buttonPC} onClick={() => window.location.href = '/projectview'}>Submit</button>
     </div>
   );
 }

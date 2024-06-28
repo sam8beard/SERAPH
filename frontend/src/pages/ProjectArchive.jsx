@@ -268,7 +268,7 @@ function ProjectArchive() {
                     <div style={styles.sectionTitle}>Your Past Projects</div>
                     <img style={styles.projectImage} alt="Project Image" src={seraph_logo}/>
 
-                    <button className="button-box" style={styles.exportButton} > Export Project PDF </button>
+                    <button className="button-box" style={styles.exportButton} onClick={() => window.location.href = '/pdfoverview'}> Export Project PDF </button>
 
                     <img style={styles.searchIcon} alt="Search Icon" src={search_icon}/>
 

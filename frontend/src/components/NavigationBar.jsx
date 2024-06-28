@@ -2,6 +2,7 @@ import React from 'react';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import seraph_logo from '../assets/seraph_logo.png';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const AppNavbar = () => {
   const location = useLocation();
