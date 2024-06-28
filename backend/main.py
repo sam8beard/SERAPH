@@ -148,6 +148,7 @@ def get_sprints():
 
 @app.route("/add_sprint", methods=["POST"])
 def add_sprint():
+<<<<<<< HEAD
     sprintid = request.json.get("sprintID")
     projectid = request.json.get("projectID")
     startdate = request.json.get("startDate")
@@ -164,6 +165,21 @@ def add_sprint():
     new_sprint = Sprint(sprintid = sprintid, projectid = projectid,
                         startdate = startdate, enddate = enddate, commitedload = commitedload, uncommitedload = uncommitedload,
                         completed = completed, notes = notes, archived = archived)
+=======
+    startdate = request.json.get("startDate")
+    enddate = request.json.get("endDate")
+    committedload = request.json.get("committedLoad")
+    uncommittedload = request.json.get("uncommittedLoad")
+    completed = request.json.get("completed")
+    notes = request.json.get("notes")
+    sprintid = request.json.get("sprintID")
+
+    if not startDate or not endDate or not committedLoad or not uncommittedLoad or not completed or not notes:
+        return jsonify({"message": "You must fill in all fields to create a sprint"}), 400
+    
+    new_sprint = Sprint(startDate = startDate, endDate = endDate, committedLoad = committedLoad, 
+                         uncommittedLoad = uncommittedLoad, completed = completed, notes = notes, sprintID = sprintID)
+>>>>>>> 4eae3ca1ef4aa37eea089cb84da8b5b14726ea03
     
     try:
         db.session.add(new_sprint)
@@ -173,9 +189,14 @@ def add_sprint():
 
 @app.route("/get_sprint/<string:sprint_id>", methods=["GET"])
 def get_sprint(sprint_id):
+<<<<<<< HEAD
     with db.session() as session:
         sprint = session.get(Sprint, sprint_id)
         return jsonify({"sprint": sprint.to_json()})
+=======
+    sprint = Sprint.query.get(sprint_id)
+    return jsonify({"sprint": sprint.to_json()})
+>>>>>>> 4eae3ca1ef4aa37eea089cb84da8b5b14726ea03
 
 @app.route("/delete_sprint/<int:sprint_id>", methods=["DELETE"])
 def delete_sprint(sprint_id):
