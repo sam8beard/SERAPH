@@ -1,6 +1,7 @@
 import './SprintInput.css'
+import PropTypes from 'prop-types'
 
-function SprintInput() {
+function SprintInput(props) {
     return (
 
         <div className="title">
@@ -11,7 +12,9 @@ function SprintInput() {
         
         <div className="sprints">
             <div className="sprintInput">
-            <input className="sprint" placeholder='Input number of sprints'></input>
+            <input className="sprint" placeholder='Input number of sprints'
+            value={props.sprints}
+            onChange={(e) => props.setSprints(e.target.value)}></input>
             </div>
 
         </div>
@@ -21,6 +24,10 @@ function SprintInput() {
 
 
 }
+SprintInput.propTypes = {
+    sprints: PropTypes.number,
+    setSprints: PropTypes.func,
+};
 
 
 export default SprintInput;

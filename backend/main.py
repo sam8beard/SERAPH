@@ -145,24 +145,24 @@ def delete_milestone(milestone_id):
 
 @app.route("/get_sprints", methods=["GET"])
 def get_sprints():
-    sprints = Project.query.all()
+    sprints = Sprint.query.all()
     json_sprints = list(map(lambda x: x.to_json(), sprints))
     return jsonify({"sprints": json_sprints})
 
 @app.route("/add_sprint", methods=["POST"])
 def add_sprint():
-    startDate = request.json.get("startDate")
-    endDate = request.json.get("endDate")
-    committedLoad = request.json.get("committedLoad")
-    uncommittedLoad = request.json.get("uncommittedLoad")
+    startdate = request.json.get("startDate")
+    enddate = request.json.get("endDate")
+    committedload = request.json.get("committedLoad")
+    uncommittedload = request.json.get("uncommittedLoad")
     completed = request.json.get("completed")
     notes = request.json.get("notes")
-    sprintID = request.json.get("sprintID")
+    sprintid = request.json.get("sprintID")
 
-    if not startDate or not endDate or not committedLoad or not uncommittedLoad or not completed or not notes or not sprintID:
+    if not startDate or not endDate or not committedLoad or not uncommittedLoad or not completed or not notes:
         return jsonify({"message": "You must fill in all fields to create a sprint"}), 400
     
-    new_sprint = Project(startDate = startDate, endDate = endDate, committedLoad = committedLoad, 
+    new_sprint = Sprint(startDate = startDate, endDate = endDate, committedLoad = committedLoad, 
                          uncommittedLoad = uncommittedLoad, completed = completed, notes = notes, sprintID = sprintID)
     
     try:
@@ -173,12 +173,12 @@ def add_sprint():
 
 @app.route("/get_sprint/<int:sprint_id>", methods=["GET"])
 def get_sprint(sprint_id):
-    sprint = Project.query.get(sprint_id)
+    sprint = Sprint.query.get(sprint_id)
     return jsonify({"sprint": sprint.to_json()})
 
 @app.route("/delete_sprint/<int:sprint_id>", methods=["DELETE"])
 def delete_sprint(sprint_id):
-    sprint = Project.query.get(sprint_id)
+    sprint = Sprint.query.get(sprint_id)
     if sprint is None:
         return jsonify({"message": "Invalid sprint id"}), 400
     
