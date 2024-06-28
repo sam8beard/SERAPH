@@ -7,3 +7,7 @@
     justify-items: center !important;
     align-items: center !important;
   }
+
+  .cg-style .card { 
+    border: 10px red solid !important;
+  }
