@@ -15,10 +15,26 @@ function Dashboard() {
         setProjects(data.projects)
         console.log(data.projects)
     }
+    function handleSubmission(formData) { 
+        fetch('/main/add_project', { 
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json'
+
+            }, 
+            body: JSON.stringify(formData)
+        })
+    }
     return (
         <div className='parent'> 
             <ProjectCard projects={projects}/> 
+
+            <form> 
+                <input type="text" placeholder='Project'/>
+            </form>
         </div>
+
+        
     )
 }
 

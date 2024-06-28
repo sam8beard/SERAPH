@@ -5,15 +5,30 @@
 }
 
 .card-PC { 
-    display: flex;
+    /* display: flex;
     flex: 1;
     box-sizing: border-box;
     border: solid 5px red; 
-    width: 100%;
+    width: 500px;
     justify-content: space-around;
-    line-height: 100px;
+    line-height: 100px; */
+}
+
+.card-PC.col { 
+    /* height: 500px !important;  */
+    padding-top: 15px; 
+    width: 500px !important;
+    display: flex;
+    border: 2px solid red; 
+    
 }
 
 .card-info-PC {
     margin: 0;
+    
+}
+
+.row { 
+    display:flex !important; 
+    justify-content: space-between !important;
 }

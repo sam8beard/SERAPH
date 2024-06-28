@@ -1,18 +1,34 @@
 import React from 'react'
 import './ProjectCard.css'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 const ProjectCard = ({projects}) => { 
     return ( 
         <> 
-            <div className="cards-container-PC">
-                {projects.map((project) => (
-                    <div className="card-PC">
-                        <div className="card-info-PC"> {project.projectID} </div>
-                        <div className="card-info-PC"> {project.customerName} </div>
-                        <div className="card-info-PC"> {project.techUsed} </div>
-                        <div className="card-info-PC"> {project.flightDirectorID} </div>
-                        <div className="card-info-PC"> {project.archived} </div>
-                    </div>
-                ))}
+            <div >
+                <Container className="card-PC"> 
+                       
+                    <Row>
+                        {projects.map((project) => (
+                            
+                                <Col className="card-PC"> 
+                                    {project.projectID}
+                                    <br></br>
+                                    {project.customerName}
+                                    <br></br>
+                                    {project.techUsed}
+                                    <br></br>
+                                    {project.flightDirectorID}
+                                    <br></br>
+                                    {project.archived}
+                                </Col>
+                            
+                        
+                            
+                        ))}
+                    </Row>
+                </Container> 
             </div>
         </>
     )
