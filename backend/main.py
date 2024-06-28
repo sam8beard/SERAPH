@@ -51,7 +51,6 @@ def delete_project(project_id):
     return jsonify({"message": "Project deleted successfully"}), 200
 
 # War functions
-# How does this access other database tables?
 
 #Returns everything from the wars tables
 @app.route("/get_wars", methods=["GET"])
@@ -98,7 +97,6 @@ def delete_war(war_id):
     return jsonify({"message": "War deleted successfully"}), 200
 
 # Milestone functions
-# How does this access other database tables?
 # Need a way to get a specific milestone since there is no milestone_id
 
 @app.route("/get_milestones", methods=["GET"])
@@ -141,7 +139,6 @@ def delete_milestone(milestone_id):
     return jsonify({"message": "Milestone deleted successfully"}), 200
 
 # Sprint functions
-# How does this access other database tables?
 
 @app.route("/get_sprints", methods=["GET"])
 def get_sprints():
@@ -152,7 +149,6 @@ def get_sprints():
 @app.route("/add_sprint", methods=["POST"])
 def add_sprint():
     sprintid = request.json.get("sprintID")
-    sprintname = request.json.get("sprintName")
     projectid = request.json.get("projectID")
     startdate = request.json.get("startDate")
     enddate = request.json.get("endDate")
@@ -162,10 +158,10 @@ def add_sprint():
     notes = request.json.get("notes")
     archived = request.json.get("archived")
 
-    if not sprintid or not sprintname or not projectid or not startdate or not enddate or not commitedload or not uncommitedload or not completed or not notes or not archived:
+    if not sprintid or not projectid or not startdate or not enddate or not commitedload or not uncommitedload or not completed or not notes or not archived:
         return jsonify({"message": "You must fill in all fields to create a sprint"}), 400
     
-    new_sprint = Sprint(sprintid = sprintid, sprintname = sprintname, projectid = projectid,
+    new_sprint = Sprint(sprintid = sprintid, projectid = projectid,
                         startdate = startdate, enddate = enddate, commitedload = commitedload, uncommitedload = uncommitedload,
                         completed = completed, notes = notes, archived = archived)
     
@@ -191,7 +187,6 @@ def delete_sprint(sprint_id):
     return jsonify({"message": "Sprint deleted successfully"}), 200
 
 # Employee functions
-# How does this access other database tables?
 
 @app.route("/get_employees", methods=["GET"])
 def get_employees():
