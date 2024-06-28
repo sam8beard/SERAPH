@@ -14,6 +14,7 @@ import ProjectArchive from './pages/ProjectArchive.jsx';
 import SignIn from './pages/SignIn.jsx'
 import ProjectCreation from './pages/ProjectCreation.jsx'
 import ProjectView from './pages/ProjectView.jsx'
+import BasicDocument from './components/pdfGeneration/BasicDocument';
 
 
 function App() {
@@ -59,6 +60,10 @@ function App() {
           <Route 
               path='/projectview'
               element={<ProjectView />}
+          />
+          <Route 
+              path='/basicdocument'
+              element={<BasicDocument />}
           />  
         </Routes>
       </Router>
