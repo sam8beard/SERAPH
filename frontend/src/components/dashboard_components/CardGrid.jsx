@@ -10,11 +10,11 @@ function CardGrid({projects}) {
                     <Row lg={7} style={{gap: "13px"}}> 
                         {projects.map((project) => { 
                             return ( 
-                                <Col className="d-flex" lg={3} md={5} sm={4} style={{gap: "13px"}}> 
+                                <Col className="d-flex" lg={3} md={5} sm={4} style={{gap: "5px"}}> 
                            
                                 
                             
-                                    <Card  style={{ width: '22rem', borderRadius: '' , backgroundColor: "#D9D9D9", }}>
+                                    <Card  style={{ width: '60rem', borderRadius: '' , backgroundColor: "#D9D9D9", }}>
                                         
                                         <Card.Body>
                                             <Card.Text>{project.customerName}</Card.Text>
