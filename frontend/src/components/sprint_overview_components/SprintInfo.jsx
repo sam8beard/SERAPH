@@ -1,5 +1,6 @@
 import React from 'react';
 import './SprintInfo.css';
+import Graph from "../../assets/SampleGraph.png";
 
 const SprintInfo = ({sprint}) => {
     return (

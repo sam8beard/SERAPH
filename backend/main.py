@@ -10,7 +10,7 @@ def get_projects():
     json_projects = list(map(lambda x: x.to_json(), projects))
     return jsonify({"projects": json_projects})
 
-@app.route("/add_project",methods=["POST"])
+@app.route("/add_project", methods=["POST"])
 def add_project(): 
     customername = request.json.get("customerName")
     techused = request.json.get("techUsed") 
@@ -57,7 +57,7 @@ def delete_project(project_id):
 @app.route("/get_wars", methods=["GET"])
 def get_wars():
     if request.method =='GET':
-        returnWars = Project.query.all()
+        returnWars = War.query.all()
         json_wars = list(map(lambda x: x.to_json(), returnWars))
         return jsonify({"returnWars": json_wars})
 
@@ -65,16 +65,16 @@ def get_wars():
 @app.route("/add_war", methods=["POST"])
 def add_war():
     if request.method =='POST':
-        warID = request.json.get("warID")
-        startDate = request.json.get("startDate")
-        endDate = request.json.get("endDate")
+        projectid = request.json.get("projectID")
+        startdate = request.json.get("startDate")
+        enddate = request.json.get("endDate")
 
-        if not warID or not startDate or not endDate: 
+        if not projectid or not startdate or not enddate: 
             return (
                 jsonify({"message": "You must fill in all fields to create a war"}), 400
             )
     
-        new_war = Project(warID = warID, startDate = startdate, endDate = enddate)
+        new_war = War(projectid = projectid, startdate = startdate, enddate = enddate)
         
         try:
             db.session.add(new_war)
@@ -84,12 +84,12 @@ def add_war():
 
 @app.route("/get_war/<int:war_id>", methods=["GET"])
 def get_war(war_id):
-    war = Project.query.get(war_id)
+    war = War.query.get(war_id)
     return jsonify({"war": war.to_json()})
 
 @app.route("/delete_war/<int:war_id>", methods=["DELETE"])
 def delete_war(war_id):
-    war = Project.query.get(war_id)
+    war = War.query.get(war_id)
     if war is None:
         return jsonify({"message": "Invalid war id"}), 400
     
@@ -103,7 +103,7 @@ def delete_war(war_id):
 
 @app.route("/get_milestones", methods=["GET"])
 def get_milestones():
-    milestones = Project.query.all()
+    milestones = Milestones.query.all()
     json_milestones = list(map(lambda x: x.to_json(), milestones))
     return jsonify({"milestones": json_milestones})
 
@@ -112,12 +112,12 @@ def add_milestone():
     date = request.json.get("date")
     description = request.json.get("description")
     status = request.json.get("status")
-    projectID = request.json.get("projectID")
+    projectid = request.json.get("projectID")
 
-    if not date or not description or not status or not projectID:
+    if not date or not description or not status or not projectid:
         return jsonify({"message": "You must fill in all fields to create a milestone"}), 400
     
-    new_milestone = Project(date = date, description = description, status = status, projectID = projectID)
+    new_milestone = Milestones(date = date, description = description, status = status, projectid = projectid)
 
     try:
         db.session.add(new_milestone)
@@ -127,12 +127,12 @@ def add_milestone():
 
 @app.route("/get_milestone/<int:milestone_id>", methods=["GET"])
 def get_milestone(milestone_id):
-    milestone = Project.query.get(milestone_id)
+    milestone = Milestones.query.get(milestone_id)
     return jsonify({"milestone": milestone.to_json()})
 
 @app.route("/delete_milestone/<int:milestone_id>", methods=["DELETE"])
 def delete_milestone(milestone_id):
-    milestone = Project.query.get(milestone_id)
+    milestone = Milestones.query.get(milestone_id)
     if milestone is None:
         return jsonify({"message": "Invalid milestone id"}), 400
     
@@ -145,25 +145,29 @@ def delete_milestone(milestone_id):
 
 @app.route("/get_sprints", methods=["GET"])
 def get_sprints():
-    sprints = Project.query.all()
+    sprints = Sprint.query.all()
     json_sprints = list(map(lambda x: x.to_json(), sprints))
     return jsonify({"sprints": json_sprints})
 
 @app.route("/add_sprint", methods=["POST"])
 def add_sprint():
-    startDate = request.json.get("startDate")
-    endDate = request.json.get("endDate")
-    committedLoad = request.json.get("committedLoad")
-    uncommittedLoad = request.json.get("uncommittedLoad")
+    sprintid = request.json.get("sprintID")
+    sprintname = request.json.get("sprintName")
+    projectid = request.json.get("projectID")
+    startdate = request.json.get("startDate")
+    enddate = request.json.get("endDate")
+    commitedload = request.json.get("commitedLoad")
+    uncommitedload = request.json.get("uncommitedLoad")
     completed = request.json.get("completed")
     notes = request.json.get("notes")
-    sprintID = request.json.get("sprintID")
+    archived = request.json.get("archived")
 
-    if not startDate or not endDate or not committedLoad or not uncommittedLoad or not completed or not notes or not sprintID:
+    if not sprintid or not sprintname or not projectid or not startdate or not enddate or not commitedload or not uncommitedload or not completed or not notes or not archived:
         return jsonify({"message": "You must fill in all fields to create a sprint"}), 400
     
-    new_sprint = Project(startDate = startDate, endDate = endDate, committedLoad = committedLoad, 
-                         uncommittedLoad = uncommittedLoad, completed = completed, notes = notes, sprintID = sprintID)
+    new_sprint = Sprint(sprintid = sprintid, sprintname = sprintname, projectid = projectid,
+                        startdate = startdate, enddate = enddate, commitedload = commitedload, uncommitedload = uncommitedload,
+                        completed = completed, notes = notes, archived = archived)
     
     try:
         db.session.add(new_sprint)
@@ -173,12 +177,12 @@ def add_sprint():
 
 @app.route("/get_sprint/<int:sprint_id>", methods=["GET"])
 def get_sprint(sprint_id):
-    sprint = Project.query.get(sprint_id)
+    sprint = Sprint.query.get(sprint_id)
     return jsonify({"sprint": sprint.to_json()})
 
 @app.route("/delete_sprint/<int:sprint_id>", methods=["DELETE"])
 def delete_sprint(sprint_id):
-    sprint = Project.query.get(sprint_id)
+    sprint = Sprint.query.get(sprint_id)
     if sprint is None:
         return jsonify({"message": "Invalid sprint id"}), 400
     
@@ -191,23 +195,23 @@ def delete_sprint(sprint_id):
 
 @app.route("/get_employees", methods=["GET"])
 def get_employees():
-    employees = Project.query.all()
+    employees = Employees.query.all()
     json_employees = list(map(lambda x: x.to_json(), employees))
     return jsonify({"employees": json_employees})
 
 @app.route("/add_employee", methods=["POST"])
 def add_employee():
-    jNumber = request.json.get("jNumber")
-    firstName = request.json.get("firstName")
-    lastName = request.json.get("lastName")
-    projectID = request.json.get("projectID")
+    jnumber = request.json.get("jNumber")
+    firstname = request.json.get("firstName")
+    lastname = request.json.get("lastName")
+    projectid = request.json.get("projectID")
     role = request.json.get("role")
-    supervisorID = request.json.get("supervisorID")
+    supervisorid = request.json.get("supervisorID")
 
-    if not jNumber or not firstName or not lastName or not projectID or not role or not supervisorID:
+    if not jnumber or not firstname or not lastname or not projectid or not role or not supervisorid:
         return jsonify({"message": "You must fill in all field to create an employee"}), 400
     
-    new_employee = Project(jNumber = jNumber, firstName = firstName, lastName = lastName, projectID = projectID, role = role, supervisorID = supervisorID)
+    new_employee = Employees(jnumber = jnumber, firstname = firstname, lastname = lastname, projectid = projectid, role = role, supervisorid = supervisorid)
 
     try:
         db.session.add(new_employee)
@@ -217,12 +221,12 @@ def add_employee():
     
 @app.route("/get_employee/<int:employee_jNumber>", methods=["GET"])
 def get_employee(employee_jNumber):
-    employee = Project.query.get(employee_jNumber)
+    employee = Employees.query.get(employee_jNumber)
     return jsonify({"employee": employee.to_json()})
 
 @app.route("/delete_employee/<int:employee_jNumber>", methods=["DELETE"])
 def delete_employee(employee_jNumber):
-    employee = Project.query.get(employee_jNumber)
+    employee = Employees.query.get(employee_jNumber)
     if employee is None:
         return jsonify({"message": "Invalid employee id"}), 400
     

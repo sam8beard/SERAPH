@@ -31,16 +31,41 @@ class Employees(db.Model):
     roleenum = db.Column(db.Integer)
     supervisorid = db.Column(db.String(12))
 
+    def to_json(self):
+        return {
+            "jNumber": self.jnumber,
+            "firstName": self.firstname,
+            "lastName": self.lastname,
+            "projectID": self.projectid,
+            "roleEnum": self.roleenum,
+            "supervisorID": self.supervisorid,
+        }
+
 class War(db.Model):
     projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'), primary_key=True)
     startdate = db.Column(db.Date, primary_key=True)
     enddate = db.Column(db.Date)
+
+    def to_json(self):
+        return {
+            "projectID": self.projectid,
+            "startDate": self.startdate,
+            "endDate": self.enddate,
+        }
 
 class Milestones(db.Model):
     projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'), primary_key=True)
     date = db.Column(db.Date, primary_key = True)
     description = db.Column(db.String(1000))
     status = db.Column(db.String(1000))
+
+    def to_json(self):
+        return {
+            "projectID": self.projectid,
+            "date": self.date,
+            "description": self.description,
+            "status": self.status,
+        }
 
 class Sprint(db.Model):
     sprintid = db.Column(db.String(20), primary_key=True)
@@ -53,3 +78,17 @@ class Sprint(db.Model):
     completed = db.Column(db.Integer)
     notes = db.Column(db.Text)
     archived = db.Column(db.Integer)
+
+    def to_json(self):
+        return {
+            "sprintID": self.sprintid,
+            "sprintName": self.sprintname,
+            "projectID": self.projectid,
+            "startDate": self.startdate,
+            "endDate": self.enddate,
+            "commitedLoad": self.commitedload,
+            "uncommitedLoad": self.uncommitedload,
+            "completed": self.completed,
+            "notes": self.notes,
+            "archived": self.archived,
+        }
