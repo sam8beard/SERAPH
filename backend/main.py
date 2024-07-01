@@ -34,6 +34,31 @@ def add_project():
         db.session.commit() 
     except Exception as e: 
         return jsonify()
+    
+@app.route("/update_project", methods=["PUT"])
+def update_project():
+    customername = request.json.get("customerName")
+    techused = request.json.get("techUsed")
+    projectname = request.json.get("projectName")
+    archived = request.json.get("archived")
+
+    if not customername or not techused or not projectname or not archived:
+        return (
+            jsonify({"message": "You must fill in all fields to update this project"}), 400
+        )
+    
+    try:
+        projectid = request.json.get("projectID")
+        project = Project.query.get(projectid)
+
+        project.customerName = customername
+        project.techUsed = techused
+        project.projectName = projectname
+        project.archived = archived
+
+        db.session.commit()
+    except Exception as e:
+        return jsonify()
 
 @app.route("/get_project/<int:project_id>", methods=["GET"])
 def get_project(project_id):

@@ -14,6 +14,7 @@ import ProjectArchive from './pages/ProjectArchive.jsx';
 import SignIn from './pages/SignIn.jsx'
 import ProjectCreation from './pages/ProjectCreation.jsx'
 import ProjectView from './pages/ProjectView.jsx'
+import ProjectUpdate from './pages/ProjectUpdate.jsx';
 
 
 function App() {
@@ -51,6 +52,10 @@ function App() {
           <Route 
               path='/projectarchive'
               element={<ProjectArchive />}
+          />
+          <Route
+              path='/projectupdate'
+              element={<ProjectUpdate />}
           />
           <Route 
               path='/signin'
