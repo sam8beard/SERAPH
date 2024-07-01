@@ -7,6 +7,14 @@
 p {
   font-weight: 400;
 }
+img {
+  height: 100px;
+}
+h1 {
+  position: relative;
+  top: -70px;
+}
+
 .parent {
   display: flex;
   justify-content: space-evenly;
