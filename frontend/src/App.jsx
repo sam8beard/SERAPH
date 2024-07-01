@@ -14,7 +14,6 @@ import ProjectArchive from './pages/ProjectArchive.jsx';
 import SignIn from './pages/SignIn.jsx'
 import ProjectCreation from './pages/ProjectCreation.jsx'
 import ProjectView from './pages/ProjectView.jsx'
-import PDFGeneration from './pages/PDFGeneration.jsx'
 
 
 function App() {
@@ -60,10 +59,6 @@ function App() {
           <Route 
               path='/projectview'
               element={<ProjectView />}
-          />  
-          <Route 
-              path='/pdfgenerate'
-              element={<PDFGeneration />}
           />  
         </Routes>
       </Router>
