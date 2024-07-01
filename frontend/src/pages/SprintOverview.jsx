@@ -12,7 +12,7 @@ function SprintOverview() {
     }, [])
 
     const fetchSprint = async() => {
-        const response = await fetch("http://127.0.0.1:5000/get_sprint/S001")
+        const response = await fetch("http://127.0.0.1:5000/get_sprint/13")
         const data = await response.json()
         setSprint(data.sprint)
         console.log(data.sprint)
