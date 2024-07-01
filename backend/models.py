@@ -70,22 +70,12 @@ class Milestones(db.Model):
         }
 
 class Sprint(db.Model):
-<<<<<<< HEAD
     sprintid = db.Column(db.Integer, primary_key=True)
     projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'))
     startdate = db.Column(db.Date)
     enddate = db.Column(db.Date)
-    commitedload = db.Column(db.Integer)
+    committedload = db.Column(db.Integer)
     uncommittedload = db.Column(db.Integer)
-=======
-    sprintID = db.Column(db.String(20), primary_key=True)
-    sprintName = db.Column(db.String(20))
-    projectID = db.Column(db.String(100), db.ForeignKey('project.projectID'))
-    startDate = db.Column(db.Date)
-    endDate = db.Column(db.Date)
-    committedLoad = db.Column(db.Integer)
-    uncommittedLoad = db.Column(db.Integer)
->>>>>>> 4eae3ca1ef4aa37eea089cb84da8b5b14726ea03
     completed = db.Column(db.Integer)
     notes = db.Column(db.Text)
     archived = db.Column(db.Integer)
@@ -96,7 +86,7 @@ class Sprint(db.Model):
             "projectID": self.projectid,
             "startDate": self.startdate,
             "endDate": self.enddate,
-            "commitedLoad": self.commitedload,
+            "committedLoad": self.committedload,
             "uncommittedLoad": self.uncommittedload,
             "completed": self.completed,
             "notes": self.notes,

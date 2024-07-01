@@ -9,9 +9,9 @@ function Completed(props) {
             <p>Completed Tasks</p>
         </div>
         <div className="completed">
-        <input className="completedInput" placeholder='Input completed tasks'
+        <input type ="number"className="completedInput" placeholder='Input completed tasks'
           value={props.completed}
-          onChange={(e) => props.setCompleted(e.target.value)}></input>
+          onChange={(e) => props.setCompleted(parseInt(e.target.value,10) || 0)}></input>
         </div>
     </div>
 
