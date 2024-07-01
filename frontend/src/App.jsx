@@ -10,11 +10,10 @@ import SprintOverview from './pages/SprintOverview.jsx'
 import SprintCreation from './pages/SprintCreation.jsx'
 import SprintUpdate from './pages/SprintUpdate.jsx'
 import PDFOverview from './pages/PDFOverview.jsx'
-import ProjectArchive from './pages/ProjectArchive.jsx';
+import ProjectArchive from './pages/ProjectArchive.jsx'
 import SignIn from './pages/SignIn.jsx'
 import ProjectCreation from './pages/ProjectCreation.jsx'
 import ProjectView from './pages/ProjectView.jsx'
-
 
 function App() {
   const [count, setCount] = useState(0)
@@ -59,7 +58,7 @@ function App() {
           <Route 
               path='/projectview'
               element={<ProjectView />}
-          />  
+          />
         </Routes>
       </Router>
     </div>
