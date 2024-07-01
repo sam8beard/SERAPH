@@ -1,7 +1,6 @@
 import './SprintCreation.css';
 import StartDate from '../components/sprint_creation_components/StartDate.jsx';
 import EndDate from '../components/sprint_creation_components/EndDate.jsx';
-import SprintInput from '../components/sprint_creation_components/SprintInput.jsx';
 import 'bootstrap/dist/css/bootstrap.css';
 import CommittedInput from '../components/sprint_creation_components/CommittedInput.jsx';
 import Uncommitted from '../components/sprint_creation_components/Uncommitted.jsx';
