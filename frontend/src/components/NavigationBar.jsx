@@ -65,6 +65,7 @@ const AppNavbar = () => {
               <NavDropdown.Item as={Link} to="/projectcreation">Project Creation</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/projectarchive">Project Archive</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/projectview">Project View</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/warcreation">War Creation</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item as={Link} to="/signin">Sign In</NavDropdown.Item>
             </NavDropdown>

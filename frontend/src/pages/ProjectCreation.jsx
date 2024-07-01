@@ -178,6 +178,7 @@ function ProjectCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     rectangle2PC: {
       backgroundColor: '#d9d9d9',
@@ -191,6 +192,7 @@ function ProjectCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     rectangle3PC: {
       backgroundColor: '#d9d9d9',
@@ -204,6 +206,7 @@ function ProjectCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     rectangle4PC: {
       backgroundColor: '#d9d9d9',
@@ -217,6 +220,7 @@ function ProjectCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     rectangle5PC: {
       backgroundColor: '#d9d9d9',
@@ -230,6 +234,7 @@ function ProjectCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     rectangle6PC: {
       backgroundColor: '#d9d9d9',
@@ -243,6 +248,7 @@ function ProjectCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     rectangle7PC: {
       backgroundColor: '#d9d9d9',
@@ -256,6 +262,7 @@ function ProjectCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     buttonPC: {
       backgroundColor: '#d9d9d9', // Match the background color of the text boxes
@@ -274,6 +281,7 @@ function ProjectCreation() {
       top: '750px', // Adjusted to match textWrapper9PC top position
       left: '1215px', // Adjusted to match textWrapper9PC left position
       width: '186px',
+      border: '2px solid #000000' 
     },
   };
 

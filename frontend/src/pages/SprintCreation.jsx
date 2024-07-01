@@ -80,9 +80,21 @@ function SprintCreation() {
       lineHeight: 'normal',
       position: 'absolute',
       zIndex: 2,
-      top: '187px',
+      top: '192px',
     },
     textWrapper6PC: {
+      color: '#000000',
+      fontFamily: 'Lexend-Regular, Helvetica',
+      fontSize: '20px',
+      fontWeight: 400,
+      left: '1141px',
+      letterSpacing: 0,
+      lineHeight: 'normal',
+      position: 'absolute',
+      zIndex: 2,
+      top: '192px',
+    },
+    textWrapper7PC: {
       color: '#000000',
       fontFamily: 'Lexend-Regular, Helvetica',
       fontSize: '20px',
@@ -94,20 +106,7 @@ function SprintCreation() {
       zIndex: 2,
       top: '328px',
     },
-    textWrapper7PC: {
-      color: '#000000',
-      fontFamily: 'Lexend-Regular, Helvetica',
-      fontSize: '20px',
-      fontWeight: 400,
-      left: '1141px',
-      letterSpacing: 0,
-      lineHeight: 'normal',
-      position: 'absolute',
-      zIndex: 2,
-      top: '328px',
-    },
     datePicker: {
-      backgroundColor: '#dfdfdf',
       borderRadius: '10px',
       height: '48px',
       position: 'absolute',
@@ -116,8 +115,6 @@ function SprintCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
-      border: 'none', // Remove border
-      outline: 'none', // Remove outline
     },
     rectangle1PC: {
       backgroundColor: '#d9d9d9',
@@ -131,6 +128,7 @@ function SprintCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     rectangle2PC: {
       backgroundColor: '#d9d9d9',
@@ -144,6 +142,7 @@ function SprintCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     rectangle3PC: {
       backgroundColor: '#d9d9d9',
@@ -157,6 +156,7 @@ function SprintCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     rectangle4PC: {
       backgroundColor: '#d9d9d9',
@@ -170,6 +170,7 @@ function SprintCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     rectangle5PC: {
       backgroundColor: '#d9d9d9',
@@ -179,10 +180,11 @@ function SprintCreation() {
       position: 'absolute',
       zIndex: 1,
       width: '515px',
-      top: '225px',
+      top: '366px',
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     rectangle6PC: {
       backgroundColor: '#d9d9d9',
@@ -192,10 +194,11 @@ function SprintCreation() {
       position: 'absolute',
       zIndex: 1,
       width: '237px',
-      top: '366px',
+      top: '225px',
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' ,
     },
     rectangle7PC: {
       backgroundColor: '#d9d9d9',
@@ -205,10 +208,11 @@ function SprintCreation() {
       position: 'absolute',
       zIndex: 1,
       width: '237px',
-      top: '366px',
+      top: '225px',
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     buttonPC: {
       backgroundColor: '#d9d9d9', // Match the background color of the text boxes
@@ -227,11 +231,7 @@ function SprintCreation() {
       top: '648px', // Adjusted to match textWrapper9PC top position
       left: '1141px', // Adjusted to match textWrapper9PC left position
       width: '237px',
-    },
-    datePicker: {
-      zIndex: 3, // Ensure datepicker appears above rectangles
-      position: 'relative',
-      backgroundColor: 'red',
+      border: '2px solid #000000' 
     },
   };
 
@@ -244,7 +244,6 @@ function SprintCreation() {
           selected={startDate}
           onChange={(date) => setStartDate(date)}
           dateFormat="dd/MM/yyyy"
-          placeholderText="Select Start Date"
           className="datePicker" // Ensure this matches your CSS class name
           style={styles.datePicker}
         />
@@ -257,7 +256,6 @@ function SprintCreation() {
           selected={endDate}
           onChange={(date) => setEndDate(date)}
           dateFormat="dd/MM/yyyy"
-          placeholderText="Select End Date"
           className="datePicker" // Ensure this matches your CSS class name
           style={styles.datePicker}
         />
@@ -269,13 +267,13 @@ function SprintCreation() {
       <div style={styles.textWrapper4PC}>Project ID</div>
       <input type="text" style={styles.rectangle4PC} placeholder="  " />
 
-      <div style={styles.textWrapper5PC}>Notes </div>
+      <div style={styles.textWrapper5PC}>Sprint ID</div>
       <input type="text" style={styles.rectangle5PC} placeholder="  " />
 
-      <div style={styles.textWrapper6PC}>Sprint ID</div>
+      <div style={styles.textWrapper6PC}>Sprint Name</div>
       <input type="text" style={styles.rectangle6PC} placeholder="  " />
 
-      <div style={styles.textWrapper7PC}>Sprint Name</div>
+      <div style={styles.textWrapper7PC}>Notes </div>
       <input type="text" style={styles.rectangle7PC} placeholder="  " />
 
       <button style={styles.buttonPC} onClick={() => window.location.href = '/projectview'}>Submit</button>

@@ -132,7 +132,6 @@ function SprintCreation() {
       top: '474px',
     },
     datePicker: {
-      backgroundColor: '#dfdfdf',
       borderRadius: '10px',
       height: '48px',
       position: 'absolute',
@@ -141,8 +140,6 @@ function SprintCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
-      border: 'none', // Remove border
-      outline: 'none', // Remove outline
     },
     rectangle1PC: {
       backgroundColor: '#d9d9d9',
@@ -156,6 +153,7 @@ function SprintCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     rectangle2PC: {
       backgroundColor: '#d9d9d9',
@@ -169,6 +167,7 @@ function SprintCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     rectangle3PC: {
       backgroundColor: '#d9d9d9',
@@ -182,6 +181,7 @@ function SprintCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     rectangle4PC: {
       backgroundColor: '#d9d9d9',
@@ -195,6 +195,7 @@ function SprintCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     rectangle5PC: {
       backgroundColor: '#d9d9d9',
@@ -208,6 +209,7 @@ function SprintCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     rectangle6PC: {
       backgroundColor: '#d9d9d9',
@@ -221,6 +223,7 @@ function SprintCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     rectangle7PC: {
       backgroundColor: '#d9d9d9',
@@ -234,6 +237,7 @@ function SprintCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     rectangle8PC: {
       backgroundColor: '#d9d9d9',
@@ -247,6 +251,7 @@ function SprintCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     rectangle9PC: {
       backgroundColor: '#d9d9d9',
@@ -260,6 +265,7 @@ function SprintCreation() {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: '10px',
+      border: '2px solid #000000' 
     },
     buttonPC: {
       backgroundColor: '#d9d9d9', // Match the background color of the text boxes
@@ -278,6 +284,7 @@ function SprintCreation() {
       top: '648px', // Adjusted to match textWrapper9PC top position
       left: '1141px', // Adjusted to match textWrapper9PC left position
       width: '237px',
+      border: '2px solid #000000' 
     },
     datePicker: {
       zIndex: 3, // Ensure datepicker appears above rectangles
@@ -295,7 +302,6 @@ function SprintCreation() {
           selected={startDate}
           onChange={(date) => setStartDate(date)}
           dateFormat="dd/MM/yyyy"
-          placeholderText="Select Start Date"
           className="datePicker" // Ensure this matches your CSS class name
           style={styles.datePicker}
         />
@@ -308,7 +314,6 @@ function SprintCreation() {
           selected={endDate}
           onChange={(date) => setEndDate(date)}
           dateFormat="dd/MM/yyyy"
-          placeholderText="Select End Date"
           className="datePicker" // Ensure this matches your CSS class name
           style={styles.datePicker}
         />

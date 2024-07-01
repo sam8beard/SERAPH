@@ -79,15 +79,13 @@ function ProjectView() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: '30px', // Match the font size of the text boxes
+            fontSize: '20px', // Match the font size of the text boxes
             fontWeight: 'bold',
             fontFamily: 'Lexend-Regular, Helvetica',
             cursor: 'pointer',
             position: 'absolute',
             zIndex: 2,
             width: '237px',
-            width: '394px',
-            height: '60px',
             top: '860px',
             right: '100px',
         },
