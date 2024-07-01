@@ -33,7 +33,7 @@ function ProjectView() {
                 <div className='box1'>
                     <div className="project-info">
                         <img className="seraph_logo" alt="Seraph Logo" src={seraph_logo} />
-                        <h1 className="project-title">{project.projectName}</h1>
+                        <h1 className="project-title">{project.projectName ? project.projectName : "SERAPH"}</h1>
                         <p>Team Members: {project.teamMembers ? project.teamMembers.join(', ') : "To be added"}</p>
                         <p>Customer: {project.customerName}</p>
                         <p>Technologies Used: {project.techUsed}</p>

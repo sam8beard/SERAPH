@@ -2,6 +2,7 @@
   "dependencies": {
     "flask": "^0.2.10",
     "flask-cors": "^0.0.1",
+    "react-axios": "^2.0.6",
     "react-router-dom": "^6.24.0"
   }
 }
