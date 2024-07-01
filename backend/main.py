@@ -19,7 +19,7 @@ def add_project():
     elementchiefid = request.json.get("elementChiefID")
     flightdirectorid = request.json.get("flightDirectorID")
     archived = request.json.get("archived") 
-
+    projecturl = request.json.get("projectURL")
     if not customername or not techused or not projectid or not projectname or not elementchiefid or not flightdirectorid or not archived: 
         return (
             jsonify({"message": "You must fill in all fields to create a project"}), 400
@@ -32,6 +32,8 @@ def add_project():
     try:
         db.session.add(new_project)
         db.session.commit() 
+        return jsonify({"message": "Project added successfully"}), 200
+        
     except Exception as e: 
         return jsonify()
 
@@ -152,17 +154,17 @@ def add_sprint():
     projectid = request.json.get("projectID")
     startdate = request.json.get("startDate")
     enddate = request.json.get("endDate")
-    commitedload = request.json.get("commitedLoad")
-    uncommitedload = request.json.get("uncommitedLoad")
+    committedload = request.json.get("committedLoad")
+    uncommittedload = request.json.get("uncommittedLoad")
     completed = request.json.get("completed")
     notes = request.json.get("notes")
     archived = request.json.get("archived")
 
-    if not sprintid or not projectid or not startdate or not enddate or not commitedload or not uncommitedload or not completed or not notes or not archived:
+    if not sprintid or not projectid or not startdate or not enddate or not committedload or not uncommittedload or not completed or not notes or not archived:
         return jsonify({"message": "You must fill in all fields to create a sprint"}), 400
     
     new_sprint = Sprint(sprintid = sprintid, projectid = projectid,
-                        startdate = startdate, enddate = enddate, commitedload = commitedload, uncommitedload = uncommitedload,
+                        startdate = startdate, enddate = enddate, commitedload = committedload, uncommitedload = uncommittedload,
                         completed = completed, notes = notes, archived = archived)
     
     try:
