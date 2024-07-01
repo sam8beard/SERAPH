@@ -93,3 +93,14 @@ class Sprint(db.Model):
             "notes": self.notes,
             "archived": self.archived,
         }
+
+class assignments(db.models):
+    jnumber = db.Column(db.String(20), db.ForeignKey('employees.jnumber'), primary_key = True)
+    projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'), primary_key = True)
+    
+    def to_json(self):
+        return {
+            "jnumber" : self.jnumber,
+            "projectid" : self.projectid,
+        }
+    

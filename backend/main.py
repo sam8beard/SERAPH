@@ -148,19 +148,22 @@ def get_sprints():
 
 @app.route("/add_sprint", methods=["POST"])
 def add_sprint():
+    sprintid = request.json.get("sprintID")
+    projectid = request.json.get("projectID")
     startdate = request.json.get("startDate")
     enddate = request.json.get("endDate")
-    committedload = request.json.get("committedLoad")
-    uncommittedload = request.json.get("uncommittedLoad")
+    commitedload = request.json.get("commitedLoad")
+    uncommitedload = request.json.get("uncommitedLoad")
     completed = request.json.get("completed")
     notes = request.json.get("notes")
-    sprintid = request.json.get("sprintID")
+    archived = request.json.get("archived")
 
-    if not startDate or not endDate or not committedLoad or not uncommittedLoad or not completed or not notes:
+    if not sprintid or not projectid or not startdate or not enddate or not commitedload or not uncommitedload or not completed or not notes or not archived:
         return jsonify({"message": "You must fill in all fields to create a sprint"}), 400
     
-    new_sprint = Sprint(startDate = startDate, endDate = endDate, committedLoad = committedLoad, 
-                         uncommittedLoad = uncommittedLoad, completed = completed, notes = notes, sprintID = sprintID)
+    new_sprint = Sprint(sprintid = sprintid, projectid = projectid,
+                        startdate = startdate, enddate = enddate, commitedload = commitedload, uncommitedload = uncommitedload,
+                        completed = completed, notes = notes, archived = archived)
     
     try:
         db.session.add(new_sprint)
@@ -170,8 +173,9 @@ def add_sprint():
 
 @app.route("/get_sprint/<string:sprint_id>", methods=["GET"])
 def get_sprint(sprint_id):
-    sprint = Sprint.query.get(sprint_id)
-    return jsonify({"sprint": sprint.to_json()})
+    with db.session() as session:
+        sprint = session.get(Sprint, sprint_id)
+        return jsonify({"sprint": sprint.to_json()})
 
 @app.route("/delete_sprint/<int:sprint_id>", methods=["DELETE"])
 def delete_sprint(sprint_id):
