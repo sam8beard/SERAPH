@@ -1,0 +1,60 @@
+.save-button,
+.cancel-button {
+    background-color: #d9d9d9;
+    box-shadow: 4px 4px 4px #00000040;
+    color: #000000;
+    font-family: "Inter-Light", Helvetica;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+
+.save-button:hover,
+.cancel-button:hover {
+    background-color: #b0b0b0;
+}
+
+
+.export-PDF-page {
+    background-color: #20375D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.title {
+    color: #FFFFFF;
+    font-family: "Lexend-Regular", Helvetica;
+    font-size: 35px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+   
+}
+
+
+/* 
+.page {
+  backgroundColor: "#FFFFFF",
+  color: "black",
+},
+.section {
+  margin: 10,
+  padding: 10,
+},
+.viewer {
+  width: window.innerWidth / 3,
+  height: window.innerHeight / 2,
+}
+  
+ */

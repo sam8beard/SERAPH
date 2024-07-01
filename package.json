@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@react-pdf/renderer": "^3.4.4",
     "flask": "^0.2.10",
     "flask-cors": "^0.0.1",
     "react-router-dom": "^6.24.0"

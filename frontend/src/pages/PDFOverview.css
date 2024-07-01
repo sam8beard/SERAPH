@@ -104,7 +104,7 @@
   }
   
   .export-PDF-page .text-wrapper {
-    color: #ffffff;
+    color: #000000;
     font-family: "Lexend-Regular", Helvetica;
     font-size: 48px;
     font-weight: 400;
@@ -118,7 +118,7 @@
   }
   
   .export-PDF-page .text-wrapper-2 {
-    color: #ffffff;
+    color: #000000;
     font-family: "Lexend-Regular", Helvetica;
     font-size: 35px;
     font-weight: 400;
@@ -132,7 +132,7 @@
   }
   
   .export-PDF-page .text-wrapper-3 {
-    color: #fffdfd;
+    color: #000000;
     font-family: "Lexend-Regular", Helvetica;
     font-size: 17px;
     font-weight: 400;
