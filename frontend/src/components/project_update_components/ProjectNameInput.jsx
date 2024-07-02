@@ -4,7 +4,7 @@ function ProjectNameInput(props) {
     return (
         <div>
             <div>
-                Current Project Name: AAAAA
+                Current Project Name: {props.projectName}
             </div>
 
             <div>

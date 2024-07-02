@@ -4,7 +4,7 @@ function CustomerNameInput(props) {
     return (
         <div>
             <div>
-                Current Customer Name: AAAAA
+                Current Customer Name: {props.customerName}
             </div>
 
             <div>

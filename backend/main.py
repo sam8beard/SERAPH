@@ -35,35 +35,28 @@ def add_project():
     except Exception as e: 
         return jsonify()
     
-@app.route("/update_project", methods=["PUT"])
-def update_project():
-    customername = request.json.get("customerName")
-    techused = request.json.get("techUsed")
-    projectname = request.json.get("projectName")
-    archived = request.json.get("archived")
+@app.route("/update_project/<string:project_id>", methods=["PUT"])
+def update_project(project_id):
+    project = Project.query.get_or_404(project_id)
 
-    if not customername or not techused or not projectname or not archived:
-        return (
-            jsonify({"message": "You must fill in all fields to update this project"}), 400
-        )
-    
-    try:
-        projectid = request.json.get("projectID")
-        project = Project.query.get(projectid)
+    if 'customerName' in request.json:
+        project.customername = request.json['customerName']
+    if 'techUsed' in request.json:
+        project.techused = request.json['techUsed']
+    if 'projectName' in request.json:
+        project.projectname = request.json['projectName']
+    if 'archived' in request.json:
+        project.archived = request.json['archived']
 
-        project.customerName = customername
-        project.techUsed = techused
-        project.projectName = projectname
-        project.archived = archived
+    db.session.commit()
 
-        db.session.commit()
-    except Exception as e:
-        return jsonify()
+    return jsonify({"message": "Project updated"}), 200
 
-@app.route("/get_project/<int:project_id>", methods=["GET"])
+@app.route("/get_project/<string:project_id>", methods=["GET"])
 def get_project(project_id):
-    project = Project.query.get(project_id)
-    return jsonify({"project": project.to_json()})
+    with db.session() as session:
+        project = session.get(Project, project_id)
+        return jsonify({"project": project.to_json()})
 
 @app.route("/delete_project/<int:project_id>", methods=["DELETE"])
 def delete_project(project_id):

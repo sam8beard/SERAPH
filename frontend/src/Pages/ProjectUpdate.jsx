@@ -1,5 +1,5 @@
 import './ProjectCreation.css';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProjectNameInput from "../components/project_update_components/ProjectNameInput.jsx";
 import CustomerNameInput from "../components/project_update_components/CustomerNameInput.jsx";
 import TechUsedInput from "../components/project_update_components/TechUsedInput.jsx";
@@ -7,20 +7,38 @@ import ArchivedInput from "../components/project_update_components/ArchvedInput.
 import SubmitInput from "../components/project_update_components/SubmitInput.jsx";
 
 const ProjectUpdate = () => { 
+    const [currentProject, setCurrentProject] = useState({});
     const [projectName, setProjectName] = useState("");
     const [customerName, setCustomerName] = useState("");
     const [techUsed, setTechUsed] = useState("");
     const [archived, setArchived] = useState(false);
 
+    useEffect(() => {
+        async function fetchProjectDetails() {
+            const response = await fetch('http://127.0.0.1:5000/get_project/P001');
+            const data = await response.json();
+            setCurrentProject(data.project);
+            setProjectName(data.project.projectName);
+            setCustomerName(data.project.customerName);
+            setTechUsed(data.project.techUsed);
+            setArchived(data.project.archived);
+        }
+        fetchProjectDetails();
+    }, []);
+
     const onSubmit = async (e) => {
         e.preventDefault();
         const data = {
-            projectName,
             customerName,
             techUsed,
-            archived,
+            projectid: currentProject.projectid,
+            projectName,
+            elementchiefid: currentProject.elementchiefid,
+            flightdirectorid: currentProject.flightdirectorid,
+            archived: archived ? 1 : 0,
+            projecturl: currentProject.projecturl,
         };
-        const url = "http://127.0.0.1:5000/update_project";
+        const url = 'http://127.0.0.1:5000/update_project/P001';
         const options = {
             method: "PUT",
             headers : {

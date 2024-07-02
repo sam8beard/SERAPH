@@ -4,7 +4,7 @@ function TechUsedInput(props) {
     return (
         <div>
             <div>
-                Current Tech Used: AAAAA BBBBB CCCCC
+                Current Tech Used: {props.techUsed}
             </div>
 
             <div>
@@ -17,7 +17,7 @@ function TechUsedInput(props) {
 }
 
 TechUsedInput.propTypes = {
-    techUsed: PropTypes.number,
+    techUsed: PropTypes.string,
     setTechUsed: PropTypes.func,
 };
 
