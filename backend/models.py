@@ -93,7 +93,7 @@ class Sprint(db.Model):
             "archived": self.archived,
         }
 
-class assignments(db.models):
+class assignments(db.Model):
     jnumber = db.Column(db.String(20), db.ForeignKey('employees.jnumber'), primary_key = True)
     projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'), primary_key = True)
     
