@@ -34,7 +34,7 @@
 
 .text-style-normal-SO {
     color: #000000;
-    font-family: Lexend;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;

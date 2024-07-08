@@ -34,11 +34,29 @@ def add_project():
         db.session.commit() 
     except Exception as e: 
         return jsonify()
+    
+@app.route("/update_project/<string:project_id>", methods=["PUT"])
+def update_project(project_id):
+    project = Project.query.get_or_404(project_id)
 
-@app.route("/get_project/<int:project_id>", methods=["GET"])
+    if 'customerName' in request.json:
+        project.customername = request.json['customerName']
+    if 'techUsed' in request.json:
+        project.techused = request.json['techUsed']
+    if 'projectName' in request.json:
+        project.projectname = request.json['projectName']
+    if 'archived' in request.json:
+        project.archived = request.json['archived']
+
+    db.session.commit()
+
+    return jsonify({"message": "Project updated"}), 200
+
+@app.route("/get_project/<string:project_id>", methods=["GET"])
 def get_project(project_id):
-    project = Project.query.get(project_id)
-    return jsonify({"project": project.to_json()})
+    with db.session() as session:
+        project = session.get(Project, project_id)
+        return jsonify({"project": project.to_json()})
 
 @app.route("/delete_project/<int:project_id>", methods=["DELETE"])
 def delete_project(project_id):
@@ -148,6 +166,7 @@ def get_sprints():
 
 @app.route("/add_sprint", methods=["POST"])
 def add_sprint():
+<<<<<<< HEAD
     print("request json", request.json)
     startdate = request.json.get("startDate")
     enddate = request.json.get("endDate")
@@ -171,6 +190,21 @@ def add_sprint():
     new_sprint = Sprint(
                         startdate = startdate, enddate = enddate, committedload = committedload, uncommittedload = uncommittedload,
                         completed = completed, notes = notes, projectid = projectid)
+=======
+    startdate = request.json.get("startdate")
+    enddate = request.json.get("enddate")
+    committedload = request.json.get("committedload")
+    uncommittedload = request.json.get("uncommittedload")
+    completed = request.json.get("completed")
+    notes = request.json.get("notes")
+    sprintid = request.json.get("sprintid")
+
+    if not startdate or not enddate or not committedload or not uncommittedload or not completed or not notes:
+        return jsonify({"message": "You must fill in all fields to create a sprint"}), 400
+    
+    new_sprint = Sprint(startdate = startdate, enddate = enddate, committedload = committedload, 
+                         uncommittedload = uncommittedload, completed = completed, notes = notes, sprintid = sprintid)
+>>>>>>> d3c3b172183a4e3257037e1d05ef9ef66114bbac
     
     try:
         db.session.add(new_sprint)
@@ -180,7 +214,7 @@ def add_sprint():
     except Exception as e:
         return jsonify()
 
-@app.route("/get_sprint/<string:sprint_id>", methods=["GET"])
+@app.route("/get_sprint/<int:sprint_id>", methods=["GET"])
 def get_sprint(sprint_id):
     with db.session() as session:
         sprint = session.get(Sprint, sprint_id)

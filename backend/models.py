@@ -70,8 +70,8 @@ class Milestones(db.Model):
         }
 
 class Sprint(db.Model):
-    sprintid = db.Column(db.Integer, primary_key=True)
-    projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'))
+    sprintid = db.Column(db.String(20), primary_key=True)
+    projectid = db.Column(db.String(100), db.ForeignKey('project.projectID'))
     startdate = db.Column(db.Date)
     enddate = db.Column(db.Date)
     committedload = db.Column(db.Integer)
@@ -82,12 +82,12 @@ class Sprint(db.Model):
 
     def to_json(self):
         return {
-            "sprintID": self.sprintid,
-            "projectID": self.projectid,
-            "startDate": self.startdate,
-            "endDate": self.enddate,
-            "committedLoad": self.committedload,
-            "uncommittedLoad": self.uncommittedload,
+            "sprintid": self.sprintid,
+            "projectid": self.projectid,
+            "startdate": self.startdate,
+            "enddate": self.enddate,
+            "committedload": self.committedload,
+            "uncommittedload": self.uncommittedload,
             "completed": self.completed,
             "notes": self.notes,
             "archived": self.archived,
