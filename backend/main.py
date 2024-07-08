@@ -21,7 +21,7 @@ def add_project():
     elementchiefid = request.json.get("elementChiefID")
     flightdirectorid = request.json.get("flightDirectorID")
     archived = request.json.get("archived")
-    projecturl = request.json.get("projectURL")
+
     if not customername or not techused or not projectid or not projectname or not elementchiefid or not flightdirectorid or not archived:
         return (
             jsonify(
@@ -35,8 +35,6 @@ def add_project():
     try:
         db.session.add(new_project)
         db.session.commit()
-        return jsonify({"message": "Project added successfully"}), 200
-
     except Exception as e:
         return jsonify()
 
@@ -45,8 +43,21 @@ def add_project():
 def update_project(project_id):
     project = Project.query.get_or_404(project_id)
 
+    if 'customerName' in request.json:
+        project.customername = request.json['customerName']
+    if 'techUsed' in request.json:
+        project.techused = request.json['techUsed']
+    if 'projectName' in request.json:
+        project.projectname = request.json['projectName']
+    if 'archived' in request.json:
+        project.archived = request.json['archived']
 
-@app.route("/get_project/<int:project_id>", methods=["GET"])
+    db.session.commit()
+
+    return jsonify({"message": "Project updated"}), 200
+
+
+@app.route("/get_project/<string:project_id>", methods=["GET"])
 def get_project(project_id):
     with db.session() as session:
         project = session.get(Project, project_id)
@@ -176,35 +187,7 @@ def get_sprints():
 
 @app.route("/add_sprint", methods=["POST"])
 def add_sprint():
-
-
-<< << << < HEAD
-   print("request json", request.json)
-    startdate = request.json.get("startDate")
-    enddate = request.json.get("endDate")
-    committedload = request.json.get("committedLoad")
-    uncommittedload = request.json.get("uncommittedLoad")
-    completed = request.json.get("completed")
-    notes = request.json.get("notes")
-    projectid = request.json.get("projectID")
-
-    if not startdate or not enddate or not committedload or not uncommittedload or not completed or not notes or not projectid:
-        print("Missing fields:")
-        print("startdate:", startdate)
-        print("enddate:", enddate)
-        print("committedload:", committedload)
-        print("uncommittedload:", uncommittedload)
-        print("completed:", completed)
-        print("notes:", notes)
-        print("projectid", projectid)
-        return jsonify({"message": "You must fill in all fields to create a sprint"}), 400
-<< << << < HEAD
-
-   new_sprint = Sprint(
-        startdate=startdate, enddate=enddate, committedload=committedload, uncommittedload=uncommittedload,
-        completed=completed, notes=notes, projectid=projectid)
-== == == =
-   startdate = request.json.get("startdate")
+    startdate = request.json.get("startdate")
     enddate = request.json.get("enddate")
     committedload = request.json.get("committedload")
     uncommittedload = request.json.get("uncommittedload")
@@ -217,16 +200,8 @@ def add_sprint():
 
     new_sprint = Sprint(startdate=startdate, enddate=enddate, committedload=committedload,
                         uncommittedload=uncommittedload, completed=completed, notes=notes, sprintid=sprintid)
->>>>>> > d3c3b172183a4e3257037e1d05ef9ef66114bbac
 
-== == == =
-
-   new_sprint = Sprint(sprintid=sprintid, projectid=projectid,
-                        startdate=startdate, enddate=enddate, commitedload=committedload, uncommitedload=uncommittedload,
-                        completed=completed, notes=notes, archived=archived)
-
->>>>>> > raymond5
-   try:
+    try:
         db.session.add(new_sprint)
         db.session.commit()
         return jsonify({"message": "Sprint created successfully"}), 201
@@ -234,17 +209,8 @@ def add_sprint():
     except Exception as e:
         return jsonify()
 
-<<<<<< < HEAD
-
 
 @app.route("/get_sprint/<int:sprint_id>", methods=["GET"])
-== =====
-
-
-@app.route("/get_sprint/<string:sprint_id>", methods=["GET"])
->>>>>> > raymond5
-
-
 def get_sprint(sprint_id):
     with db.session() as session:
         sprint = session.get(Sprint, sprint_id)
