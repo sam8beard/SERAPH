@@ -39,7 +39,7 @@
 .buttons {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: left;
    
 }
 
