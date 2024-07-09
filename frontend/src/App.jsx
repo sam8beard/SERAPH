@@ -59,11 +59,11 @@ function App() {
           <Route 
               path='/projectview'
               element={<ProjectView />}
-          />
-          <Route
-              path='/projectupdate/:projectId'
-              element={<ProjectUpdate />}
-          />
+          /> 
+          <Route 
+              path='/pptxoverview'
+              element={<PptxOverview />}
+          />  
         </Routes>
       </Router>
     </div>
