@@ -52,7 +52,7 @@ def update_project(project_id):
 
     return jsonify({"message": "Project updated"}), 200
 
-@app.route("/get_project/<int:project_id>", methods=["GET"])
+@app.route("/get_project/<string:project_id>", methods=["GET"])
 def get_project(project_id):
     project = Project.query.get(project_id)
     return jsonify({"project": project.to_json()})
