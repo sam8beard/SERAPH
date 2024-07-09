@@ -8,17 +8,20 @@ function ProjectNameInput(props) {
             </div>
 
             <div>
-                <input placeholder='Input new project name'
-                value={props.projectName}
-                onChange={(e) => props.setProjectName(e.target.value)}></input>
+                <input 
+                    placeholder='Insert new project name'
+                    value={props.newProjectName}
+                    onChange={(e) => props.setNewProjectName(e.target.value)}
+                />
             </div>
         </div>
-    )
+    );
 }
 
 ProjectNameInput.propTypes = {
-    projectName: PropTypes.string,
-    setProjectName: PropTypes.func,
+    projectName: PropTypes.string.isRequired,
+    newProjectName: PropTypes.string.isRequired,
+    setNewProjectName: PropTypes.func.isRequired,
 };
 
 export default ProjectNameInput;

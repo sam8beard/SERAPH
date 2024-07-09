@@ -1,12 +1,13 @@
-import './ProjectCreation.css';
 import { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom';
 import ProjectNameInput from "../components/project_update_components/ProjectNameInput.jsx";
 import CustomerNameInput from "../components/project_update_components/CustomerNameInput.jsx";
 import TechUsedInput from "../components/project_update_components/TechUsedInput.jsx";
 import ArchivedInput from "../components/project_update_components/ArchvedInput.jsx";
 import SubmitInput from "../components/project_update_components/SubmitInput.jsx";
 
-const ProjectUpdate = () => { 
+const ProjectUpdate = () => {
+    const { projectId } = useParams();
     const [currentProject, setCurrentProject] = useState({});
     const [projectName, setProjectName] = useState("");
     const [customerName, setCustomerName] = useState("");
@@ -15,7 +16,7 @@ const ProjectUpdate = () => {
 
     useEffect(() => {
         async function fetchProjectDetails() {
-            const response = await fetch('http://127.0.0.1:5000/get_project/P001');
+            const response = await fetch(`http://127.0.0.1:5000/get_project/${projectId}`);
             const data = await response.json();
             setCurrentProject(data.project);
             setProjectName(data.project.projectName);
@@ -24,7 +25,7 @@ const ProjectUpdate = () => {
             setArchived(data.project.archived);
         }
         fetchProjectDetails();
-    }, []);
+    }, [projectId]);
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -38,10 +39,10 @@ const ProjectUpdate = () => {
             archived: archived ? 1 : 0,
             projecturl: currentProject.projecturl,
         };
-        const url = 'http://127.0.0.1:5000/update_project/P001';
+        const url = `http://127.0.0.1:5000/update_project/${projectId}`;
         const options = {
             method: "PUT",
-            headers : {
+            headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(data)
@@ -53,7 +54,7 @@ const ProjectUpdate = () => {
         }
     };
 
-    return ( 
+    return (
         <form onSubmit={onSubmit}>
             <div>
                 <h1>Project Update Form</h1>
@@ -67,6 +68,7 @@ const ProjectUpdate = () => {
             </div>
             <SubmitInput onSubmit={onSubmit} />
         </form>
-    )
-}
+    );
+};
+
 export default ProjectUpdate;
