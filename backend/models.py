@@ -47,10 +47,10 @@ class War(db.Model):
     projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'), primary_key=True)
     startdate = db.Column(db.Date, primary_key=True)
     enddate = db.Column(db.Date)
-    projecttitle = db.Column(db.text)
-    projectstatus = db.Column(db.text)
-    dayplan = db.Column(db.text)
-    information = db.Column(db.text)
+    projecttitle = db.Column(db.Text)
+    projectstatus = db.Column(db.Text)
+    dayplan = db.Column(db.Text)
+    information = db.Column(db.Text)
 
     def to_json(self):
         return {
