@@ -1,6 +1,7 @@
 from config_db import db
 # from flask_login import UserMixin
 
+
 class Project(db.Model):
     customername = db.Column(db.String(100))
     techused = db.Column(db.Text)
@@ -11,21 +12,19 @@ class Project(db.Model):
     archived = db.Column(db.Integer)
     projecturl = db.Column(db.String(1000))
 
-    # DO THIS FOR EVERY MODEL
-    def to_json(self): 
+    def to_json(self):
         return {
-            "customerName": self.customername, 
+            "customerName": self.customername,
             "techUsed": self.techused,
             "projectID": self.projectid,
             "projectName": self.projectname,
             "elementChiefID": self.elementchiefid,
             "flightDirectorID": self.flightdirectorid,
             "archived": self.archived,
-            "projecturl": self.projecturl,
+            "projectURL": self.projecturl,
         }
 
-
-class Employees(db.Model):
+class Employee(db.Model):
     jnumber = db.Column(db.String(12), primary_key=True)
     firstname = db.Column(db.String(100))
     lastname = db.Column(db.String(100))
@@ -43,21 +42,30 @@ class Employees(db.Model):
             "supervisorID": self.supervisorid,
         }
 
+
 class War(db.Model):
     projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'), primary_key=True)
     startdate = db.Column(db.Date, primary_key=True)
     enddate = db.Column(db.Date)
+    projecttitle = db.Column(db.Text)
+    projectstatus = db.Column(db.Text)
+    dayplan = db.Column(db.Text)
+    information = db.Column(db.Text)
 
     def to_json(self):
         return {
             "projectID": self.projectid,
             "startDate": self.startdate,
             "endDate": self.enddate,
+            "projecTitle": self.projectitle,
+            "projectStatus": self.projectstatus,
+            "dayPlan": self.dayplan,
+            "information": self.information,
         }
 
-class Milestones(db.Model):
+class Milestone(db.Model):
     projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'), primary_key=True)
-    date = db.Column(db.Date, primary_key = True)
+    date = db.Column(db.Date, primary_key=True)
     description = db.Column(db.String(1000))
     status = db.Column(db.String(1000))
 
@@ -69,10 +77,37 @@ class Milestones(db.Model):
             "status": self.status,
         }
 
+
+# class Sprint(db.Model):
+#     projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'), primary_key=True)
+#     startdate = db.Column(db.Date, primary_key=True)
+#     enddate = db.Column(db.Date)
+#     committedload = db.Column(db.Integer)
+#     uncommittedload = db.Column(db.Integer)
+#     completed = db.Column(db.Integer)
+#     notes = db.Column(db.Text)
+#     archived = db.Column(db.Integer)
+#     velocity = db.Column(db.Integer)
+#     capacity = db.Column(db.Integer)
+
+#     def to_json(self):
+#         return {
+#             "projectID": self.projectid,
+#             "startDate": self.startdate,
+#             "endDate": self.enddate,
+#             "committedLoad": self.committedload,
+#             "uncommittedLoad": self.uncommittedload,
+#             "completed": self.completed,
+#             "notes": self.notes,
+#             "archived": self.archived,
+#             "velocity": self.velocity,
+#             "capacity": self.capacity,
+#         }
+
 class Sprint(db.Model):
-    sprintid = db.Column(db.String(20), primary_key=True)
-    projectid = db.Column(db.String(100), db.ForeignKey('project.projectID'))
-    startdate = db.Column(db.Date)
+
+    projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'), primary_key=True)
+    startdate = db.Column(db.Date, primary_key=True)
     enddate = db.Column(db.Date)
     committedload = db.Column(db.Integer)
     uncommittedload = db.Column(db.Integer)
@@ -82,13 +117,22 @@ class Sprint(db.Model):
 
     def to_json(self):
         return {
-            "sprintid": self.sprintid,
-            "projectid": self.projectid,
-            "startdate": self.startdate,
-            "enddate": self.enddate,
-            "committedload": self.committedload,
-            "uncommittedload": self.uncommittedload,
+            
+            "projectID": self.projectid,
+            "startDate": self.startdate,
+            "endDate": self.enddate,
+            "committedLoad": self.committedload,
+            "uncommittedLoad": self.uncommittedload,
             "completed": self.completed,
             "notes": self.notes,
             "archived": self.archived,
+        }
+class Assignment(db.Model):
+    jnumber = db.Column(db.String(12), db.ForeignKey('employee.jnumber'), primary_key=True)
+    projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'), primary_key=True)
+    
+    def to_json(self):
+        return {
+            "jNumber" : self.jnumber,
+            "projectID" : self.projectid,
         }

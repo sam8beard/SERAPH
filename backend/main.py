@@ -1,6 +1,6 @@
 from flask import request, jsonify 
 from config_db import db, app
-from models import Project, Employees, War, Milestones, Sprint
+from models import Project, Employee, War, Milestone, Sprint
 
 # Project functions
 
@@ -158,15 +158,69 @@ def delete_milestone(milestone_id):
 
 # Sprint functions
 
+@app.route("/update_sprint/<string:project_id>", methods=["PUT"])
+def update_sprint(project_id):
+    sprint = Sprint.query.get_or_404(project_id)
+
+    if 'customerName' in request.json:
+        sprint.customername = request.json['customerName']
+    if 'techUsed' in request.json:
+        sprint.techused = request.json['techUsed']
+    if 'projectName' in request.json:
+        sprint.projectname = request.json['projectName']
+    if 'archived' in request.json:
+        sprint.archived = request.json['archived']
+
+    db.session.commit()
+
+    return jsonify({"message": "Project updated"}), 200
+
 @app.route("/get_sprints", methods=["GET"])
 def get_sprints():
     sprints = Sprint.query.all()
     json_sprints = list(map(lambda x: x.to_json(), sprints))
     return jsonify({"sprints": json_sprints})
 
+
+# @app.route("/add_sprint", methods=["POST"])
+# def add_sprint():
+#     print("request json", request.json)
+#     startdate = request.json.get("startDate")
+#     enddate = request.json.get("endDate")
+#     committedload = request.json.get("committedLoad")
+#     uncommittedload = request.json.get("uncommittedLoad")
+#     completed = request.json.get("completed")
+#     notes = request.json.get("notes")
+#     velocity = request.json.get("velocity")
+#     capacity = request.json.get("capacity")
+#     projectid = request.json.get("projectID")
+
+#     print("startdate:", startdate)
+#     print("enddate:", enddate)
+#     print("committedload:", committedload)
+#     print("uncommittedload:", uncommittedload)
+#     print("completed:", completed)
+#     print("notes:", notes)
+#     print("velocity:", velocity)
+#     print("capacity:", capacity)
+#     print("projectID", projectid)
+#     if not startdate or not enddate or not committedload or not uncommittedload or not completed or not notes or not velocity or not capacity or not projectid:
+#         return jsonify({"message": "You must fill in all fields to create a sprint"}), 400
+    
+#     new_sprint = Sprint(startdate = startdate, enddate = enddate, committedload = committedload, 
+#                          uncommittedload = uncommittedload, completed = completed, notes = notes, 
+#                          velocity = velocity, capacity = capacity, projectid = projectid)
+    
+#     try:
+#         db.session.add(new_sprint)
+#         db.session.commit()
+#         return jsonify({"message": "Sprint created successfully"}), 201
+
+#     except Exception as e:
+#         return jsonify()
+
 @app.route("/add_sprint", methods=["POST"])
 def add_sprint():
-<<<<<<< HEAD
     print("request json", request.json)
     startdate = request.json.get("startDate")
     enddate = request.json.get("endDate")
@@ -190,26 +244,11 @@ def add_sprint():
     new_sprint = Sprint(
                         startdate = startdate, enddate = enddate, committedload = committedload, uncommittedload = uncommittedload,
                         completed = completed, notes = notes, projectid = projectid)
-=======
-    startdate = request.json.get("startdate")
-    enddate = request.json.get("enddate")
-    committedload = request.json.get("committedload")
-    uncommittedload = request.json.get("uncommittedload")
-    completed = request.json.get("completed")
-    notes = request.json.get("notes")
-    sprintid = request.json.get("sprintid")
-
-    if not startdate or not enddate or not committedload or not uncommittedload or not completed or not notes:
-        return jsonify({"message": "You must fill in all fields to create a sprint"}), 400
-    
-    new_sprint = Sprint(startdate = startdate, enddate = enddate, committedload = committedload, 
-                         uncommittedload = uncommittedload, completed = completed, notes = notes, sprintid = sprintid)
->>>>>>> d3c3b172183a4e3257037e1d05ef9ef66114bbac
     
     try:
         db.session.add(new_sprint)
         db.session.commit()
-        return jsonify({"message": "Sprint created successfully"}), 201
+        return jsonify({"message": "Sprint created successfully"}), 200
 
     except Exception as e:
         return jsonify()

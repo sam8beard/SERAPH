@@ -9,8 +9,28 @@ import Uncommitted from '../components/sprint_creation_components/Uncommitted.js
 import Completed from '../components/sprint_creation_components/Completed.jsx';
 import Notes from '../components/sprint_creation_components/Notes.jsx';
 import ButtonImp from '../components/sprint_creation_components/ButtonImp.jsx';
+import { useState, useEffect } from "react";
 
-function SprintUpdate() { 
+const SprintUpdate = () => { 
+    const [startDate, setStartDate] = useState("");
+    const [endDate, setEndDate] = useState("");
+    const [committedLoad, setCommittedLoad] = useState(0);
+    const [uncommittedLoad, setUncommittedLoad] = useState(0);
+    const [completed, setCompleted] = useState(0);
+    const [notes, setNotes] = useState("");
+
+    useEffect(() => {
+        async function fetchSprintDetails() {
+            const response = await fetch('http://127.0.0.1:5000/get_sprint/P001');
+            const data = await response.json();
+            setStartDate(data.startDate);
+            setProjectName(data.project.projectName);
+            setCustomerName(data.project.customerName);
+            setTechUsed(data.project.techUsed);
+            setArchived(data.project.archived);
+        }
+        fetchSprintDetails();
+    }, []);
     return (
         <div className="parent">
             <div className="top">
@@ -25,7 +45,6 @@ function SprintUpdate() {
                     <EndDate/>
                 </div>
 
-                <SprintInput/>
                 
                 <CommittedInput/>
                 
