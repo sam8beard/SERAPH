@@ -1,6 +1,6 @@
 from flask import request, jsonify 
 from config_db import db, app
-from models import Project, Employees, War, Milestones, Sprint
+from models import Project, Employee, War, Milestone, Sprint
 
 # Project functions
 
@@ -166,19 +166,10 @@ def get_sprints():
 
 @app.route("/add_sprint", methods=["POST"])
 def add_sprint():
-<<<<<<< HEAD
     startdate = request.json.get("startdate")
     enddate = request.json.get("enddate")
     committedload = request.json.get("committedload")
     uncommittedload = request.json.get("uncommittedload")
-=======
-    sprintid = request.json.get("sprintID")
-    projectid = request.json.get("projectID")
-    startdate = request.json.get("startDate")
-    enddate = request.json.get("endDate")
-    commitedload = request.json.get("commitedLoad")
-    uncommitedload = request.json.get("uncommitedLoad")
->>>>>>> Paul4
     completed = request.json.get("completed")
     notes = request.json.get("notes")
     sprintid = request.json.get("sprintid")
@@ -186,14 +177,8 @@ def add_sprint():
     if not startdate or not enddate or not committedload or not uncommittedload or not completed or not notes:
         return jsonify({"message": "You must fill in all fields to create a sprint"}), 400
     
-<<<<<<< HEAD
     new_sprint = Sprint(startdate = startdate, enddate = enddate, committedload = committedload, 
                          uncommittedload = uncommittedload, completed = completed, notes = notes, sprintid = sprintid)
-=======
-    new_sprint = Sprint(sprintid = sprintid, projectid = projectid,
-                        startdate = startdate, enddate = enddate, commitedload = commitedload, uncommitedload = uncommitedload,
-                        completed = completed, notes = notes, archived = archived)
->>>>>>> Paul4
     
     try:
         db.session.add(new_sprint)
@@ -266,9 +251,4 @@ if __name__ == "__main__":
     with app.app_context(): 
         db.create_all()
 
-<<<<<<< HEAD
     app.run(debug=True)
-=======
-    app.run(debug=True)
-
->>>>>>> Paul4
