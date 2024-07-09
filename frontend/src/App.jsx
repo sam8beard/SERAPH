@@ -64,7 +64,11 @@ function App() {
           <Route 
               path='/pptxoverview'
               element={<PptxOverview />}
-          />  
+          />
+          <Route 
+              path='/projectupdate/:projectId'
+              element={<ProjectUpdate />}
+          />
         </Routes>
       </Router>
     </div>
