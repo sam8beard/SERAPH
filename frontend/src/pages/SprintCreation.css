@@ -47,6 +47,7 @@ input {
     font-size: 10px;
     justify-content: flex-end;
     padding: 20px;
+    color: black;
 }
 
 .submitBtn {
@@ -58,4 +59,29 @@ input {
 
 .submitBtn:hover {
     background-color: azure;
+}
+
+.Sprinttitle {
+    color: black;
+    font-size: 2em;
+}
+.commitTitle {
+    color: black;
+}
+
+.uncommitTitle {
+    color: black;
+}
+.notesTitle {
+    color: black;
+}
+
+.compTitle {
+    color: black;
+}
+.endTitle {
+    color: black;
+}
+.startTitle {
+    color: black;
 }

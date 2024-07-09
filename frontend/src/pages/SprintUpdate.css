@@ -46,13 +46,16 @@ p {
 }
 
 
+
 .bottom {
-    display: flex;
-
-    width: 120vh;
-    justify-content: flex-end;
-
+        display: flex;
+        width: 100vw; /* Changed to vw to match parent width */
+        justify-content: flex-start; /* Changed to flex-start to align left */
+        padding: 20px; /* Add padding for better spacing */
+        margin-top: 350px;
 }
+
+
 
 .top {
     display:flex;
@@ -67,6 +70,10 @@ p {
     font-size: 10px;
     justify-content: flex-end;
     padding: 20px;
- 
+    color: black;
 
+}
+
+.updateTitle{
+    color: black;
 }

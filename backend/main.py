@@ -173,8 +173,9 @@ def add_sprint():
     completed = request.json.get("completed")
     notes = request.json.get("notes")
     projectid = request.json.get("projectID")
-    
-    if not startdate or not enddate or not committedload or not uncommittedload or not completed or not notes or not projectid:
+    capacity = request.json.get("capacity")
+    velocity = request.json.get("velocity")    
+    if not startdate or not enddate or not committedload or not uncommittedload or not completed or not notes or not projectid or not capacity or not velocity:
         print("Missing fields:")
         print("startdate:", startdate)
         print("enddate:", enddate)
@@ -183,11 +184,13 @@ def add_sprint():
         print("completed:", completed)
         print("notes:", notes)
         print("projectid", projectid)
+        print("capacity: ", capacity)
+        print("velocity: ", velocity)
         return jsonify({"message": "You must fill in all fields to create a sprint"}), 400
     
     new_sprint = Sprint(
                         startdate = startdate, enddate = enddate, committedload = committedload, uncommittedload = uncommittedload,
-                        completed = completed, notes = notes, projectid = projectid)
+                        completed = completed, notes = notes, projectid = projectid, capacity = capacity, velocity = velocity)
     
     try:
         db.session.add(new_sprint)
