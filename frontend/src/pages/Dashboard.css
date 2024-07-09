@@ -1,10 +1,7 @@
 .parent { 
     color: black !important;
-    background-color: #ffffff;
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    width:100%;
+    display: flex;
+    justify-content: center;
 }
 
 /* h1 { 

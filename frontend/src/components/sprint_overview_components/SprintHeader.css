@@ -1,0 +1,35 @@
+.header-1-SO {
+    margin: auto;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    line-height: 80px;
+}
+
+.header-2-SO {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.header-2-content-SO {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.text-style-header-1-SO {
+    color: #000000;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 48px;
+}
+
+.text-style-header-2-SO {
+    color: #000000;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 36px;
+}

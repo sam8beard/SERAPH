@@ -1,0 +1,61 @@
+.parent {
+    display: flex;
+    justify-content: flex-start;
+    height: 100vh; 
+    width: 100vw;
+    flex-direction: column;
+}
+
+input {
+    border-radius: 10px;
+    height: 30px;
+    width: 200px;
+    margin: 10px 0; /* Add margin to avoid overlap */
+}
+
+.input { 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 80vh;
+    font-size: 2rem;
+    justify-content: space-evenly;
+}
+
+.date {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: space-between;
+}
+
+.bottom {
+    display: flex;
+    width: 100vw; /* Changed to vw to match parent width */
+    justify-content: flex-start; /* Changed to flex-start to align left */
+    padding: 20px; /* Add padding for better spacing */
+}
+
+.top {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.submitBtn {
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white; /* Ensure a clear background color */
+    padding: 10px; /* Add some padding for better click area */
+}
+
+.submitBtn:hover {
+    background-color: azure;
+}

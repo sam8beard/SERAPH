@@ -1,6 +1,9 @@
 import './CommittedInput.css';
+import PropTypes from 'prop-types'
 
-function CommittedInput() {
+
+
+function CommittedInput(props) {
     return(
         <div className='title'>
                     <div className="commitTitle">
@@ -8,12 +11,18 @@ function CommittedInput() {
                     </div>
 
                     <div className="committed">
-                    <input className="committedInput" placeholder='Input committed load'></input>
+                    <input type="number" className="committedInput" placeholder='Input committed load'
+                     value={props.committedLoad}
+                     onChange={(e) => props.setCommittedLoad(parseInt(e.target.value, 10) || 0)}></input>
                     </div>
                 </div>
 
     )
 
 }
+CommittedInput.propTypes = {
+    committedLoad: PropTypes.number,
+    setCommittedLoad: PropTypes.func,
+};
 
 export default CommittedInput;

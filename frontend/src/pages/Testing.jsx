@@ -5,4 +5,4 @@ function Testing () {
         </h1>
     )
 }
-export default Testing 
+export default Testing;
