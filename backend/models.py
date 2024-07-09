@@ -79,7 +79,7 @@ class Milestone(db.Model):
 
 
 class Sprint(db.Model):
-    projectid = db.Column(db.String(100), db.ForeignKey('project.projectID'), primary_key=True)
+    projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'), primary_key=True)
     startdate = db.Column(db.Date, primary_key=True)
     enddate = db.Column(db.Date)
     committedload = db.Column(db.Integer)

@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-pdf/renderer": "^3.4.4",
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "expo-file-system": "^17.0.1",

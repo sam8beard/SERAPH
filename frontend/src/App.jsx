@@ -15,6 +15,7 @@ import SignIn from './pages/SignIn.jsx'
 import ProjectCreation from './pages/ProjectCreation.jsx'
 import ProjectView from './pages/ProjectView.jsx'
 import ProjectUpdate from './pages/ProjectUpdate.jsx'
+import PptxOverview from './pages/PptxOverview.jsx' 
 
 function App() {
   const [count, setCount] = useState(0)

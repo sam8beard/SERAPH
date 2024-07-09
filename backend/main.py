@@ -34,29 +34,11 @@ def add_project():
         db.session.commit() 
     except Exception as e: 
         return jsonify()
-    
-@app.route("/update_project/<string:project_id>", methods=["PUT"])
-def update_project(project_id):
-    project = Project.query.get_or_404(project_id)
 
-    if 'customerName' in request.json:
-        project.customername = request.json['customerName']
-    if 'techUsed' in request.json:
-        project.techused = request.json['techUsed']
-    if 'projectName' in request.json:
-        project.projectname = request.json['projectName']
-    if 'archived' in request.json:
-        project.archived = request.json['archived']
-
-    db.session.commit()
-
-    return jsonify({"message": "Project updated"}), 200
-
-@app.route("/get_project/<string:project_id>", methods=["GET"])
+@app.route("/get_project/<int:project_id>", methods=["GET"])
 def get_project(project_id):
-    with db.session() as session:
-        project = session.get(Project, project_id)
-        return jsonify({"project": project.to_json()})
+    project = Project.query.get(project_id)
+    return jsonify({"project": project.to_json()})
 
 @app.route("/delete_project/<int:project_id>", methods=["DELETE"])
 def delete_project(project_id):
@@ -193,7 +175,7 @@ def add_sprint():
     try:
         db.session.add(new_sprint)
         db.session.commit()
-        return jsonify({"message": "Sprint created successfully"}), 201
+        return jsonify({"message": "Sprint created successfully"}), 200
 
     except Exception as e:
         return jsonify()
