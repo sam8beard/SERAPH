@@ -11,9 +11,9 @@ function CommittedInput(props) {
                     </div>
 
                     <div className="committed">
-                    <input className="committedInput" placeholder='Input committed load'
+                    <input type="number" className="committedInput" placeholder='Input committed load'
                      value={props.committedLoad}
-                     onChange={(e) => props.setCommittedLoad(e.target.value)}></input>
+                     onChange={(e) => props.setCommittedLoad(parseInt(e.target.value, 10) || 0)}></input>
                     </div>
                 </div>
 

@@ -1,6 +1,7 @@
 from config_db import db
 # from flask_login import UserMixin
 
+
 class Project(db.Model):
     customername = db.Column(db.String(100))
     techused = db.Column(db.Text)
@@ -12,9 +13,9 @@ class Project(db.Model):
     projecturl = db.Column(db.String(1000))
 
     # DO THIS FOR EVERY MODEL
-    def to_json(self): 
+    def to_json(self):
         return {
-            "customerName": self.customername, 
+            "customerName": self.customername,
             "techUsed": self.techused,
             "projectID": self.projectid,
             "projectName": self.projectname,
@@ -43,8 +44,10 @@ class Employees(db.Model):
             "supervisorID": self.supervisorid,
         }
 
+
 class War(db.Model):
-    projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'), primary_key=True)
+    projectid = db.Column(db.String(100), db.ForeignKey(
+        'project.projectid'), primary_key=True)
     startdate = db.Column(db.Date, primary_key=True)
     enddate = db.Column(db.Date)
 
@@ -55,9 +58,11 @@ class War(db.Model):
             "endDate": self.enddate,
         }
 
+
 class Milestones(db.Model):
-    projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'), primary_key=True)
-    date = db.Column(db.Date, primary_key = True)
+    projectid = db.Column(db.String(100), db.ForeignKey(
+        'project.projectid'), primary_key=True)
+    date = db.Column(db.Date, primary_key=True)
     description = db.Column(db.String(1000))
     status = db.Column(db.String(1000))
 
@@ -68,6 +73,7 @@ class Milestones(db.Model):
             "description": self.description,
             "status": self.status,
         }
+
 
 class Sprint(db.Model):
     sprintid = db.Column(db.String(20), primary_key=True)
@@ -91,4 +97,17 @@ class Sprint(db.Model):
             "completed": self.completed,
             "notes": self.notes,
             "archived": self.archived,
+        }
+
+
+class assignments(db.Model):
+    jnumber = db.Column(db.String(20), db.ForeignKey(
+        'employees.jnumber'), primary_key=True)
+    projectid = db.Column(db.String(100), db.ForeignKey(
+        'project.projectid'), primary_key=True)
+
+    def to_json(self):
+        return {
+            "jnumber": self.jnumber,
+            "projectid": self.projectid,
         }
