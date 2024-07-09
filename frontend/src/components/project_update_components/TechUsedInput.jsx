@@ -8,17 +8,20 @@ function TechUsedInput(props) {
             </div>
 
             <div>
-                <input placeholder='Input new tech used'
-                value={props.techUsed}
-                onChange={(e) => props.setTechUsed(e.target.value)}></input>
+                <input 
+                    placeholder='Insert new tech used'
+                    value={props.newTechUsed}
+                    onChange={(e) => props.setNewTechUsed(e.target.value)}
+                />
             </div>
         </div>
-    )
+    );
 }
 
 TechUsedInput.propTypes = {
-    techUsed: PropTypes.string,
-    setTechUsed: PropTypes.func,
+    techUsed: PropTypes.string.isRequired,
+    newTechUsed: PropTypes.string.isRequired,
+    setNewTechUsed: PropTypes.func.isRequired,
 };
 
 export default TechUsedInput;

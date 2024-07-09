@@ -31,7 +31,7 @@ function App() {
           <Route 
               path='/'
               element={<Dashboard/>}
-          /> 
+          />
           <Route 
               path='/sprintoverview'
               element={<SprintOverview />}
@@ -61,7 +61,7 @@ function App() {
               element={<ProjectView />}
           />
           <Route
-              path='/projectupdate'
+              path='/projectupdate/:projectId'
               element={<ProjectUpdate />}
           />
         </Routes>
