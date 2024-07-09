@@ -34,6 +34,23 @@ def add_project():
         db.session.commit() 
     except Exception as e: 
         return jsonify()
+    
+@app.route("/update_project/<string:project_id>", methods=["PUT"])
+def update_project(project_id):
+    project = Project.query.get_or_404(project_id)
+
+    if 'customerName' in request.json:
+        project.customername = request.json['customerName']
+    if 'techUsed' in request.json:
+        project.techused = request.json['techUsed']
+    if 'projectName' in request.json:
+        project.projectname = request.json['projectName']
+    if 'archived' in request.json:
+        project.archived = request.json['archived']
+
+    db.session.commit()
+
+    return jsonify({"message": "Project updated"}), 200
 
 @app.route("/get_project/<int:project_id>", methods=["GET"])
 def get_project(project_id):
@@ -101,7 +118,7 @@ def delete_war(war_id):
 
 @app.route("/get_milestones", methods=["GET"])
 def get_milestones():
-    milestones = Milestones.query.all()
+    milestones = Milestone.query.all()
     json_milestones = list(map(lambda x: x.to_json(), milestones))
     return jsonify({"milestones": json_milestones})
 
@@ -115,7 +132,7 @@ def add_milestone():
     if not date or not description or not status or not projectid:
         return jsonify({"message": "You must fill in all fields to create a milestone"}), 400
     
-    new_milestone = Milestones(date = date, description = description, status = status, projectid = projectid)
+    new_milestone = Milestone(date = date, description = description, status = status, projectid = projectid)
 
     try:
         db.session.add(new_milestone)
@@ -125,12 +142,12 @@ def add_milestone():
 
 @app.route("/get_milestone/<int:milestone_id>", methods=["GET"])
 def get_milestone(milestone_id):
-    milestone = Milestones.query.get(milestone_id)
+    milestone = Milestone.query.get(milestone_id)
     return jsonify({"milestone": milestone.to_json()})
 
 @app.route("/delete_milestone/<int:milestone_id>", methods=["DELETE"])
 def delete_milestone(milestone_id):
-    milestone = Milestones.query.get(milestone_id)
+    milestone = Milestone.query.get(milestone_id)
     if milestone is None:
         return jsonify({"message": "Invalid milestone id"}), 400
     
@@ -180,10 +197,10 @@ def add_sprint():
     except Exception as e:
         return jsonify()
 
-@app.route("/get_sprint/<string:sprint_id>", methods=["GET"])
-def get_sprint(sprint_id):
+@app.route("/get_sprint/<string:projectid>", methods=["GET"])
+def get_sprint(projectid):
     with db.session() as session:
-        sprint = session.get(Sprint, sprint_id)
+        sprint = session.query(Sprint).filter_by(projectid=projectid).first()
         return jsonify({"sprint": sprint.to_json()})
 
 @app.route("/delete_sprint/<int:sprint_id>", methods=["DELETE"])
@@ -200,7 +217,7 @@ def delete_sprint(sprint_id):
 
 @app.route("/get_employees", methods=["GET"])
 def get_employees():
-    employees = Employees.query.all()
+    employees = Employee.query.all()
     json_employees = list(map(lambda x: x.to_json(), employees))
     return jsonify({"employees": json_employees})
 
@@ -216,7 +233,7 @@ def add_employee():
     if not jnumber or not firstname or not lastname or not projectid or not role or not supervisorid:
         return jsonify({"message": "You must fill in all field to create an employee"}), 400
     
-    new_employee = Employees(jnumber = jnumber, firstname = firstname, lastname = lastname, projectid = projectid, role = role, supervisorid = supervisorid)
+    new_employee = Employee(jnumber = jnumber, firstname = firstname, lastname = lastname, projectid = projectid, role = role, supervisorid = supervisorid)
 
     try:
         db.session.add(new_employee)
@@ -226,12 +243,12 @@ def add_employee():
     
 @app.route("/get_employee/<int:employee_jNumber>", methods=["GET"])
 def get_employee(employee_jNumber):
-    employee = Employees.query.get(employee_jNumber)
+    employee = Employee.query.get(employee_jNumber)
     return jsonify({"employee": employee.to_json()})
 
 @app.route("/delete_employee/<int:employee_jNumber>", methods=["DELETE"])
 def delete_employee(employee_jNumber):
-    employee = Employees.query.get(employee_jNumber)
+    employee = Employee.query.get(employee_jNumber)
     if employee is None:
         return jsonify({"message": "Invalid employee id"}), 400
     
