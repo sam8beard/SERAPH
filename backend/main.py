@@ -1,6 +1,6 @@
 from flask import request, jsonify 
 from config_db import db, app
-from models import Project, Employees, War, Milestones, Sprint
+from models import Project, Employee, War, Milestone, Sprint
 
 # Project functions
 
@@ -198,7 +198,7 @@ def add_sprint():
     except Exception as e:
         return jsonify()
 
-@app.route("/get_sprint/<int:sprint_id>", methods=["GET"])
+@app.route("/get_sprint/<string:sprint_id>", methods=["GET"])
 def get_sprint(sprint_id):
     with db.session() as session:
         sprint = session.get(Sprint, sprint_id)

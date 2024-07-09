@@ -31,7 +31,7 @@ function App() {
           <Route 
               path='/'
               element={<Dashboard/>}
-          /> 
+          />
           <Route 
               path='/sprintoverview'
               element={<SprintOverview />}
@@ -59,11 +59,11 @@ function App() {
           <Route 
               path='/projectview'
               element={<ProjectView />}
-          />
-          <Route
-              path='/projectupdate'
-              element={<ProjectUpdate />}
-          />
+          /> 
+          <Route 
+              path='/pptxoverview'
+              element={<PptxOverview />}
+          />  
         </Routes>
       </Router>
     </div>
