@@ -197,8 +197,8 @@ def add_sprint():
     except Exception as e:
         return jsonify()
 
-@app.route("/get_sprint/<string:projectid>", methods=["GET"])
-def get_sprint(projectid):
+@app.route("/get_sprint/<string:projectid>/<string:startdate>", methods=["GET"])
+def get_sprint(projectid, startdate):
     with db.session() as session:
         sprint = session.query(Sprint).filter_by(projectid=projectid).first()
         return jsonify({"sprint": sprint.to_json()})
