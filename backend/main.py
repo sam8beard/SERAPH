@@ -166,7 +166,6 @@ def get_sprints():
 
 @app.route("/add_sprint", methods=["POST"])
 def add_sprint():
-<<<<<<< HEAD
     print("request json", request.json)
     startdate = request.json.get("startDate")
     enddate = request.json.get("endDate")
@@ -190,21 +189,6 @@ def add_sprint():
     new_sprint = Sprint(
                         startdate = startdate, enddate = enddate, committedload = committedload, uncommittedload = uncommittedload,
                         completed = completed, notes = notes, projectid = projectid)
-=======
-    startdate = request.json.get("startdate")
-    enddate = request.json.get("enddate")
-    committedload = request.json.get("committedload")
-    uncommittedload = request.json.get("uncommittedload")
-    completed = request.json.get("completed")
-    notes = request.json.get("notes")
-    sprintid = request.json.get("sprintid")
-
-    if not startdate or not enddate or not committedload or not uncommittedload or not completed or not notes:
-        return jsonify({"message": "You must fill in all fields to create a sprint"}), 400
-    
-    new_sprint = Sprint(startdate = startdate, enddate = enddate, committedload = committedload, 
-                         uncommittedload = uncommittedload, completed = completed, notes = notes, sprintid = sprintid)
->>>>>>> d3c3b172183a4e3257037e1d05ef9ef66114bbac
     
     try:
         db.session.add(new_sprint)
