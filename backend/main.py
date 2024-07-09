@@ -60,26 +60,57 @@ def get_wars():
         json_wars = list(map(lambda x: x.to_json(), returnWars))
         return jsonify({"returnWars": json_wars})
 
-#To add a specific war to the table
+@app.route("/add_war", methods=["POST"])
+def add_war(): 
+    projectid = request.json.get("projectid")
+    startdate = request.json.get("startdate")
+    enddate = request.json.get("enddate")
+    projecttitle = request.json.get("projecttitle")
+    projectstatus = request.json.get("projectstatus")
+    dayplan = request.json.get("dayplan")
+    information = request.json.get("information")
+
+    if not startdate or not enddate or not projectid or not projecttitle or not projectstatus or not dayplan or not information: 
+        return (
+            jsonify({"message": "You must fill in all fields to create a war"}), 400
+        )
+    
+    new_war = War(startdate = startdate, enddate = enddate, projectid = projectid, 
+                          projecttitle = projecttitle, projectstatus = projectstatus, 
+                          dayplan = dayplan, information = information)
+    try:
+        db.session.add(new_war)
+        db.session.commit() 
+    except Exception as e: 
+        return jsonify()
+
+""" #To add a specific war to the table
 @app.route("/add_war", methods=["POST"])
 def add_war():
     if request.method =='POST':
         projectid = request.json.get("projectID")
         startdate = request.json.get("startDate")
         enddate = request.json.get("endDate")
+        projecttitle = request.json.get("projecttitle")
+        projectstatus = request.json.get("projectstatus")
+        dayplan = request.json.get("dayplan")
+        information = request.json.get("information")
+        
 
-        if not projectid or not startdate or not enddate: 
+
+        if not projectid or not startdate or not enddate or not projecttitle or not projectstatus or not dayplan or not information: 
             return (
                 jsonify({"message": "You must fill in all fields to create a war"}), 400
             )
     
-        new_war = War(projectid = projectid, startdate = startdate, enddate = enddate)
+        new_war = War(projectid = projectid, startdate = startdate, enddate = enddate, projecttitle = projecttitle, 
+                    projectstatus = projectstatus, dayplan = dayplan, information = information)
         
         try:
             db.session.add(new_war)
             db.session.commit() 
         except Exception as e: 
-            return jsonify()
+            return jsonify() """
 
 @app.route("/get_war/<int:war_id>", methods=["GET"])
 def get_war(war_id):

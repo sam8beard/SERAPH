@@ -54,12 +54,12 @@ class War(db.Model):
 
     def to_json(self):
         return {
-            "projectID": self.projectid,
-            "startDate": self.startdate,
-            "endDate": self.enddate,
-            "projecTitle": self.projectitle,
-            "projectStatus": self.projectstatus,
-            "dayPlan": self.dayplan,
+            "projectid": self.projectid,
+            "startdate": self.startdate,
+            "enddate": self.enddate,
+            "projecttitle": self.projecttitle,
+            "projectstatus": self.projectstatus,
+            "dayplan": self.dayplan,
             "information": self.information,
         }
 

@@ -16,6 +16,9 @@ import ProjectCreation from './pages/ProjectCreation.jsx'
 import ProjectView from './pages/ProjectView.jsx'
 import ProjectUpdate from './pages/ProjectUpdate.jsx'
 import PptxOverview from './pages/PptxOverview.jsx' 
+import War from './pages/War.jsx' 
+
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -65,6 +68,10 @@ function App() {
               path='/pptxoverview'
               element={<PptxOverview />}
           />  
+          <Route 
+              path='/war'
+              element={<War />}
+          />
         </Routes>
       </Router>
     </div>
