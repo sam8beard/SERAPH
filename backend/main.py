@@ -1,6 +1,6 @@
 from flask import request, jsonify 
 from config_db import db, app
-from models import Project, Employees, War, Milestones, Sprint
+from models import Project, Employee, War, Milestone, Sprint
 
 # Project functions
 
