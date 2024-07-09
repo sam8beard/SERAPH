@@ -34,10 +34,14 @@ function ProjectView() {
                     <div className="project-info">
                         <img className="seraph_logo" alt="Seraph Logo" src={seraph_logo} />
                         <h1 className="project-title">{project.projectName ? project.projectName : "SERAPH"}</h1>
-                        <p>Team Members: {project.teamMembers ? project.teamMembers.join(', ') : "To be added"}</p>
-                        <p>Customer: {project.customerName}</p>
-                        <p>Technologies Used: {project.techUsed}</p>
-                        <p>Description: {project.description ? project.description : "To be added"}</p>
+                        <p>Team Members: </p>
+                        <p className="textData">{project.teamMembers ? project.teamMembers.join(', ') : "To be added"}</p>
+                        <p>Customer: </p>
+                        <p className="textData">{project.customerName ? project.customerName : "To be added"}</p>
+                        <p>Technologies Used: </p>
+                        <p className="textData">{project.techUsed ? project.techUsed : "To be added"}</p>
+                        <p>Description: </p>
+                        <p className="textData">{project.description ? project.description : "To be added"}</p>
                         <div className="progress-bar-PV">
                             <div className="progress-PV" style={project.progress ? { width: `${project.progress}%` } : {width: `${project.progress}%` }}></div>
                         </div>
@@ -48,8 +52,10 @@ function ProjectView() {
                     <div className='sprint-overview-title'>
                         <h2>Sprint Overview</h2>
                     </div>
-                    <p>Committed Load: 543</p>
-                    <p>Sprint Number: 33.2</p>
+                    <p>Committed Load: </p>
+                    <p className="textData">543</p>
+                    <p>Sprint Number: </p>
+                    <p className="textData">33.2</p>
                 </div>
             </div>
             <div className='buttons'>
