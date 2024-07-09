@@ -12,7 +12,6 @@ class Project(db.Model):
     archived = db.Column(db.Integer)
     projecturl = db.Column(db.String(1000))
 
-    # DO THIS FOR EVERY MODEL
     def to_json(self):
         return {
             "customerName": self.customername,
@@ -22,11 +21,10 @@ class Project(db.Model):
             "elementChiefID": self.elementchiefid,
             "flightDirectorID": self.flightdirectorid,
             "archived": self.archived,
-            "projecturl": self.projecturl,
+            "projectURL": self.projecturl,
         }
 
-
-class Employees(db.Model):
+class Employee(db.Model):
     jnumber = db.Column(db.String(12), primary_key=True)
     firstname = db.Column(db.String(100))
     lastname = db.Column(db.String(100))
@@ -50,18 +48,24 @@ class War(db.Model):
         'project.projectid'), primary_key=True)
     startdate = db.Column(db.Date, primary_key=True)
     enddate = db.Column(db.Date)
+    projecttitle = db.Column(db.Text)
+    projectstatus = db.Column(db.Text)
+    dayplan = db.Column(db.Text)
+    information = db.Column(db.Text)
 
     def to_json(self):
         return {
             "projectID": self.projectid,
             "startDate": self.startdate,
             "endDate": self.enddate,
+            "projectTitle": self.projecttitle,
+            "projectStatus": self.projectstatus,
+            "dayPlan": self.dayplan,
+            "information": self.information,
         }
 
-
-class Milestones(db.Model):
-    projectid = db.Column(db.String(100), db.ForeignKey(
-        'project.projectid'), primary_key=True)
+class Milestone(db.Model):
+    projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'), primary_key=True)
     date = db.Column(db.Date, primary_key=True)
     description = db.Column(db.String(1000))
     status = db.Column(db.String(1000))
@@ -85,6 +89,8 @@ class Sprint(db.Model):
     completed = db.Column(db.Integer)
     notes = db.Column(db.Text)
     archived = db.Column(db.Integer)
+    velocity = db.Column(db.Integer)
+    capacity = db.Column(db.Integer)
 
     def to_json(self):
         return {
@@ -97,17 +103,16 @@ class Sprint(db.Model):
             "completed": self.completed,
             "notes": self.notes,
             "archived": self.archived,
+            "velocity": self.velocity,
+            "capacity": self.capacity,
         }
 
-
-class assignments(db.Model):
-    jnumber = db.Column(db.String(20), db.ForeignKey(
-        'employees.jnumber'), primary_key=True)
-    projectid = db.Column(db.String(100), db.ForeignKey(
-        'project.projectid'), primary_key=True)
-
+class Assignment(db.Model):
+    jnumber = db.Column(db.String(12), db.ForeignKey('employee.jnumber'), primary_key=True)
+    projectid = db.Column(db.String(100), db.ForeignKey('project.projectid'), primary_key=True)
+    
     def to_json(self):
         return {
-            "jnumber": self.jnumber,
-            "projectid": self.projectid,
+            "jnumber" : self.jnumber,
+            "projectid" : self.projectid,
         }
