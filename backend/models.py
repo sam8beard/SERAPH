@@ -57,11 +57,10 @@ class War(db.Model):
             "projectID": self.projectid,
             "startDate": self.startdate,
             "endDate": self.enddate,
-            "projectitle": self.projectitle,
-            "projectstatus": self.projectstatus,
-            "dayplan": self.dayplan,
+            "projecTitle": self.projectitle,
+            "projectStatus": self.projectstatus,
+            "dayPlan": self.dayplan,
             "information": self.information,
-
         }
 
 class Milestone(db.Model):
@@ -93,11 +92,11 @@ class Sprint(db.Model):
 
     def to_json(self):
         return {
-            "projectid": self.projectid,
-            "startdate": self.startdate,
-            "enddate": self.enddate,
-            "committedload": self.committedload,
-            "uncommittedload": self.uncommittedload,
+            "projectID": self.projectid,
+            "startDate": self.startdate,
+            "endDate": self.enddate,
+            "committedLoad": self.committedload,
+            "uncommittedLoad": self.uncommittedload,
             "completed": self.completed,
             "notes": self.notes,
             "archived": self.archived,
@@ -111,6 +110,6 @@ class Assignment(db.Model):
     
     def to_json(self):
         return {
-            "jnumber" : self.jnumber,
-            "projectid" : self.projectid,
+            "jNumber" : self.jnumber,
+            "projectID" : self.projectid,
         }
