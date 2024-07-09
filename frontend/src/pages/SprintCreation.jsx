@@ -17,6 +17,8 @@ const SprintCreation = () => {
     const [completed, setCompleted] = useState(0);
     const [notes, setNotes] = useState("");
     const [projectID, setProjectID] = useState("");
+    const [capacity, setCapacity] = useState(0);
+    const [velocity, setVelocity] = useState(0);
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -27,7 +29,9 @@ const SprintCreation = () => {
             uncommittedLoad: parseInt(uncommittedLoad),
             completed: parseInt(completed),
             projectID,
-            notes
+            notes,
+            capacity: parseInt(capacity),
+            velocity: parseInt(velocity),
         };
         const url = "http://127.0.0.1:5000/add_sprint";
         const options = {
@@ -49,7 +53,7 @@ const SprintCreation = () => {
         <form className="parent" onSubmit={onSubmit}>
             <div className="top">
                 <div className="title">
-                    <h1>Sprint Creation Form</h1>
+                    <h1 className="Sprinttitle">Sprint Creation Form</h1>
                 </div>
             </div>
 
@@ -72,6 +76,25 @@ const SprintCreation = () => {
                     id="projectID"
                     value={projectID}
                     onChange={(e) => setProjectID(e.target.value)}
+                />
+                </div>
+                <div>
+                <label htmlFor="capacity">capacity</label>
+                <input
+                    type="number"
+                    id="capacity"
+                    value={capacity}
+                    onChange={(e) => setCapacity(parseInt(e.target.value, 10) || 0)}
+                    />
+                </div>
+
+                <div>
+                <label htmlFor="velocity">velocity</label>
+                <input
+                    type="number"
+                    id="velocity"
+                    value={velocity}
+                    onChange={(e) => setVelocity(parseInt(e.target.value, 10) || 0)}
                 />
                 </div>
                
