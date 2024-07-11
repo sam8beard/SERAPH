@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios, { formToJSON } from 'axios';
+import './ProjectForm.css'
 
 function MyForm() {
   const [formData, setFormData] = useState({
@@ -41,72 +42,68 @@ function MyForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="customerName"
-        value={formData.customerName}
-        onChange={handleChange}
-        placeholder="Customer Name"
-      />
-      <input
-        type="text"
-        name="techUsed"
-        value={formData.techUsed}
-        onChange={handleChange}
-        placeholder="Tech Used"
-      />
-      <input
-        type="text"
-        name="projectID"
-        value={formData.projectID}
-        onChange={handleChange}
-        placeholder="Project ID"
-      />
-      
-      <input
-        type="text"
-        name="projectName"
-        value={formData.projectName}
-        onChange={handleChange}
-        placeholder="Project Name"
-      />
-      
-      <input
-        type="text"
-        name="elementChiefID"
-        value={formData.elementChiefID}
-        onChange={handleChange}
-        placeholder="Element Chief ID"
-      />
-      
-      <input
-        type="text"
-        name="flightDirectorID"
-        value={formData.flightDirectorID}
-        onChange={handleChange}
-        placeholder="Flight Director ID"
-      />
-      
-      
-      <input
-        type="number"
-        name="archived"
-        value={formData.archived}
-        onChange={handleChange}
-        placeholder="Archived"
-      />
-      
-      <input
-        type="text"
-        name="projectURL"
-        value={formData.projectURL}
-        onChange={handleChange}
-        placeholder="Photo URL"
-      />
-      {/* Add other input fields as needed */}
-      <button type="submit">Submit</button>
-    </form>
+    <div className="form-container">
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    name="customerName"
+                    value={formData.customerName}
+                    onChange={handleChange}
+                    placeholder="Customer Name"
+                />
+                <input
+                    type="text"
+                    name="techUsed"
+                    value={formData.techUsed}
+                    onChange={handleChange}
+                    placeholder="Tech Used"
+                />
+                <input
+                    type="text"
+                    name="projectID"
+                    value={formData.projectID}
+                    onChange={handleChange}
+                    placeholder="Project ID"
+                />
+                <input
+                    type="text"
+                    name="projectName"
+                    value={formData.projectName}
+                    onChange={handleChange}
+                    placeholder="Project Name"
+                />
+                <input
+                    type="text"
+                    name="elementChiefID"
+                    value={formData.elementChiefID}
+                    onChange={handleChange}
+                    placeholder="Element Chief ID"
+                />
+                <input
+                    type="text"
+                    name="flightDirectorID"
+                    value={formData.flightDirectorID}
+                    onChange={handleChange}
+                    placeholder="Flight Director ID"
+                />
+                <input
+                    type="number"
+                    name="archived"
+                    value={formData.archived}
+                    onChange={handleChange}
+                    placeholder="Archived"
+                />
+                <input
+                    type="text"
+                    name="projectURL"
+                    value={formData.projectURL}
+                    onChange={handleChange}
+                    placeholder="Photo URL"
+                />
+                {/* Add other input fields as needed */}
+                <button type="submit">Submit</button>
+            </form>
+      </div>
   );
 }
 

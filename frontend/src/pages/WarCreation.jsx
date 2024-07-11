@@ -54,7 +54,8 @@ function WarCreation() {
       overflow: 'hidden',
       position: 'absolute',
       width: '1920px',
-      top: '50px'
+      top: '50px',
+      left: '50px',
     },
     textWrapper1: {
       color: '#000000',
@@ -97,7 +98,7 @@ function WarCreation() {
       left: '33px',
       position: 'absolute',
       top: '225px',
-      width: '1038px',
+      width: '250px',
       border: '2px solid #000000' 
     },
     textWrapper3: {
@@ -119,7 +120,7 @@ function WarCreation() {
       left: '33px',
       position: 'absolute',
       top: '366px',
-      width: '1038px',
+      width: '250px',
       border: '2px solid #000000' 
     },
     textWrapper4: {
@@ -141,7 +142,7 @@ function WarCreation() {
       left: '33px',
       position: 'absolute',
       top: '507px',
-      width: '1038px',
+      width: '250px',
       border: '2px solid #000000' 
     },
     textWrapper5: {
@@ -160,7 +161,7 @@ function WarCreation() {
       backgroundColor: '#d9d9d9',
       borderRadius: '10px',
       height: '654px',
-      right: '60px',
+      right: '600px',
       position: 'absolute',
       top: '84px',
       width: '700px',
@@ -168,7 +169,7 @@ function WarCreation() {
     },
     div2: {
       position: 'absolute',
-      right: '60px',
+      right: '575px',
       height: '654px',
       width: '700px',
       top: '94px'
@@ -197,7 +198,7 @@ function WarCreation() {
       position: 'absolute',
       top: '5px',
       width: '111px',
-      zIndex: '2'
+      zIndex: '2', 
     },
     textWrapper8: {
       color: '#000000',
@@ -216,7 +217,7 @@ function WarCreation() {
       top: '40px',
       backgroundColor: '#000000',
       height: '2px',
-      width: '699px',
+      width: '675px',
       zIndex: '3',
       position: 'absolute'
     },
@@ -226,7 +227,7 @@ function WarCreation() {
       borderCollapse: 'collapse'
     },
     warTableThTd: {
-      padding: '8px',
+      padding: '18px',
       border: '1px solid #dfdfdf'
     },
     warTableTh: {
@@ -238,14 +239,18 @@ function WarCreation() {
       boxSizing: 'border-box'
     },
     plusSign: {
-      top:'-5px',
+      top:'655px',
       position: 'absolute',
-      right: '5px'
+      right: '550px',
+      width: '10%',
+      height: '10%',
     },
     minusSign: {
-      top: '666px',
+      top: '677px',
       position: 'absolute',
-      left: '60px'
+      left: '1px',
+      width: '10%', // Adjust width for smaller size
+      height: '3%', // Adjust height for smaller size
     },
     buttonPC: {
         backgroundColor: '#d9d9d9', // Match the background color of the text boxes
@@ -261,7 +266,7 @@ function WarCreation() {
         cursor: 'pointer',
         position: 'absolute',
         zIndex: 2,
-        top: '690px', // Adjusted to match textWrapper9PC top position
+        top: '790px', // Adjusted to match textWrapper9PC top position
         left: '835px', // Adjusted to match textWrapper9PC left position
         width: '237px',
         border: '2px solid #000000' 
@@ -272,7 +277,7 @@ function WarCreation() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '8px', // Adjust padding as needed
+        padding: '15px', // Adjust padding as needed
     },
     inputField: {
         width: '100%',
@@ -281,7 +286,7 @@ function WarCreation() {
         outline: 'none',
         fontFamily: 'Lexend-Regular, Helvetica',
         fontSize: '16px',
-        padding: '4px',
+        padding: '2px',
         boxSizing: 'border-box',
         overflow: 'hidden', // Ensure no overflow
         textOverflow: 'ellipsis', // Ensure text ellipsis if overflow
@@ -343,7 +348,7 @@ function WarCreation() {
                   <img
                     alt="Group"
                     src={minus_sign}
-                    style={{ cursor: 'pointer' }}
+                    style={{ ...styles.minusSign, cursor: 'pointer' }} // Apply styles here
                     onClick={() => removeRow(index)}
                   />
                 </td>

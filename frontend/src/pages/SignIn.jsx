@@ -201,7 +201,7 @@ function SignIn() {
             <button className="button-box" style={styles.rectangle4SI} > CAC SSO </button>
             
             {/* Login Button */}
-            <button className="button-box" style={styles.rectangle5SI} onClick={() => window.location.href = '/dashboard'}> Login </button>
+            <button className="button-box" style={styles.rectangle5SI} onClick={() => window.location.href = '/'}> Login </button>
 
           
             <img className="dod_logo-SI" alt="DOD Logo" src={dod_logo_SI} style={styles.dodLogoSI} />
