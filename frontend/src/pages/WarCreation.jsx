@@ -5,39 +5,78 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 function WarCreation() {
+
   const initialTableData = [
-    { id: 1, date: '', description: '', status: '' }
-  ];
+    { id: 1, startDate: new Date(), endDate: new Date(), projectTitle: '', projectStatus: '', dayPlan: '', information: '' }
+];
 
-  const [tableData, setTableData] = useState(initialTableData);
+const [tableData, setTableData] = useState(initialTableData);
 
-  const addRow = () => {
+const addRow = () => {
     const newRow = {
-      id: tableData.length + 1,
-      date: '',
-      description: '',
-      status: ''
+        id: tableData.length + 1,
+        startDate: new Date(),
+        endDate: new Date(),
+        projectTitle: '',
+        projectStatus: '',
+        dayPlan: '',
+        information: ''
     };
     setTableData([...tableData, newRow]);
-  };
+};
 
-  const removeRow = (index) => {
+const removeRow = (index) => {
     const updatedData = [...tableData];
     updatedData.splice(index, 1);
     setTableData(updatedData);
-  };
+};
 
-  const handleDateChange = (date, rowIndex) => {
+const handleDateChange = (date, rowIndex, field) => {
     const updatedData = [...tableData];
-    updatedData[rowIndex].date = date;
+    updatedData[rowIndex][field] = date;
     setTableData(updatedData);
-  };
+};
 
-  const handleInputChange = (e, rowIndex, field) => {
+const handleInputChange = (e, rowIndex, field) => {
     const updatedData = [...tableData];
     updatedData[rowIndex][field] = e.target.value;
     setTableData(updatedData);
-  };
+};
+
+const onSubmit = async (e) => {
+    e.preventDefault();
+    const data = {
+        projectID: 'your_project_id', // Replace with actual project ID
+        wars: tableData.map(row => ({
+            startDate: row.startDate,
+            endDate: row.endDate,
+            projectTitle: row.projectTitle,
+            projectStatus: row.projectStatus,
+            dayPlan: row.dayPlan,
+            information: row.information
+        }))
+    };
+
+    const url = 'http://127.0.0.1:5000/create_war';
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    };
+
+    try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Failed to create War object');
+        }
+        alert('War object created successfully');
+    } catch (error) {
+        alert(error.message);
+    }
+};
 
   // Styles object
   const styles = {
@@ -150,7 +189,7 @@ function WarCreation() {
       fontFamily: 'Lexend-Regular, Helvetica',
       fontSize: '20px',
       fontWeight: '400',
-      right: '637px',
+      right: '837px',
       letterSpacing: '0',
       lineHeight: 'normal',
       position: 'absolute',
@@ -366,7 +405,7 @@ function WarCreation() {
           />
         </div>
 
-        <button style={styles.buttonPC} onClick={() => window.location.href = '/dashboard'}>Submit</button>
+        <button style={styles.buttonPC} onClick={() => window.location.href = '/'}>Submit</button>
       </div>
     </div>
   );

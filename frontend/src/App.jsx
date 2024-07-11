@@ -14,6 +14,7 @@ import ProjectCreation from './pages/ProjectCreation.jsx';
 import ProjectView from './pages/ProjectView.jsx';
 import WarCreation from './pages/WarCreation.jsx';
 import 'bootstrap/dist/css/bootstrap.css';
+import ProjectUpdate from './pages/ProjectUpdate.jsx';
 
 
 function App() {
@@ -50,6 +51,10 @@ function App() {
           <Route 
               path='/projectarchive'
               element={<ProjectArchive />}
+          />
+          <Route 
+              path='/projectupdate'
+              element={<ProjectUpdate />}
           />
           <Route 
               path='/signin'

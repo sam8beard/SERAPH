@@ -15,6 +15,7 @@ const AppNavbar = () => {
     '/sprintupdate': 'Sprint Update',
     '/pdfoverview': 'PDF Overview',
     '/projectcreation': 'Project Creation',
+    '/projectupdate': 'Project Update',
     '/projectarchive': 'Project Archive',
     '/projectview': 'Project View',
     '/warcreation': 'War Creation',
@@ -71,6 +72,7 @@ const AppNavbar = () => {
               <NavDropdown.Item as={Link} to="/sprintupdate">Sprint Update</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/pdfoverview">PDF Overview</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/projectcreation">Project Creation</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/projectupdate">Project Update</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/projectarchive">Project Archive</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/projectview">Project View</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/warcreation">War Creation</NavDropdown.Item>

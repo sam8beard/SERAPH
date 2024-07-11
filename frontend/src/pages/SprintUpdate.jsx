@@ -340,7 +340,7 @@ function SprintCreation() {
       <div style={styles.textWrapper9PC}>Notes </div>
       <input type="text" style={styles.rectangle9PC} placeholder="  " />
 
-      <button style={styles.buttonPC} onClick={() => window.location.href = '/dashboard'}>Submit</button>
+      <button style={styles.buttonPC} onClick={() => window.location.href = '/'}>Submit</button>
     </div>
   );
 }
