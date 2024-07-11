@@ -6,7 +6,7 @@ import seraph_logo from '../assets/seraph_logo.png';
 import { useParams } from 'react-router-dom';
 
 function ProjectView() {
-    const { projectID } = useParams(); // get project id from the URL
+    const { projectID } = useParams();
     const [project, setProject] = useState([])
 
     useEffect(() => {

@@ -18,7 +18,8 @@ def add_project():
     projectname = request.json.get("projectName") 
     elementchiefid = request.json.get("elementChiefID")
     flightdirectorid = request.json.get("flightDirectorID")
-    archived = request.json.get("archived") 
+    archived = request.json.get("archived")
+    projecturl = request.json.get("projectURL")
 
     if not customername or not techused or not projectid or not projectname or not elementchiefid or not flightdirectorid or not archived: 
         return (
@@ -27,7 +28,7 @@ def add_project():
     
     new_project = Project(customername = customername, techused = techused, projectid = projectid, 
                           projectname = projectname, elementchiefid = elementchiefid, 
-                          flightdirectorid = flightdirectorid, archived = archived)
+                          flightdirectorid = flightdirectorid, archived = archived, projecturl = projecturl)
     
     try:
         db.session.add(new_project)

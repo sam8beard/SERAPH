@@ -7,17 +7,17 @@ import { Chart as ChartJS } from 'chart.js/auto'
 import { Bar, Doughnut, Line } from "react-chartjs-2" 
 
 function SprintOverview() {
-    const [sprint, setSprint] = useState([])
+    const [sprint, setSprint] = useState({ projectId: 69, startDate: '2005-01-14' });
 
     useEffect(() => {
         fetchSprint()
     }, [])
 
-    const fetchSprint = async() => {
-        const response = await fetch("http://127.0.0.1:5000/get_sprint/69/2005-01-14") // this is hardcoded for now 
-        const data = await response.json()
-        setSprint(data.sprint)
-        console.log(data.sprint)
+    const fetchSprint = async () => {
+        const response = await fetch(`http://127.0.0.1:5000/get_sprint/${projectId}/${startDate}`);
+        const data = await response.json();
+        setSprint(data.sprint);
+        console.log(data.sprint);
     }
 
     return (

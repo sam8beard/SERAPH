@@ -1,8 +1,6 @@
 import React from 'react';
 import './SprintInfo.css';
-import Graph from "../../assets/SampleGraph.png";
-import { Chart as ChartJS } from 'chart.js/auto'
-import { Bar, Doughnut, Line } from "react-chartjs-2" 
+import { Bar } from "react-chartjs-2" 
 const SprintInfo = ({sprint}) => {
     return (
         <>
@@ -22,12 +20,12 @@ const SprintInfo = ({sprint}) => {
                             },
 
                             {
-                                label: "Commited Load", 
+                                label: "Committed Load", 
                                 data: [sprint.committedLoad],
                             }, 
 
                             {
-                                label: "Uncommited Load", 
+                                label: "Uncommitted Load", 
                                 data: [sprint.uncommittedLoad],
                             },
 
@@ -38,12 +36,6 @@ const SprintInfo = ({sprint}) => {
                         ]
                     }}
                 />
-                {/* <div className="flex-container-child-left-SO">
-                    <div className="text-style-normal-SO">{sprint.notes}</div>
-                </div>
-                <div className="flex-container-child-right-SO">
-                    <img src={Graph} />
-                </div> */}
             </div>
         </>
     )
