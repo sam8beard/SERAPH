@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios, { formToJSON } from 'axios';
+import './WarForm.css'
 
 function MyForm() {
   const [formData, setFormData] = useState({
@@ -94,7 +95,7 @@ function MyForm() {
         placeholder="Additional Information"
       />
       {/* Add other input fields as needed */}
-      <button type="submit">Submit</button>
+      <button className="submit">Submit</button>
     </form>
   );
 }

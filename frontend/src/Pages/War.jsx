@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import { useState, useEffect } from 'react'
-import ProjectForm from '../components/WarForm'
+import ProjectForm from '../components/war_creation/WarForm'
+import "./War.css";
+
 function War() { 
 
     
@@ -17,10 +19,9 @@ function War() {
 
     return (
         <div className='parent'> 
+            <div className="title"> War Form </div>
+            
 
-            <form > 
-                <input type="text" placeholder='Project'/>
-            </form>
             <ProjectForm/> 
         </div>
         // CREATE FORM COMPONENT AND INSERT HERE
