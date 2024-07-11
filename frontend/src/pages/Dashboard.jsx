@@ -29,10 +29,26 @@ function Dashboard() {
     }
 
     return (
-        <div className='parent'> 
-            <CardGrid projects={projects}/> 
+        <div className='dash-parent'> 
+            <div className='dash-header'> 
+                <div className="welcome"> 
+                    <div> 
+                        <h1> Welcome to S E R A P H </h1>
 
-            <form > 
+                    </div>
+                    <div> 
+                        {/* <h4> View all of your available projects </h4> */}
+
+                    </div> 
+                </div>
+                
+            </div>
+            <div className="grid-parent"> 
+                 <CardGrid projects={projects}/> 
+            </div>
+            
+
+            <form> 
                 <input type="text" placeholder='Project'/>
             </form>
             <ProjectForm/> 

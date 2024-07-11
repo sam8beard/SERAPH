@@ -1,9 +1,25 @@
-.parent { 
+.dash-parent { 
     color: black !important;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    line-height: 0.9;
+    /* margin-top: 85rem !important; */
 }
 
+.dash-header { 
+    display: flex;
+    justify-content: center;
+    font-weight: lighter;
+}
+
+.welcome h1 { 
+    font-weight: lighter;
+}
+.welcome { 
+    display: flex; 
+    justify-content: center;
+}
 /* h1 { 
     margin-top: 20px !important; 
 } */

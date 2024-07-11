@@ -5,6 +5,7 @@
 } */
 .nav-container { 
   margin-top: 50px !important;
+  margin-bottom: 10rem !important;
 }
 .logo {
   height: 6em;
@@ -38,3 +39,4 @@
 .read-the-docs {
   color: #888;
 }
+
