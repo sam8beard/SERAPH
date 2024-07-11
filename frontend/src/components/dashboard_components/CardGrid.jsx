@@ -9,9 +9,10 @@ function CardGrid({ projects }) {
                     <Card className="cg-style" style={{ width: '60rem', borderRadius: '', backgroundColor: "#D9D9D9" }}>
                     <Card.Body>
                             <Card.Text>{project.customerName}</Card.Text>
-                            <Card.Img variant="top" src={project.projecturl} style={{ width: "5rem", height: "5rem" }} />
+                            <Card.Img variant="top" src={project.projectURL} alt="Project Icon" style={{ width: "5rem", height: "5rem" }} />
                             <Card.Text>{project.projectID}</Card.Text>
                             <Card.Title>{project.projectName}</Card.Title>
+                            <Button variant="primary" as={Link} to={`/projectview/${project.projectID}`}>View Project</Button>
                             <Button variant="primary" as={Link} to={`/projectupdate/${project.projectID}`}>Edit Project</Button>
                         </Card.Body>
                     </Card>

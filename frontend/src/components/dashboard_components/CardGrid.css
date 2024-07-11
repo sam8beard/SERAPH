@@ -1,13 +1,13 @@
 .parent-CG{
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr)) !important;
-    grid-gap: 2rem !important;
-    margin-block: 2rem !important;
-    padding: 0 1rem !important;
-    justify-items: center !important;
-    align-items: center !important;
-  }
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr)) !important;
+  grid-gap: 2rem !important;
+  margin-block: 2rem !important;
+  padding: 0 1rem !important;
+  justify-items: center !important;
+  align-items: center !important;
+}
 
-  .cg-style .card { 
-    border: 10px red solid !important;
-  }
+.cg-style .card { 
+  border: 10px red solid !important;
+}
