@@ -55,8 +55,9 @@ def update_project(project_id):
 
 @app.route("/get_project/<string:project_id>", methods=["GET"])
 def get_project(project_id):
-    project = Project.query.get(project_id)
-    return jsonify({"project": project.to_json()})
+    with db.session() as session:
+        project = session.query(Project).filter_by(projectid=project_id).first()
+        return jsonify({"project": project.to_json()})
 
 @app.route("/delete_project/<int:project_id>", methods=["DELETE"])
 def delete_project(project_id):

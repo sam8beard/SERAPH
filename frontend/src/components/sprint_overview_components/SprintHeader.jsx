@@ -12,6 +12,7 @@ const SprintHeader = ({sprint}) => {
                     <div className="header-2-content-SO">Uncommitted Load: {sprint.uncommittedLoad}</div>
                     <div className="header-2-content-SO">Total Completed: {sprint.completed}</div>
                 </div>
+                <div className="text-style-header-1-SO">Notes: {sprint.notes}</div>
             </h1>
         </>
     )
