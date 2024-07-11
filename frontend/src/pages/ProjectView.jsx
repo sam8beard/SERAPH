@@ -6,26 +6,19 @@ import seraph_logo from '../assets/seraph_logo.png';
 import { useParams } from 'react-router-dom';
 
 function ProjectView() {
-    const { projectID } = useParams();
+    const { projectId } = useParams();
     const [project, setProject] = useState([])
 
     useEffect(() => {
-        const fetchProject = async () => {
-            try {
-                const response = await fetch("http://127.0.0.1:5000/get_project/${projectID}")
-                if (!response.ok) {
-                    throw new Error("network response not valid"), 400
-                }
-                const data = await response.json()
-                setProject(data.project)
-                console.log(data.project)
-            } catch (error) {
-                console.error("Error fetching project data", error)
-            }
-        };
-
         fetchProject();
     }, []);
+
+    const fetchProject = async () => {
+        const response = await fetch(`http://127.0.0.1:5000/get_project/${projectId}`)
+        const data = await response.json()
+        setProject(data.project)
+        console.log(data.project)
+    };
 
     return (
         <>

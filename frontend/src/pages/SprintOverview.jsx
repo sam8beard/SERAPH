@@ -10,15 +10,16 @@ function SprintOverview() {
     const [sprint, setSprint] = useState({ projectId: 69, startDate: '2005-01-14' });
 
     useEffect(() => {
-        fetchSprint()
-    }, [])
+        fetchSprint();
+    }, []);
 
     const fetchSprint = async () => {
+        const { projectId, startDate } = sprint;
         const response = await fetch(`http://127.0.0.1:5000/get_sprint/${projectId}/${startDate}`);
         const data = await response.json();
         setSprint(data.sprint);
         console.log(data.sprint);
-    }
+    };
 
     return (
         <div>
