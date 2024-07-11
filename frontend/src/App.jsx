@@ -58,7 +58,7 @@ function App() {
               element={<SignIn />}
           />
           <Route 
-              path='/projectview'
+              path='/projectview/:projectId'
               element={<ProjectView />}
           /> 
           <Route 

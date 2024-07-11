@@ -10,7 +10,7 @@ class Project(db.Model):
     elementchiefid = db.Column(db.String(100))
     flightdirectorid = db.Column(db.String(100))
     archived = db.Column(db.Integer)
-    projecturl = db.Column(db.String(1000))
+    projecturl = db.Column(db.Text)
 
     def to_json(self):
         return {

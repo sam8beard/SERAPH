@@ -9,7 +9,7 @@ function MyForm() {
     projectName: '',
     elementChiefID: '',
     flightDirectorID: '',
-    archived: null,
+    archived: '',
     projectURL: '',
 
 
