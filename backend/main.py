@@ -101,7 +101,7 @@ def delete_war(war_id):
 
 @app.route("/get_milestones", methods=["GET"])
 def get_milestones():
-    milestones = Milestones.query.all()
+    milestones = Milestone.query.all()
     json_milestones = list(map(lambda x: x.to_json(), milestones))
     return jsonify({"milestones": json_milestones})
 

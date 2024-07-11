@@ -1,0 +1,24 @@
+.cards-container-PC {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.card-PC.col { 
+    /* height: 500px !important;  */
+    padding-top: 15px; 
+    width: 500px !important;
+    display: flex;
+    border: 2px solid red; 
+    
+}
+
+.card-info-PC {
+    margin: 0;
+    
+}
+
+.row { 
+    display:flex !important; 
+    justify-content: space-between !important;
+}

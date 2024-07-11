@@ -15,7 +15,8 @@ import SignIn from './pages/SignIn.jsx'
 import ProjectCreation from './pages/ProjectCreation.jsx'
 import ProjectView from './pages/ProjectView.jsx'
 import ProjectUpdate from './pages/ProjectUpdate.jsx'
-import PptxOverview from './pages/PptxOverview.jsx' 
+import PptxOverview from './pages/PptxOverview.jsx'
+import SprintDashboard from './pages/SprintDashboard.jsx'; 
 
 function App() {
   const [count, setCount] = useState(0)
@@ -64,7 +65,11 @@ function App() {
           <Route 
               path='/pptxoverview'
               element={<PptxOverview />}
-          />  
+          />
+          <Route
+              path='/sprintdashboard'
+              element={<SprintDashboard />}
+          />
         </Routes>
       </Router>
     </div>
