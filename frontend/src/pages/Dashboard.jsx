@@ -34,10 +34,10 @@ function Dashboard() {
                 <div className="welcome"> 
                     <div> 
                         <h1> Welcome to S E R A P H </h1>
-
+                        <h4> View all of your available projects </h4>
                     </div>
                     <div> 
-                        {/* <h4> View all of your available projects </h4> */}
+                        
 
                     </div> 
                 </div>
