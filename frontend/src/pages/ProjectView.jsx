@@ -16,6 +16,7 @@ function ProjectView(  ) {
 
     useEffect(() => {
         fetchProject();
+        fetchSprints();
     }, []);
 
     const fetchProject = async () => {
@@ -25,16 +26,12 @@ function ProjectView(  ) {
         console.log(data.project)
     };
 
-    useEffect(() => {
-        fetchSprints()
-    }, [])
-
     const fetchSprints = async () => { 
         const response = await fetch(`http://127.0.0.1:5000/get_sprints/${projectId}`)
         const data = await response.json()
         setSprints(data.sprints)
         console.log(data.sprints)
-    }
+    };
 
     return (
         <>
