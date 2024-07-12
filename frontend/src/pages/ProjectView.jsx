@@ -3,6 +3,8 @@ import './ProjectView.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 import { useState, useEffect } from 'react';
 
@@ -59,7 +61,7 @@ function ProjectView(  ) {
                         <Container>
                             {sprints.map((sprint) => (
                                 <Row> 
-                                    {sprint.startDate} - {sprint.endDate}
+                                    <Button style={{margin: "0.5rem"}} as={Link} to={`/sprintoverview/${sprint.projectID}/${sprint.startDate}`} > {sprint.startDate} - {sprint.endDate} </Button>
                                 </Row>
                             ))} 
                             <Row> 
@@ -67,8 +69,6 @@ function ProjectView(  ) {
                             </Row>
                         </Container>
                     </div>
-                    <p>Committed Load: 543</p>
-                    <p>Sprint Number: 33.2</p>
                 </div>
             </div>
             <div className='buttons'>
