@@ -2,12 +2,13 @@ import "bootstrap/dist/css/bootstrap.css";
 import './SprintOverview.css';
 import { useState, useEffect } from 'react';
 import SprintHeader from "../components/sprint_overview_components/SprintHeader";
+import SprintNotes from "../components/sprint_overview_components/SprintNotes"
 import SprintInfo from "../components/sprint_overview_components/SprintInfo";
 import { Chart as ChartJS } from 'chart.js/auto';
 
 function SprintOverview() {
     const [sprint, setSprint] = useState({
-        projectId: 69,
+        projectId: 'P011',
         startDate: '2005-01-14',
         velocity: 0,
         capacity: 0,
@@ -40,9 +41,15 @@ function SprintOverview() {
     };
 
     return (
-        <div className="overview-container">
-            <SprintHeader sprint={sprint} project={project} />
-            <SprintInfo sprint={sprint} />
+        <div className="overview-container-SO">
+            <div className="left-column-SO">
+                <SprintHeader sprint={sprint} project={project} />
+                <SprintNotes sprint={sprint} />
+            </div>
+            <div className="right-column-SO">
+                <SprintInfo sprint={sprint} />
+            </div>
+            
         </div>
     );
 }

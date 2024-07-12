@@ -28,10 +28,6 @@ const SprintHeader = ({ sprint, project }) => {
                 <div className="info-label">Total Completed:</div>
                 <div className="info-value">{sprint.completed}</div>
             </div>
-            <div className="notes-section">
-                <div className="notes-label">Notes:</div>
-                <div className="notes-text">{sprint.notes}</div>
-            </div>
         </div>
     );
 }
