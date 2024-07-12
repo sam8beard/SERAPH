@@ -165,7 +165,6 @@ def get_sprints(project_id):
     sprints = Sprint.query.filter_by(projectid=project_id).all()
     # sprints = Sprint.query.filter(projectid=project_id, Sprint.project_id==project_id).all()
     json_sprints = list(map(lambda x: x.to_json(), sprints))
-    console.log(json_sprints)
     return jsonify({"sprints": json_sprints})
 
 @app.route("/add_sprint", methods=["POST"])
