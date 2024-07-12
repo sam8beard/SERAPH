@@ -160,10 +160,12 @@ def delete_milestone(milestone_id):
 
 # Sprint functions
 
-@app.route("/get_sprints", methods=["GET"])
-def get_sprints():
-    sprints = Sprint.query.all()
+@app.route("/get_sprints/<string:project_id>", methods=["GET"])
+def get_sprints(project_id):
+    sprints = Sprint.query.filter_by(projectid=project_id).all()
+    # sprints = Sprint.query.filter(projectid=project_id, Sprint.project_id==project_id).all()
     json_sprints = list(map(lambda x: x.to_json(), sprints))
+    console.log(json_sprints)
     return jsonify({"sprints": json_sprints})
 
 @app.route("/add_sprint", methods=["POST"])
@@ -263,6 +265,7 @@ def delete_employee(employee_jNumber):
     db.session.delete(employee)
     db.session.commit()
     return jsonify({"message": "Employee deleted successfully"}), 200
+
 
 if __name__ == "__main__": 
     with app.app_context(): 

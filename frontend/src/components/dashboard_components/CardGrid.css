@@ -11,3 +11,7 @@
 .cg-style .card { 
   border: 10px red solid !important;
 }
+
+.cg-button {
+  margin: 5px !important;
+}

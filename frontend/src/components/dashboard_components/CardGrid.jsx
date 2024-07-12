@@ -12,8 +12,8 @@ function CardGrid({ projects }) {
                             <Card.Img variant="top" src={project.projectURL} alt="Project Icon" style={{ width: "5rem", height: "5rem" }} />
                             <Card.Text>{project.projectID}</Card.Text>
                             <Card.Title>{project.projectName}</Card.Title>
-                            <Button variant="primary" as={Link} to={`/projectview/${project.projectID}`}>View Project</Button>
-                            <Button variant="primary" as={Link} to={`/projectupdate/${project.projectID}`}>Edit Project</Button>
+                            <Button className="cg-button" variant="primary" as={Link} to={`/projectview/${project.projectID}`} style={{ margin: "1rem"}}>View Project</Button>
+                            <Button className="cg-button" variant="primary" as={Link} to={`/projectupdate/${project.projectID}`}style={{ margin: "1rem"}}>Edit Project</Button>
                         </Card.Body>
                     </Card>
                 </Col>
