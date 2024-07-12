@@ -9,12 +9,16 @@ function CardGrid({ sprints }) {
                 <Col className="d-flex" lg={3} md={5} sm={4} style={{ gap: "5px" }} key={sprint.projectID}>
                     <Card className="cg-style" style={{ width: '60rem', borderRadius: '', backgroundColor: "#D9D9D9" }}>
                         <Card.Body>
-                            <Card.Title >{sprint.projectID}</Card.Title>
+                            <Card.Title>{sprint.projectID}</Card.Title>
                             <Card.Text>Commited: {sprint.committedLoad}</Card.Text>
                             <Card.Text>Uncommitted: {sprint.uncommittedLoad}</Card.Text>
                             <Card.Text>Completed: {sprint.completed}</Card.Text>
-                            <Button variant="primary" classname="margin" as={Link} to={`/sprint_update/${sprint.projectID}`}>Edit Sprint</Button>
-                            <Button variant="primary" classname="margin" as={Link} to={`/sprint_overview/${sprint.projectID}`}>View Sprint</Button>
+                            <Button variant="primary" className="margin" as={Link} to={`/sprintupdate/${sprint.projectID}/${sprint.startDate}`}>
+                                Edit Sprint
+                            </Button>
+                            <Button variant="primary" className="margin" as={Link} to={`/sprintoverview/${sprint.projectID}/${sprint.startDate}`}>
+                                View Sprint
+                            </Button>
                         </Card.Body>
                     </Card>
                 </Col>
@@ -22,6 +26,5 @@ function CardGrid({ sprints }) {
         </Row>
     );
 }
-
 
 export default CardGrid;

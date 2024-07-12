@@ -1,6 +1,7 @@
 from flask import request, jsonify 
 from config_db import db, app
 from models import Project, Employee, War, Milestone, Sprint
+from datetime import datetime
 
 # Project functions
 
@@ -204,8 +205,10 @@ def add_sprint():
 
 @app.route("/get_sprint/<string:projectid>/<string:startdate>", methods=["GET"])
 def get_sprint(projectid, startdate):
+    start_date = datetime.strptime(startdate, "%a, %d %b %Y %H:%M:%S GMT").date()
+
     with db.session() as session:
-        sprint = session.query(Sprint).filter_by(projectid=projectid).first()
+        sprint = session.query(Sprint).filter_by(projectid=projectid, startdate=start_date).first()
         return jsonify({"sprint": sprint.to_json()})
 
 @app.route("/delete_sprint/<int:sprint_id>", methods=["DELETE"])

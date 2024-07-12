@@ -20,11 +20,7 @@ function NavigationBar() {
                 <Nav.Link href="/signin">Sign In</Nav.Link>
                 <Nav.Link href="/projectview">Project View</Nav.Link>
                 <Nav.Link href="/projectupdate">Project Update</Nav.Link>
-<<<<<<< HEAD
-                <Nav.Link href="/sprintupdate">Sprint Update</Nav.Link>
-=======
                 <Nav.Link href="/sprintdashboard">Sprint Dashboard</Nav.Link>
->>>>>>> jason12
                 <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                   <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">

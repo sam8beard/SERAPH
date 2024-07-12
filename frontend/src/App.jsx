@@ -35,11 +35,11 @@ function App() {
               element={<Dashboard/>}
           />
           <Route 
-              path='/sprintoverview'
+              path='/sprintoverview/:projectId/:startDate'
               element={<SprintOverview />}
           />
           <Route 
-              path='/sprintupdate'
+              path='/sprintupdate/:projectId/:startDate'
               element={<SprintUpdate />}
           />
           <Route 
@@ -66,15 +66,13 @@ function App() {
               path='/pptxoverview'
               element={<PptxOverview />}
           />
-<<<<<<< HEAD
           <Route 
               path='/projectupdate/:projectId'
               element={<ProjectUpdate />}
-=======
+          />
           <Route
               path='/sprintdashboard'
               element={<SprintDashboard />}
->>>>>>> jason12
           />
         </Routes>
       </Router>
