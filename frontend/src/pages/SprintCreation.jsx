@@ -12,26 +12,26 @@ import { useState } from "react";
 const SprintCreation = () => { 
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
-    const [committedLoad, setCommittedLoad] = useState(0);
-    const [uncommittedLoad, setUncommittedLoad] = useState(0);
-    const [completed, setCompleted] = useState(0);
+    const [committedLoad, setCommittedLoad] = useState();
+    const [uncommittedLoad, setUncommittedLoad] = useState();
+    const [completed, setCompleted] = useState();
     const [notes, setNotes] = useState("");
     const [projectID, setProjectID] = useState("");
-    const [capacity, setCapacity] = useState(0);
-    const [velocity, setVelocity] = useState(0);
+    const [capacity, setCapacity] = useState();
+    const [velocity, setVelocity] = useState();
 
     const onSubmit = async (e) => {
         e.preventDefault();
         const data = {
             startDate,
             endDate,
-            committedLoad: parseInt(committedLoad),
-            uncommittedLoad: parseInt(uncommittedLoad),
-            completed: parseInt(completed),
+            committedLoad: parseInt(committedLoad) || 0,
+            uncommittedLoad: parseInt(uncommittedLoad || 0),
+            completed: parseInt(completed) || 0,
             projectID,
             notes,
-            capacity: parseInt(capacity),
-            velocity: parseInt(velocity),
+            capacity: parseInt(capacity) || 0,
+            velocity: parseInt(velocity) || 0,
         };
         const url = "http://127.0.0.1:5000/add_sprint";
         const options = {
@@ -59,49 +59,83 @@ const SprintCreation = () => {
 
             <div className="input">
                 <div className="date">
-                    <StartDate startDate={startDate} setStartDate={setStartDate}/> 
-                    <EndDate endDate={endDate} setEndDate={setEndDate}/>
+                    <div>
+                        <label htmlFor="startDate" className="startTitle"></label>
+                        <StartDate startDate={startDate} setStartDate={setStartDate} /> 
+                    </div>
+                    <div>
+                        <label htmlFor="endDate" className="endTitle"></label>
+                        <EndDate endDate={endDate} setEndDate={setEndDate} />
+                    </div>
                 </div>
+       
+                    <div>
+                        <label htmlFor="committedLoad" className="commitTitle"></label>
+                        <CommittedInput committedLoad={committedLoad} setCommittedLoad={setCommittedLoad} />
+                    </div>
+
+                    <div>
+                        <label htmlFor="uncommittedLoad" className="uncommitTitle"></label>
+                        <Uncommitted uncommittedLoad={uncommittedLoad} setUncommittedLoad={setUncommittedLoad} />
+                    </div>
                 
-                <CommittedInput committedLoad={committedLoad} setCommittedLoad={setCommittedLoad} />
                 
-                <Uncommitted uncommittedLoad={uncommittedLoad} setUncommittedLoad={setUncommittedLoad}/>
-                
-                <Completed completed={completed} setCompleted={setCompleted}/>
+           
+                <div>
+                    <label htmlFor="completed" className="compTitle"></label>
+                    <Completed completed={completed} setCompleted={setCompleted} />
+                </div>
 
                 <div>
-                <label htmlFor="projectid">projectid</label>
-                <input
-                    type="text"
-                    id="projectID"
-                    value={projectID}
-                    onChange={(e) => setProjectID(e.target.value)}
-                />
+                    <div className='title'>
+                        <div className="commitTitle">
+                        <p>Project ID</p>
+                        </div>
+                    <input
+                        placeholder='Input project ID'
+                        type="text"
+                        id="projectID"
+                        value={projectID}
+                        onChange={(e) => setProjectID(e.target.value)}
+                    />
+                    </div>
                 </div>
+            
+                
                 <div>
-                <label htmlFor="capacity">capacity</label>
-                <input
-                    type="number"
-                    id="capacity"
-                    value={capacity}
-                    onChange={(e) => setCapacity(parseInt(e.target.value, 10) || 0)}
+                    <div className='title'>
+                    <div className="commitTitle">
+                        <p>Capacity</p>
+                    </div>
+                    <input
+                        placeholder='Input capacity'
+                        type="number"
+                        id="capacity"
+                        value={capacity}
+                        onChange={(e) => setCapacity(parseInt(e.target.value, 10) || 0)}
                     />
                 </div>
+                </div>
 
                 <div>
-                <label htmlFor="velocity">velocity</label>
-                <input
-                    type="number"
-                    id="velocity"
-                    value={velocity}
-                    onChange={(e) => setVelocity(parseInt(e.target.value, 10) || 0)}
-                />
+                    <div className='title'>
+                    <div className="commitTitle">
+                        <p>Velocity</p>
+                    </div>
+                    <input
+                        placeholder='Input velocity'
+                        type="number"
+                        id="velocity"
+                        value={velocity}
+                        onChange={(e) => setVelocity(parseInt(e.target.value, 10) || 0)}
+                    />
+                    </div>
                 </div>
-               
-                <Notes notes={notes} setNotes={setNotes}/>
-                
+
+                <Notes notes={notes} setNotes={setNotes} />
+                <ButtonImp />
                 <div className="bottom">
-                    <ButtonImp/>
+
                 </div>
             </div>
         </form>
