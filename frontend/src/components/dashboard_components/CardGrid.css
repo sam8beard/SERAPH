@@ -1,17 +1,82 @@
-.parent-CG{
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr)) !important;
-  grid-gap: 2rem !important;
-  margin-block: 2rem !important;
-  padding: 0 1rem !important;
-  justify-items: center !important;
-  align-items: center !important;
+.parent-CG {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem 1rem;
 }
 
-.cg-style .card { 
-  border: 10px red solid !important;
+.cg-style {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ced4da;
+  border-radius: 0.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  min-height: 150px;
 }
 
-.cg-button {
-  margin: 5px !important;
+.d-flex {
+  min-height: 150px;
+}
+
+.cg-style:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cg-img-container {
+  width: 33%;
+  overflow: hidden;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.cg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.card-link {
+  width: 87.5%; 
+  text-decoration: none;
+  display: flex;
+}
+
+.cg-body {
+  width: 100%;
+}
+
+.edit-button-container {
+  width: 12.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cg-edit-button {
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+
+
+.mb-4 {
+  margin-bottom: 2rem !important;
 }

@@ -11,9 +11,6 @@ function MyForm() {
     flightDirectorID: '',
     archived: '',
     projectURL: '',
-
-
-    // Add other fields as needed
   });
 
   const handleChange = (e) => {
@@ -25,7 +22,6 @@ function MyForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Call the function to send data to Flask backend
     sendDataToBackend();
   };
 

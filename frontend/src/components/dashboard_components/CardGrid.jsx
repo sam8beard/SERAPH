@@ -1,20 +1,38 @@
 import { Col, Row, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import editIcon from '../../assets/edit.png';
+import './CardGrid.css';
 
 function CardGrid({ projects }) {
     return (
-        <Row lg={7} style={{ gap: "10px" }}>
+        <Row className="parent-CG">
             {projects.map((project) => (
-                <Col className="d-flex" lg={3} md={5} sm={4} style={{ gap: "5px" }} key={project.projectID}>
-                    <Card className="cg-style" style={{ width: '60rem', borderRadius: '', backgroundColor: "#D9D9D9" }}>
-                    <Card.Body>
-                            <Card.Text>{project.customerName}</Card.Text>
-                            <Card.Img variant="top" src={project.projectURL} alt="Project Icon" style={{ width: "5rem", height: "5rem" }} />
-                            <Card.Text>{project.projectID}</Card.Text>
-                            <Card.Title>{project.projectName}</Card.Title>
-                            <Button className="cg-button" variant="primary" as={Link} to={`/projectview/${project.projectID}`} style={{ margin: "1rem"}}>View Project</Button>
-                            <Button className="cg-button" variant="primary" as={Link} to={`/projectupdate/${project.projectID}`}style={{ margin: "1rem"}}>Edit Project</Button>
-                        </Card.Body>
+                <Col lg={4} md={6} sm={12} key={project.projectID} className="mb-4">
+                    <Card className="cg-style">
+                        <div className="d-flex">
+                            <Link to={`/projectview/${project.projectID}`} className="card-link">
+                                <div className="d-flex flex-row w-100">
+                                    <div className="cg-img-container">
+                                        <Card.Img 
+                                            variant="left" 
+                                            src={project.projectURL} 
+                                            alt="Project Icon" 
+                                            className="cg-img"
+                                        />
+                                    </div>
+                                    <Card.Body className="d-flex flex-column justify-content-center align-items-center cg-body">
+                                        <Card.Title>{project.projectName}</Card.Title>
+                                        <Card.Text>{project.customerName}</Card.Text>
+                                        <Card.Text>{project.projectID}</Card.Text>
+                                    </Card.Body>
+                                </div>
+                            </Link>
+                            <div className="edit-button-container">
+                                <Button variant="secondary" as={Link} to={`/projectupdate/${project.projectID}`} className="cg-edit-button">
+                                    <img src={editIcon} alt="Edit" className="edit-icon" />
+                                </Button>
+                            </div>
+                        </div>
                     </Card>
                 </Col>
             ))}
