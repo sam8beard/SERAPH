@@ -4,35 +4,54 @@
   padding: 0;
   font-family: Arial, sans-serif;
 } */
+p {
+  font-weight: 400;
+}
+img {
+  height: 100px;
+}
+h1 {
+  position: relative;
+  top: -70px;
+}
 
 .parent {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: flex-start;
   height: calc(100vh - 40px); 
-  width: calc(100vw - 250px);
+  width: calc(100vw - 200px);
   padding: 20px;
-  margin-left: 40px;
-  margin-top: 40px;
+  margin-left: 30px;
+  margin-top: 30px;
+  flex-grow: 0;
+  
 }
 
-.project-card {
+.box1 {
   background-color: #a9a9a9;
   border-radius: 10px;
   padding: 10px;
-  width: 60%;
+  width: 50%;
   height: 85%;
+  flex-grow: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-self: start;  
 }
-.sprint-overview-card {
+.box2 {
+  align-self: flex-start;
   background-color: #a9a9a9;
   border-radius: 10px;
   padding: 10px;
-  width: 30%;
-  height: 85%;
+  width: 40%;
+  height: 60%;
+  position: absolute;
+  right: 100px;
+  bottom: 120px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
   line-height: 50px;
+  align-self: start;  
 }
 .sprint-overview-title {
   text-align: center;
@@ -84,8 +103,8 @@
   border-radius: 5px;
   cursor: pointer;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 30px;
+  right: 100px;
 }
 
 .update-button:hover {

@@ -1,7 +1,6 @@
 import './SprintCreation.css';
 import StartDate from '../components/sprint_creation_components/StartDate.jsx';
 import EndDate from '../components/sprint_creation_components/EndDate.jsx';
-import SprintInput from '../components/sprint_creation_components/SprintInput.jsx';
 import 'bootstrap/dist/css/bootstrap.css';
 import CommittedInput from '../components/sprint_creation_components/CommittedInput.jsx';
 import Uncommitted from '../components/sprint_creation_components/Uncommitted.jsx';
@@ -13,22 +12,26 @@ import { useState } from "react";
 const SprintCreation = () => { 
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
-    const [sprints, setSprints] = useState("");
-    const [committedLoad, setCommittedLoad] = useState("");
-    const [uncommittedLoad, setUncommittedLoad] = useState("");
-    const [completed, setCompleted] = useState("");
+    const [committedLoad, setCommittedLoad] = useState(0);
+    const [uncommittedLoad, setUncommittedLoad] = useState(0);
+    const [completed, setCompleted] = useState(0);
     const [notes, setNotes] = useState("");
+    const [projectID, setProjectID] = useState("");
+    const [capacity, setCapacity] = useState(0);
+    const [velocity, setVelocity] = useState(0);
 
     const onSubmit = async (e) => {
         e.preventDefault();
         const data = {
             startDate,
             endDate,
-            sprints, 
-            committedLoad,
-            uncommittedLoad,
-            completed,
-            notes
+            committedLoad: parseInt(committedLoad),
+            uncommittedLoad: parseInt(uncommittedLoad),
+            completed: parseInt(completed),
+            projectID,
+            notes,
+            capacity: parseInt(capacity),
+            velocity: parseInt(velocity),
         };
         const url = "http://127.0.0.1:5000/add_sprint";
         const options = {
@@ -40,6 +43,7 @@ const SprintCreation = () => {
         };
         const response = await fetch(url, options);
         if (response.status !== 201 && response.status !== 200) {
+            
             const data = await response.json();
             alert(data.message);
         }
@@ -49,7 +53,7 @@ const SprintCreation = () => {
         <form className="parent" onSubmit={onSubmit}>
             <div className="top">
                 <div className="title">
-                    <h1>Sprint Creation Form</h1>
+                    <h1 className="Sprinttitle">Sprint Creation Form</h1>
                 </div>
             </div>
 
@@ -58,14 +62,41 @@ const SprintCreation = () => {
                     <StartDate startDate={startDate} setStartDate={setStartDate}/> 
                     <EndDate endDate={endDate} setEndDate={setEndDate}/>
                 </div>
-
-                <SprintInput sprints={sprints} setSprints={setSprints}/>
                 
                 <CommittedInput committedLoad={committedLoad} setCommittedLoad={setCommittedLoad} />
                 
                 <Uncommitted uncommittedLoad={uncommittedLoad} setUncommittedLoad={setUncommittedLoad}/>
                 
                 <Completed completed={completed} setCompleted={setCompleted}/>
+
+                <div>
+                <label htmlFor="projectid">projectid</label>
+                <input
+                    type="text"
+                    id="projectID"
+                    value={projectID}
+                    onChange={(e) => setProjectID(e.target.value)}
+                />
+                </div>
+                <div>
+                <label htmlFor="capacity">capacity</label>
+                <input
+                    type="number"
+                    id="capacity"
+                    value={capacity}
+                    onChange={(e) => setCapacity(parseInt(e.target.value, 10) || 0)}
+                    />
+                </div>
+
+                <div>
+                <label htmlFor="velocity">velocity</label>
+                <input
+                    type="number"
+                    id="velocity"
+                    value={velocity}
+                    onChange={(e) => setVelocity(parseInt(e.target.value, 10) || 0)}
+                />
+                </div>
                
                 <Notes notes={notes} setNotes={setNotes}/>
                 

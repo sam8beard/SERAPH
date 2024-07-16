@@ -1,0 +1,27 @@
+.overview-container-SO {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 30px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    height: 80vh;
+    margin: 0 auto;
+}
+
+.left-column-SO {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 40%;
+    margin: 20px;
+}
+
+.right-column-SO {
+    display: flex;
+    width: 60%;
+    height: 95%;
+    margin: 20px
+}

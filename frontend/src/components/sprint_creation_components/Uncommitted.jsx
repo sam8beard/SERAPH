@@ -9,9 +9,9 @@ function Uncommitted(props) {
             <p>Uncommitted Load</p>
         </div>
         <div className="uncommitted">
-        <input className="uncommittedInput" placeholder='Input uncommitted load'
+        <input type="number" className="uncommittedInput" placeholder='Input uncommitted load'
         value={props.uncommittedLoad}
-        onChange={(e) => props.setUncommittedLoad(e.target.value)}></input>
+        onChange={(e) => props.setUncommittedLoad(parseInt(e.target.value, 10) || 0)}></input>
         </div>
     </div>
 

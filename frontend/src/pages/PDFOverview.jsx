@@ -1,84 +1,166 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import {
+  Document,
+  Page,
+  Text,
+  View,
+  StyleSheet,
+  PDFViewer,
+} from "@react-pdf/renderer";
 import "./PDFOverview.css";
+import CardGrid from '../components/dashboard_components/CardGrid' 
 
-export const PDFOverview = () => {
+// Create styles
+const styles = StyleSheet.create({
+  page: {
+    backgroundColor: "#FFFFFF",
+    color: "black",
+  },
+  section: {
+    margin: 10,
+    padding: 10,
+    textAlign: 'center',
+    fontWeight: 900,
+    
+  },
+  viewer: {
+    width: window.innerWidth - 1000,
+    height: window.innerHeight,
+  },
+  info: {
+    margin: 10,
+    padding: 10,
+    fontWeight: 10,
+    
+  },
+});
+
+// Create Document Component
+function PDFOverview() {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+
+  const fetchProjects = async () => {
+    const response = await fetch("http://127.0.0.1:5000/get_projects");
+    const data = await response.json();
+    setProjects(data.projects);
+    console.log(data.projects);
+  };
+
+
+
   return (
     <div className="export-PDF-page">
-      <div className="overlap-wrapper">
-        <div className="overlap">
-          <div className="rectangle" />
-          <div className="div" />
-          <img className="image" alt="Image" src="image-5.png" />
-          <p className="text-wrapper">S E R A P H</p>
-          <div className="text-wrapper-2">Your Project PDF</div>
-          <div className="text-wrapper-3">Welcome User</div>
-          <div className="rectangle-2" />
-          <div className="rectangle-3" />
-          <div className="rectangle-4" />
-          <div className="rectangle-5" />
-          <div className="rectangle-6" />
-          <div className="rectangle-7" />
-          <div className="rectangle-8" />
-          <div className="rectangle-9" />
-          <div className="rectangle-10" />
-          <div className="rectangle-11" />
-          <div className="rectangle-12" />
-          <div className="rectangle-13" />
-          <div className="rectangle-14" />
-          <div className="rectangle-15" />
-          <div className="rectangle-16" />
-          <div className="rectangle-17" />
-          <div className="rectangle-18" />
-          <img className="line" alt="Line" src="line-38.svg" />
-          <img className="img" alt="Line" src="line-39.svg" />
-          <img className="line-2" alt="Line" src="line-40.svg" />
-          <img className="line-3" alt="Line" src="line-41.svg" />
-          <img className="line-4" alt="Line" src="line-42.svg" />
-          <img className="line-5" alt="Line" src="line-43.svg" />
-          <img className="line-6" alt="Line" src="line-44.svg" />
-          <img className="line-7" alt="Line" src="line-45.svg" />
-          <div className="text-wrapper-4">MEDUSA</div>
-          <div className="text-wrapper-5">Metrics</div>
-          <div className="text-wrapper-6">Sprint 1</div>
-          <div className="text-wrapper-7">Sprint 2</div>
-          <div className="text-wrapper-8">Sprint 3</div>
-          <img src="../assets/SERAPH_ICON.png" />
-          <div className="group">
-            <div className="overlap-group">
-                <div className="buttons">
-                    <button className="save-button">Save PDF</button>
-                    <button className="cancel-button">Cancel</button>
-                </div>
-            </div>
-          </div>
-          
-          
-          <div className="text-wrapper-10">Medusa.pdf</div>
-        </div>
+      <div className="title">Your Project PDF</div>
+
+      <PDFViewer style={styles.viewer}>
+        <Document>
+          <Page size="Letter" style={styles.page}>
+            <View style={styles.section}>
+              <Text>Project Overview</Text>
+            </View>
+            {projects.map((project, index) => (
+              <View key={index} style={styles.info}>
+                <Text>Project Name: {project.projectName}</Text>
+                <Text>Customer Name: {project.customerName}</Text>
+                <Text>Tech Used: {project.techUsed}</Text>
+                <Text>Project ID: {project.projecturl}</Text>
+                
+              </View>
+            ))}
+          </Page>
+        </Document>
+      </PDFViewer>
+
+      <div className="buttons">
+        <button className="save-button">Save PDF</button>
+        <button className="cancel-button">Cancel</button>
       </div>
     </div>
   );
-};
-
-export default PDFOverview;
- 
-
-
-/* import React from "react";
-import "./PDFOverview.css";
-import 'bootstrap/dist/css/bootstrap.css';
-
-function PDFOverview() {
-	return (
-       
-		<div className="background">
-            <div className="logo">
-            </div>
-            <div className="title">
-                <h1>GeeksForGeeksafdsfasdfasdfadsf</h1>
-            </div>
-		</div>
-	);
 }
 
-export default PDFOverview; */
+export default PDFOverview;
+
+
+
+
+
+
+
+
+
+/* import {
+  Document,
+  Page,
+  Text,
+  View,
+  StyleSheet,
+  PDFViewer,
+} from "@react-pdf/renderer";
+import "./PDFOverview.css";
+
+// Create styles
+const styles = StyleSheet.create({
+  page: {
+      backgroundColor: "#FFFFFF",
+      color: "black",
+  },
+  section: {
+      margin: 10,
+      padding: 10,
+  },
+  viewer: {
+      width: window.innerWidth / 3,
+      height: window.innerHeight,
+  },
+});
+
+
+
+
+function PDFOverview() {
+  const [projects, setProjects] = useState([])
+
+    useEffect(() => {
+        fetchProjects()
+    }, [])
+    const fetchProjects = async () => { 
+        const response = await fetch("http://127.0.0.1:5000/get_projects")
+        const data = await response.json()
+        setProjects(data.projects)
+        console.log(data.projects)
+    }
+
+
+  return (
+    
+      <div className="export-PDF-page">    
+          
+          <div className="title">Your Project PDF</div>
+
+          <PDFViewer style={styles.viewer}>
+              <Document>            
+                  <Page size="A4" style={styles.page}>
+                      <View style={styles.section}>
+                          <Text>SERAPH</Text>
+                      </View>
+                      <View style={styles.section}>
+                          <Text>World</Text>
+                      </View>
+                  </Page>
+              </Document>
+          </PDFViewer>
+
+          <div className="buttons">
+              <button className="save-button">Save PDF</button>
+              <button className="cancel-button">Cancel</button>
+          </div>                
+      </div>
+  );
+}
+export default PDFOverview;
+ */

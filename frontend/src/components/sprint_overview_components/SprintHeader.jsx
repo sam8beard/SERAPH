@@ -1,20 +1,35 @@
 import React from 'react';
 import './SprintHeader.css';
 
-const SprintHeader = ({sprint}) => {
+const SprintHeader = ({ sprint, project }) => {
     return (
-        <>
-            <h1 className="header-1-SO text-style-header-SO">
-                <div>Project Name Here</div>
-                <div>{sprint.startDate} - {sprint.endDate}</div>
-                <div>
-                    <div>Committed Load: {sprint.commitedLoad}</div>
-                    <div>Uncommitted Load: {sprint.uncommittedLoad}</div>
-                    <div>Total Completed: {sprint.completed}</div>
-                </div>
-            </h1>
-        </>
-    )
+        <div className="header-container">
+            <div className="project-name">{project.projectName}</div>
+            <div className="header-section">
+                <div className="date-range">{`${sprint.startDate} - ${sprint.endDate}`}</div>
+            </div>
+            <div className="header-section">
+                <div className="info-label">Velocity:</div>
+                <div className="info-value">{sprint.velocity}</div>
+            </div>
+            <div className="header-section">
+                <div className="info-label">Capacity:</div>
+                <div className="info-value">{sprint.capacity}</div>
+            </div>
+            <div className="header-section">
+                <div className="info-label">Committed Load:</div>
+                <div className="info-value">{sprint.committedLoad}</div>
+            </div>
+            <div className="header-section">
+                <div className="info-label">Uncommitted Load:</div>
+                <div className="info-value">{sprint.uncommittedLoad}</div>
+            </div>
+            <div className="header-section">
+                <div className="info-label">Total Completed:</div>
+                <div className="info-value">{sprint.completed}</div>
+            </div>
+        </div>
+    );
 }
 
 export default SprintHeader;

@@ -1,9 +1,8 @@
-.header-container {
+.notes-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #ffffff;
-    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -11,23 +10,16 @@
     min-height: 100%;
     margin: 10px;
     box-sizing: border-box;
+    padding: 20px;
 }
 
-.project-name {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
+.notes-label {
+    font-style: italic;
+    font-size: 1.2em;
     margin-bottom: 10px;
 }
 
-.header-section {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.info-label {
-    font-weight: bold;
-    color: #333;
+.notes-text {
+    text-align: left;
+    font-size: 1em;
 }

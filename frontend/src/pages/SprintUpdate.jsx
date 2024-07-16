@@ -9,13 +9,14 @@ import Uncommitted from '../components/sprint_creation_components/Uncommitted.js
 import Completed from '../components/sprint_creation_components/Completed.jsx';
 import Notes from '../components/sprint_creation_components/Notes.jsx';
 import ButtonImp from '../components/sprint_creation_components/ButtonImp.jsx';
+import React from 'react';
 
-function SprintUpdate() { 
+const SprintUpdate = () =>  { 
     return (
         <div className="parent">
             <div className="top">
-                <div className="title">
-                    <h1>Sprint Update Form</h1>
+                <div className="title" style={{ color: 'black', fontSize: '1em', marginTop: '50px'}}>
+                    <h1 className="updateTitle">Sprint Update Form</h1>
                 </div>
             </div>
 
@@ -24,14 +25,28 @@ function SprintUpdate() {
                     <StartDate/> 
                     <EndDate/>
                 </div>
-
-                <SprintInput/>
                 
                 <CommittedInput/>
                 
                <Uncommitted/>
                 
                 <Completed/>
+                <div>
+                <label htmlFor="capacity">capacity</label>
+                <input
+                    type="number"
+                    id="capacity"
+
+                    />
+                </div>
+
+                <div>
+                <label htmlFor="velocity">velocity</label>
+                <input
+                    type="number"
+                    id="velocity"
+                />
+                </div>
                
                <Notes/>
                 
@@ -41,8 +56,8 @@ function SprintUpdate() {
             <div className="bottom">
 
             <div className="buttons">
-        <button type="submit" className="submitBtn">Update</button>
-    </div>
+        <button type="submit" className="submitBtn" style={{marginTop: '50px', marginRight: '700px', fontSize: '1.25em'}}>Update</button>
+        </div>
                 
             </div>
 

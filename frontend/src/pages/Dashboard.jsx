@@ -3,7 +3,7 @@ import './Dashboard.css';
 import CardGrid from '../components/dashboard_components/CardGrid' 
 import { useState, useEffect } from 'react'
 import ProjectCard from '../components/dashboard_components/ProjectCard';
-
+import ProjectForm from '../components/dashboard_components/ProjectForm'
 function Dashboard() { 
     const [projects, setProjects] = useState([])
 
@@ -16,6 +16,7 @@ function Dashboard() {
         setProjects(data.projects)
         console.log(data.projects)
     }
+    
     function handleSubmission(formData) { 
         fetch('/main/add_project', { 
             method: 'POST',
@@ -28,12 +29,29 @@ function Dashboard() {
     }
 
     return (
-        <div className='parent'> 
-            <CardGrid projects={projects}/> 
+        <div className='dash-parent'> 
+            <div className='dash-header'> 
+                <div className="welcome"> 
+                    <div> 
+                        <h1> Welcome to S E R A P H </h1>
+                        <h4> View all of your available projects </h4>
+                    </div>
+                    <div> 
+                        
 
-            <form > 
+                    </div> 
+                </div>
+                
+            </div>
+            <div className="grid-parent"> 
+                 <CardGrid projects={projects}/> 
+            </div>
+            
+
+            <form> 
                 <input type="text" placeholder='Project'/>
             </form>
+            <ProjectForm/> 
         </div>
         // CREATE FORM COMPONENT AND INSERT HERE
         // HANDLE ALL OF TE 
