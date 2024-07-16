@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Container, Row, Button } from 'react-bootstrap';
 import SprintChart from '../components/SprintChart';
 import './ProjectView.css';
+import editIcon from '../assets/edit.png';
 
 const ProjectView = () => {
     const { projectId } = useParams();
