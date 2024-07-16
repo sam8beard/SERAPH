@@ -19,15 +19,12 @@ function War() {
 
     return (
         <div className='parent'> 
-            <div className="title"> War Form </div>
-            
-
+            <div className="title"> </div>
+            <div className="title"> </div>
             <ProjectForm/> 
         </div>
-        // CREATE FORM COMPONENT AND INSERT HERE
-        // HANDLE ALL OF TE 
         
     )
 }
 
-export default War;
+export default War; 

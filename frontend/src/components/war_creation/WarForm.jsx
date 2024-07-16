@@ -40,64 +40,89 @@ function MyForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="projectid"
-        value={formData.projectid}
-        onChange={handleChange}
-        placeholder="Project ID"
-      />
-      <input
-        type="date"
-        name="startdate"
-        value={formData.startdate}
-        onChange={handleChange}
-        placeholder="Start Date"
-      />
-      <input
-        type="date"
-        name="enddate"
-        value={formData.enddate}
-        onChange={handleChange}
-        placeholder="End Date"
-      />
-      <input
-        type="text"
-        name="projecttitle"
-        value={formData.projecttitle}
-        onChange={handleChange}
-        placeholder="Project Title"
-      />
-      
-      <input
-        type="text"
-        name="projectstatus"
-        value={formData.projectstatus}
-        onChange={handleChange}
-        placeholder="Status"
-      />
-      
-      <input
-        type="text"
-        name="dayplan"
-        value={formData.dayplan}
-        onChange={handleChange}
-        placeholder="Day Plan"
-      />
-      
-      
-      <input
-        type="text"
-        name="information"
-        value={formData.information}
-        onChange={handleChange}
-        placeholder="Additional Information"
-      />
-      {/* Add other input fields as needed */}
-      <button className="submit">Submit</button>
-    </form>
+    <div className="parent">
+      <div className="title">War Form</div>
+      <form onSubmit={handleSubmit}>
+        <div className="grid-container">
+          <div className="grid-item">
+            <div className="heading">Project ID</div>
+            <input
+              type="text"
+              name="projectid"
+              value={formData.projectid}
+              onChange={handleChange}
+              placeholder="Project ID"
+            />
+  
+            <div className="heading">Start Date</div>
+            <input
+              type="date"
+              name="startdate"
+              value={formData.startdate}
+              onChange={handleChange}
+              placeholder="Start Date"
+            />
+  
+            <div className="heading">End Date</div>
+            <input
+              type="date"
+              name="enddate"
+              value={formData.enddate}
+              onChange={handleChange}
+              placeholder="End Date"
+            />
+  
+            <div className="heading">Project Title</div>
+            <input
+              type="text"
+              name="projecttitle"
+              value={formData.projecttitle}
+              onChange={handleChange}
+              placeholder="Project Title"
+            />
+
+        
+            <div> </div>
+            <div> </div>
+            <div className="heading">Project Status</div>
+            <textarea
+              type="text"
+              name="projectstatus"
+              value={formData.projectstatus}
+              onChange={handleChange}
+              placeholder="Status"
+              className="stat"
+            />
+          </div>
+  
+          <div className="grid-item">
+            <div className="heading">Day Plan</div>
+            <textarea
+              type="text"
+              name="dayplan"
+              value={formData.dayplan}
+              onChange={handleChange}
+              placeholder="Day Plan"
+              className="day"
+            />
+  
+            <div className="heading">Additional Information</div>
+            <textarea
+              type="text"
+              name="information"
+              value={formData.information}
+              onChange={handleChange}
+              placeholder="Additional Information"
+              className="info"
+            />
+          </div>
+        </div>
+  
+        <button className="submit">Submit</button>
+      </form>
+    </div>
   );
+  
 }
 
 export default MyForm;
