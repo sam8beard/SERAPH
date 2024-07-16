@@ -6,6 +6,8 @@ import SprintNotes from "../components/sprint_overview_components/SprintNotes"
 import SprintInfo from "../components/sprint_overview_components/SprintInfo";
 import { Chart as ChartJS } from 'chart.js/auto';
 import { useParams } from 'react-router-dom';
+import editIcon from '../assets/edit.png';
+import { Col, Row, Card, Button } from 'react-bootstrap';
 
 function SprintOverview() {
     const { projectId, startDate } = useParams();
@@ -36,6 +38,9 @@ function SprintOverview() {
             <div className="left-column-SO">
                 <SprintHeader sprint={sprint} project={project} />
                 <SprintNotes sprint={sprint} />
+                <Button variant="secondary" as={Link} to={`/sprintupdate/${project.projectID}/${project.startDate}`} className="cg-edit-button">
+                    <img src={editIcon} alt="Edit" className="edit-icon" />
+                </Button>
             </div>
             <div className="right-column-SO">
                 <SprintInfo sprint={sprint} />

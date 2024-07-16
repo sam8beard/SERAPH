@@ -108,9 +108,6 @@ const ProjectView = () => {
                     <SprintChart data={aggregateChartData()} />
                 </div>
             </div>
-            <Button variant="secondary" as={Link} to={`/projectupdate/${project.projectID}/${project.startDate}`} className="cg-edit-button">
-                <img src={editIcon} alt="Edit" className="edit-icon" />
-            </Button>
         </div>
     );
 };
