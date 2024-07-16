@@ -4,7 +4,7 @@ import { Bar } from 'react-chartjs-2';
 
 const SprintInfo = ({ sprint }) => {
     return (
-        <div className="chart-container">
+        <div className="chart-container-si">
             <Bar
                 data={{
                     labels: ["Sprint Info"],

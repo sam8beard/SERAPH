@@ -2,11 +2,16 @@ import React from 'react';
 import './SprintHeader.css';
 
 const SprintHeader = ({ sprint, project }) => {
+    const formatDate = (dateString) => {
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        return new Date(dateString).toLocaleDateString(undefined, options);
+    };
+
     return (
         <div className="header-container">
             <div className="project-name">{project.projectName}</div>
             <div className="header-section">
-                <div className="date-range">{`${sprint.startDate} - ${sprint.endDate}`}</div>
+                <div className="date-range">{`${formatDate(sprint.startDate)} - ${formatDate(sprint.endDate)}`}</div>
             </div>
             <div className="header-section">
                 <div className="info-label">Velocity:</div>
