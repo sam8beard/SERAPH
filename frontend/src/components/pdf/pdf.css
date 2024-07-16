@@ -47,17 +47,6 @@
     align-items: center;
 }
 
-.grid-item {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    width: 80%;
-  }
 
   .form {
     box-shadow: 4px 4px 4px #00000040;

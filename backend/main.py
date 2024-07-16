@@ -1,6 +1,7 @@
 from flask import request, jsonify 
 from config_db import db, app
 from models import Project, Employee, War, Milestone, Sprint
+from flask_cors import CORS
 
 # Project functions
 

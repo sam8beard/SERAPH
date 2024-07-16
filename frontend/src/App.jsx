@@ -10,6 +10,7 @@ import SprintOverview from './pages/SprintOverview.jsx'
 import SprintCreation from './pages/SprintCreation.jsx'
 import SprintUpdate from './pages/SprintUpdate.jsx'
 import PDFOverview from './pages/PDFOverview.jsx'
+import PDFOptions from './pages/PDFOptions.jsx'
 import ProjectArchive from './pages/ProjectArchive.jsx'
 import SignIn from './pages/SignIn.jsx'
 import ProjectCreation from './pages/ProjectCreation.jsx'
@@ -51,6 +52,10 @@ function App() {
           <Route 
               path='/pdfoverview'
               element={<PDFOverview />}
+          />
+          <Route 
+              path='/pdfoptions'
+              element={<PDFOptions />}
           />
           <Route 
               path='/projectarchive'

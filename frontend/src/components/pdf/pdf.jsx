@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios, { formToJSON } from 'axios';
-import './WarForm.css'
+import './pdf.css'
 
-function MyForm() {
+function PDFForm() {
   const [formData, setFormData] = useState({
     projectid: '',
     startdate: '',
@@ -46,19 +46,23 @@ function MyForm() {
 
   return (
     <div className="parent">
-      <div className="title">War Form</div>
+      <div className="title">PDF Generation Selection</div>
       <form onSubmit={handleSubmit}>
         <div className="grid-container">
           <div className="grid-item">
             <div className="heading">Project ID</div>
-            <textarea
+            <select
               type="text"
               name="projectid"
               value={formData.projectid}
               onChange={handleChange}
               placeholder="Project ID"
               className="form"
-            />
+              >
+                <option value = ""> Select Project ID</option>
+                <option value = ""> adsfas</option>
+
+              </select>
   
             <div className="heading">Start Date</div>
             <input
@@ -101,27 +105,7 @@ function MyForm() {
             />
           </div>
   
-          <div className="grid-item">
-            <div className="heading">Day Plan</div>
-            <textarea
-              type="text"
-              name="dayplan"
-              value={formData.dayplan}
-              onChange={handleChange}
-              placeholder="Day Plan"
-              className="day"
-            />
-  
-            <div className="heading">Additional Information</div>
-            <textarea
-              type="text"
-              name="information"
-              value={formData.information}
-              onChange={handleChange}
-              placeholder="Additional Information"
-              className="info"
-            />
-          </div>
+
         </div>
   
         <button className="submit">Submit</button>
@@ -133,4 +117,4 @@ function MyForm() {
   
 }
 
-export default MyForm;
+export default PDFForm;
