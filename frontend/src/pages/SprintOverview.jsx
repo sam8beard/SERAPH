@@ -8,6 +8,7 @@ import { Chart as ChartJS } from 'chart.js/auto';
 import { useParams } from 'react-router-dom';
 import editIcon from '../assets/edit.png';
 import { Col, Row, Card, Button } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 function SprintOverview() {
     const { projectId, startDate } = useParams();

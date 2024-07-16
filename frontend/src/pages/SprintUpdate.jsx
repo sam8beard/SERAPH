@@ -19,12 +19,12 @@ const SprintUpdate = () =>  {
     const [currentSprint, setCurrentSprint] = useState({});
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
-    const [committedLoad, setCommittedLoad] = useState(0);
-    const [uncommittedLoad, setUncommittedLoad] = useState(0);
-    const [completed, setCompleted] = useState(0);
+    const [committedLoad, setCommittedLoad] = useState();
+    const [uncommittedLoad, setUncommittedLoad] = useState();
+    const [completed, setCompleted] = useState();
     const [notes, setNotes] = useState("");
-    const [capacity, setCapacity] = useState(0);
-    const [velocity, setVelocity] = useState(0);
+    const [capacity, setCapacity] = useState();
+    const [velocity, setVelocity] = useState();
 
     useEffect(() => {
         async function fetchSprintDetails() {
@@ -49,13 +49,13 @@ const SprintUpdate = () =>  {
         const data = {
             startDate,
             endDate,
-            committedLoad: parseInt(committedLoad),
-            uncommittedLoad: parseInt(uncommittedLoad),
-            completed: parseInt(completed),
+            committedLoad: parseInt(committedLoad) || 0,
+            uncommittedLoad: parseInt(uncommittedLoad) || 0 ,
+            completed: parseInt(completed) || 0,
             projectID: projectId,
             notes,
-            capacity: parseInt(capacity),
-            velocity: parseInt(velocity),
+            capacity: parseInt(capacity) || 0,
+            velocity: parseInt(velocity) || 0,
         };
         const url = `http://127.0.0.1:5000/update_sprint/${projectId}`;
         const options = {
