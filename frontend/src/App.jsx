@@ -32,6 +32,10 @@ function App() {
         <Routes>
           <Route 
               path='/'
+              element={<SignIn/>}
+          />
+          <Route 
+              path='/dashboard'
               element={<Dashboard/>}
           />
           <Route 
@@ -53,10 +57,6 @@ function App() {
           <Route 
               path='/projectarchive'
               element={<ProjectArchive />}
-          />
-          <Route 
-              path='/signin'
-              element={<SignIn />}
           />
           <Route 
               path='/projectview/:projectId'

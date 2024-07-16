@@ -9,13 +9,13 @@ function NavigationBar() {
     return (
         <Navbar expand="lg" className="bg-body-tertiary navbar">
           <Container>
-            <Navbar.Brand href="/">S E R A P H</Navbar.Brand>
+            <Navbar.Brand href="/dashboard">S E R A P H</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
                 <Nav.Link href="/pdfoverview">PDF Overview</Nav.Link>
                 <Nav.Link href="/projectarchive">Project Archive</Nav.Link>
-                <Nav.Link href="/signin">Sign In</Nav.Link>
+                <Nav.Link href="/">Sign Out</Nav.Link>
                 <Nav.Link href="/sprintdashboard">Sprint Dashboard</Nav.Link>
               </Nav>
             </Navbar.Collapse>
