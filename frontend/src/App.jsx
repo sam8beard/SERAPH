@@ -47,7 +47,7 @@ function App() {
               element={<SprintUpdate />}
           />
           <Route 
-              path='/sprintcreation'
+              path='/sprintcreate/:projectId'
               element={<SprintCreation />}
           />
           <Route 

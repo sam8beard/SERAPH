@@ -3,7 +3,6 @@ import { Link, useParams } from 'react-router-dom';
 import { Container, Row, Button } from 'react-bootstrap';
 import SprintChart from '../components/SprintChart';
 import './ProjectView.css';
-import editIcon from '../assets/edit.png';
 
 const ProjectView = () => {
     const { projectId } = useParams();
@@ -94,12 +93,20 @@ const ProjectView = () => {
                                     className="sprint-button"
                                     as={Link}
                                     to={`/sprintoverview/${sprint.projectID}/${sprint.startDate}`}
-                                >
-                                    {`${formatDate(sprint.startDate)} - ${formatDate(sprint.endDate)}`}
+                                    >{`${formatDate(sprint.startDate)} - ${formatDate(sprint.endDate)}`}
                                 </Button>
                             </Row>
                         ))}
-                    </Container>
+                        <Row>
+                            <Button
+                                className="create-sprint-button"
+                                as={Link}
+                                to={`/sprintcreate/${projectId}`}
+                                variant="secondary"
+                                >Create Sprint
+                            </Button>
+                        </Row>
+                     </Container>
                 </div>
             </div>
 
