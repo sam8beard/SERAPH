@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Container, Row, Button } from 'react-bootstrap';
 import SprintChart from '../components/SprintChart';
 import './ProjectView.css';
+import editIcon from '../assets/edit.png';
 
 const ProjectView = () => {
     const { projectId } = useParams();
@@ -107,6 +108,9 @@ const ProjectView = () => {
                     <SprintChart data={aggregateChartData()} />
                 </div>
             </div>
+            <Button variant="secondary" as={Link} to={`/projectupdate/${project.projectID}/${project.startDate}`} className="cg-edit-button">
+                <img src={editIcon} alt="Edit" className="edit-icon" />
+            </Button>
         </div>
     );
 };
