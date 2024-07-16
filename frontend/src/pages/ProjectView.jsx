@@ -83,9 +83,6 @@ const ProjectView = () => {
                 </div>
 
                 <div className="box2">
-                    <div className="sprint-overview-title">
-                        <h2>Sprints</h2>
-                    </div>
                     <Container>
                         {sprints.map((sprint) => (
                             <Row key={sprint.startDate}>

@@ -16,7 +16,6 @@ function NavigationBar() {
                 <Nav.Link href="/pdfoverview">PDF Overview</Nav.Link>
                 <Nav.Link href="/projectarchive">Project Archive</Nav.Link>
                 <Nav.Link href="/">Sign Out</Nav.Link>
-                <Nav.Link href="/sprintdashboard">Sprint Dashboard</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
