@@ -86,7 +86,7 @@ const SprintUpdate = () =>  {
             <div className="input">
                 <div className="date">
                     <StartDate startDate={startDate} setStartDate={setStartDate}/> 
-                    <EndDate endDate={endDate} setEndDate={setEndDate}/>
+                    <EndDate endDate={endDate} setEndDate={setEndDate} />
                 </div>
                 
                 <CommittedInput committedLoad={committedLoad} setCommittedLoad={setCommittedLoad} />
