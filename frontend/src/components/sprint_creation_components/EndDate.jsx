@@ -1,6 +1,13 @@
 import './EndDate.css'
 import PropTypes from 'prop-types'
 
+const formatDate = (dateString) => {
+    const dateObject = new Date(dateString);
+    const year = dateObject.getFullYear();
+    const month = String(dateObject.getMonth() + 1).padStart(2, '0');
+    const day = String(dateObject.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+};
 
 function EndDate(props) {
     return(
@@ -10,7 +17,7 @@ function EndDate(props) {
             </div>
             <div className="endDateInput">
             <input type="date" className="endDate" placeholder='input end date'
-            value={props.endDate}
+            value={formatDate(props.endDate)}
             onChange={(e) => props.setEndDate(e.target.value)}></input>
             </div>
         </div>

@@ -221,9 +221,11 @@ def delete_sprint(sprint_id):
     db.session.commit()
     return jsonify({"message": "Sprint deleted successfully"}), 200
 
-@app.route("/update_sprint/<string:project_id>", methods=["PUT"])
-def update_sprint(project_id):
-    sprint = Sprint.query.get_or_404(project_id)
+@app.route("/update_sprint/<string:project_id>/<string:oldStartDate>", methods=["PUT"])
+def update_sprint(project_id, oldStartDate):
+    start_date = request.json.get('startDate')
+    print(f"Updating sprint for start_date: {start_date}")
+    sprint = Sprint.query.get_or_404((project_id, oldStartDate))
 
     if 'startDate' in request.json:
         sprint.startdate = request.json['startDate']
@@ -241,10 +243,11 @@ def update_sprint(project_id):
         sprint.capacity = request.json['capacity']          
     if 'velocity' in request.json:  
         sprint.velocity = request.json['velocity']  
-    
+
     db.session.commit()
 
     return jsonify({"message": "Sprint updated"}), 200
+
 
 # Employee functions
 

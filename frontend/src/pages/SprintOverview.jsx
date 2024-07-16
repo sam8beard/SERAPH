@@ -39,7 +39,7 @@ function SprintOverview() {
             <div className="left-column-SO">
                 <SprintHeader sprint={sprint} project={project} />
                 <SprintNotes sprint={sprint} />
-                <Button variant="secondary" as={Link} to={`/sprintupdate/${project.projectID}/${project.startDate}`} className="cg-edit-button">
+                <Button variant="secondary" as={Link} to={`/sprintupdate/${projectId}/${startDate}`} className="cg-edit-button">
                     <img src={editIcon} alt="Edit" className="edit-icon" />
                 </Button>
             </div>

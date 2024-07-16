@@ -1,26 +1,30 @@
 import './Uncommitted.css';
-import PropTypes from 'prop-types'
-
+import PropTypes from 'prop-types';
 
 function Uncommitted(props) {
-    return(
+    const uncommittedLoadValue = props.uncommittedLoad !== undefined ? props.uncommittedLoad : '';
+
+    return (
         <div className="title">
-        <div className="uncommitTitle">
-            <p>Uncommitted Load</p>
+            <div className="uncommitTitle">
+                <p>Uncommitted Load</p>
+            </div>
+            <div className="uncommitted">
+                <input
+                    type="number"
+                    className="uncommittedInput"
+                    placeholder='Input uncommitted load'
+                    value={uncommittedLoadValue}
+                    onChange={(e) => props.setUncommittedLoad(parseInt(e.target.value, 10) || 0)}
+                />
+            </div>
         </div>
-        <div className="uncommitted">
-        <input type="number" className="uncommittedInput" placeholder='Input uncommitted load'
-        value={props.uncommittedLoad}
-        onChange={(e) => props.setUncommittedLoad(parseInt(e.target.value, 10) || 0)}></input>
-        </div>
-    </div>
-
-
-    )
+    );
 }
+
 Uncommitted.propTypes = {
     uncommittedLoad: PropTypes.number,
-    setUncommittedLoad: PropTypes.func,
+    setUncommittedLoad: PropTypes.func.isRequired,
 };
 
 export default Uncommitted;
