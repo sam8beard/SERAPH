@@ -1,11 +1,11 @@
 .notesInput {
     border-radius: 10px;
-    height: 150px; /* Increase the height */
-    width: 600px; /* Increase the width */
-    margin: 10px 0; /* Add margin to avoid overlap */
-    padding: 15px; /* Increase padding */
-    border: 1px solid #ced4da; /* Border color for inputs */
-    font-size: 1.2rem; /* Increase font size inside inputs */
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Slight inner shadow for depth */
-    resize: vertical; /* Allow vertical resizing */
+    height: 150px;
+    width: 600px;
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #ced4da;
+    font-size: 1.2rem;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    resize: vertical;
 }

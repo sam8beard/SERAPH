@@ -1,13 +1,12 @@
 .navbar {
     background-color: #20375D !important;
     color: white !important;
-    position: fixed !important; /* Make the navbar fixed */
-    top: 0 !important; /* Align it to the top */
-    left: 0 !important; /* Align it to the left */
-    width: 100vw !important; /* Full width */
-    z-index: 1000; /* Ensure it stays above other content */
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    z-index: 1000;
 }
-
 
 .navbar-brand, 
 .navbar-nav .nav-link, 

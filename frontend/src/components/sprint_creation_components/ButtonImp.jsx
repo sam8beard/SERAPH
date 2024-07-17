@@ -1,19 +1,11 @@
 import './ButtonImp.css';
 
-
-function ButtonImp(){
+function ButtonImp() {
     return(
         <div className="buttons">
-        <button type="submit" className="submitBtn">Submit</button>
-    </div>
-
-
-
-
+            <button type="submit" className="submitBtn">Submit</button>
+        </div>
     )
-
-
-
-}
+};
 
 export default ButtonImp;
