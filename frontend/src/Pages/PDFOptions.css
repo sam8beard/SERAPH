@@ -1,0 +1,22 @@
+.parent {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+   
+}
+
+.white-line {
+    background-color: #ffffff;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+.title {
+    color:#20375D;
+    font-weight: 900;
+    font-size: 800;
+}
