@@ -7,28 +7,28 @@
     font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-right: 20px;
     
 }
 
 .save-button:hover,
 .cancel-button:hover {
-    background-color: #b0b0b0;
+    background-color: #aea9a9;
 }
 
 
 .export-PDF-page {
-    background-color: #20375D;
+    background-color: #bdbaba;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: -7rem !important;
 
 }
 
 
 .title {
-    color: #FFFFFF;
+    color: #20375D;
     font-family: "Lexend-Regular", Helvetica;
     font-size: 35px;
     font-weight: 400;

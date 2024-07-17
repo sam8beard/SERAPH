@@ -13,6 +13,10 @@ import ProjectView from './pages/ProjectView.jsx'
 import ProjectUpdate from './pages/ProjectUpdate.jsx'
 import PptxOverview from './pages/PptxOverview.jsx'
 import SprintDashboard from './pages/SprintDashboard.jsx'; 
+import PDFOptions from './pages/PDFOptions.jsx'
+import War from './pages/War.jsx' 
+
+
 
 function App() {
   return (
@@ -67,6 +71,14 @@ function App() {
           <Route
               path='/sprintdashboard'
               element={<SprintDashboard />}
+          />
+          <Route 
+              path='/war'
+              element={<War />}
+          />
+          <Route 
+              path='/pdfoptions'
+              element={<PDFOptions />}
           />
         </Routes>
       </Router>
