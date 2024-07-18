@@ -17,7 +17,7 @@ function ArchivedInput(props) {
 }
 
 ArchivedInput.propTypes = {
-    archived: PropTypes.bool,
+    archived: PropTypes.number,
     setArchived: PropTypes.func,
 };
 

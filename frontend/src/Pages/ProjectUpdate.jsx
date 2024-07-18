@@ -12,7 +12,7 @@ const ProjectUpdate = () => {
     const [projectName, setProjectName] = useState("");
     const [customerName, setCustomerName] = useState("");
     const [techUsed, setTechUsed] = useState("");
-    const [archived, setArchived] = useState(false);
+    const [archived, setArchived] = useState(0);
 
     useEffect(() => {
         async function fetchProjectDetails() {

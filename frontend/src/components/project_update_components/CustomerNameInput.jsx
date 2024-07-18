@@ -10,8 +10,8 @@ function CustomerNameInput(props) {
             <div>
                 <input 
                     placeholder='Insert new customer name'
-                    value={props.newCustomerName}
-                    onChange={(e) => props.setNewCustomerName(e.target.value)}
+                    value={props.customerName}
+                    onChange={(e) => props.setCustomerName(e.target.value)}
                 />
             </div>
         </div>
@@ -19,9 +19,8 @@ function CustomerNameInput(props) {
 }
 
 CustomerNameInput.propTypes = {
-    customerName: PropTypes.string.isRequired,
-    newCustomerName: PropTypes.string.isRequired,
-    setNewCustomerName: PropTypes.func.isRequired,
+    customerName: PropTypes.string,
+    setCustomerName: PropTypes.func,
 };
 
 export default CustomerNameInput;

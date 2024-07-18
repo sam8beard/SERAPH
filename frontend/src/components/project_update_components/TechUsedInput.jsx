@@ -10,8 +10,8 @@ function TechUsedInput(props) {
             <div>
                 <input 
                     placeholder='Insert new tech used'
-                    value={props.newTechUsed}
-                    onChange={(e) => props.setNewTechUsed(e.target.value)}
+                    value={props.techUsed}
+                    onChange={(e) => props.settechUsed(e.target.value)}
                 />
             </div>
         </div>
@@ -19,9 +19,8 @@ function TechUsedInput(props) {
 }
 
 TechUsedInput.propTypes = {
-    techUsed: PropTypes.string.isRequired,
-    newTechUsed: PropTypes.string.isRequired,
-    setNewTechUsed: PropTypes.func.isRequired,
+    techUsed: PropTypes.string,
+    setTechUsed: PropTypes.func,
 };
 
 export default TechUsedInput;
