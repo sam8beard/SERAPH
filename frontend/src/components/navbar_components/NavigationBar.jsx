@@ -15,6 +15,7 @@ function NavigationBar() {
               <Nav className="me-auto">
                 <Nav.Link href="/pdfoverview">PDF Overview</Nav.Link>
                 <Nav.Link href="/projectarchive">Project Archive</Nav.Link>
+                <Nav.Link href="/war">Create War</Nav.Link>
                 <Nav.Link href="/">Sign Out</Nav.Link>
               </Nav>
             </Navbar.Collapse>
