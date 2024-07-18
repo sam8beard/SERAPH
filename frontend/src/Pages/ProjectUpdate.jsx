@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import ProjectNameInput from "../components/project_update_components/ProjectNameInput.jsx";
 import CustomerNameInput from "../components/project_update_components/CustomerNameInput.jsx";
 import TechUsedInput from "../components/project_update_components/TechUsedInput.jsx";
-import ArchivedInput from "../components/project_update_components/ArchvedInput.jsx";
+import ArchivedInput from "../components/project_update_components/ArchivedInput.jsx";
 import SubmitInput from "../components/project_update_components/SubmitInput.jsx";
 
 const ProjectUpdate = () => {
@@ -12,7 +12,7 @@ const ProjectUpdate = () => {
     const [projectName, setProjectName] = useState("");
     const [customerName, setCustomerName] = useState("");
     const [techUsed, setTechUsed] = useState("");
-    const [archived, setArchived] = useState(0);
+    const [archived, setArchived] = useState(false);
 
     useEffect(() => {
         async function fetchProjectDetails() {
@@ -22,7 +22,7 @@ const ProjectUpdate = () => {
             setProjectName(data.project.projectName);
             setCustomerName(data.project.customerName);
             setTechUsed(data.project.techUsed);
-            setArchived(data.project.archived);
+            setArchived(data.project.archived === 1);
         }
         fetchProjectDetails();
     }, [projectId]);

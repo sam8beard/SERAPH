@@ -17,8 +17,8 @@ function ArchivedInput(props) {
 }
 
 ArchivedInput.propTypes = {
-    archived: PropTypes.number,
-    setArchived: PropTypes.func,
+    archived: PropTypes.bool,
+    setArchived: PropTypes.func.isRequired,
 };
 
 export default ArchivedInput;
