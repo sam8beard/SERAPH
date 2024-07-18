@@ -11,6 +11,12 @@ def get_projects():
     json_projects = list(map(lambda x: x.to_json(), projects))
     return jsonify({"projects": json_projects})
 
+@app.route("/get_archived", methods=["GET"])
+def get_archived():
+    archive = Project.query.filter_by(archived=1).all()
+    json_archived = list(map(lambda x: x.to_json(), archive))
+    return jsonify({"archived": json_archived})
+
 @app.route("/add_project", methods=["POST"])
 def add_project(): 
     customername = request.json.get("customerName")

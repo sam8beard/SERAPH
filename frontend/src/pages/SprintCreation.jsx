@@ -8,16 +8,15 @@ import Completed from '../components/sprint_creation_components/Completed.jsx';
 import Notes from '../components/sprint_creation_components/Notes.jsx';
 import ButtonImp from '../components/sprint_creation_components/ButtonImp.jsx';
 import { useState } from "react";
-import { useParams } from "react-router-dom";
 
 const SprintCreation = () => { 
-    const { projectId } = useParams();
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
     const [committedLoad, setCommittedLoad] = useState();
     const [uncommittedLoad, setUncommittedLoad] = useState();
     const [completed, setCompleted] = useState();
     const [notes, setNotes] = useState("");
+    const [projectID, setProjectID] = useState("");
     const [capacity, setCapacity] = useState();
     const [velocity, setVelocity] = useState();
 
@@ -27,9 +26,9 @@ const SprintCreation = () => {
             startDate,
             endDate,
             committedLoad: parseInt(committedLoad) || 0,
-            uncommittedLoad: parseInt(uncommittedLoad) || 0,
+            uncommittedLoad: parseInt(uncommittedLoad || 0),
             completed: parseInt(completed) || 0,
-            projectID: projectId,
+            projectID,
             notes,
             capacity: parseInt(capacity) || 0,
             velocity: parseInt(velocity) || 0,
@@ -44,6 +43,7 @@ const SprintCreation = () => {
         };
         const response = await fetch(url, options);
         if (response.status !== 201 && response.status !== 200) {
+            
             const data = await response.json();
             alert(data.message);
         }
@@ -85,6 +85,22 @@ const SprintCreation = () => {
                     <label htmlFor="completed" className="compTitle"></label>
                     <Completed completed={completed} setCompleted={setCompleted} />
                 </div>
+
+                <div>
+                    <div className='title'>
+                        <div className="commitTitle">
+                        <p>Project ID</p>
+                        </div>
+                    <input
+                        placeholder='Input project ID'
+                        type="text"
+                        id="projectID"
+                        value={projectID}
+                        onChange={(e) => setProjectID(e.target.value)}
+                    />
+                    </div>
+                </div>
+            
                 
                 <div>
                     <div className='title'>
